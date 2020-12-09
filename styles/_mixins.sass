@@ -1,0 +1,11 @@
+@import vars
+
+// text
+=textCSW($color, $size, $weight)
+  color: $color
+  font-size: $size
+  font-weight: $weight
+  line-height: 24px
+=textCSWH($color, $size, $weight, $height)
+  +textCSW($color, $size, $weight)
+  line-height: $height

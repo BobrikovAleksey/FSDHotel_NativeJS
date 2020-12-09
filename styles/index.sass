@@ -1,0 +1,53 @@
+@import vars, mixins
+
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+  &:active
+    outline: none
+  &:focus
+    outline: none
+
+html
+  font-size: $FontSize px
+
+body
+  user-select: none
+  font-family: Montserrat, serif
+  +textCSWH($DarkShade75, 1rem, 400, 1.72rem)
+
+a
+  text-decoration: none
+
+button, input
+  border: none
+  background: none
+
+//input::placeholder,
+//input::-webkit-input-placeholder,
+//input:-moz-placeholder,
+//input::-moz-placeholder,
+//input:-ms-input-placeholder
+//  color: $placeholder
+
+details > summary
+  list-style: none
+
+h1
+  +textCSWH($DarkShade, 24rem / 14, 700, 29rem / 14)
+  text-transform: uppercase
+
+h2
+  +textCSWH($DarkShade, 19rem / 14, 700, 23rem / 14)
+  text-transform: uppercase
+
+h3
+  +textCSWH($DarkShade, 12rem / 14, 700, 15rem / 14)
+  text-transform: uppercase
+
+summary::-webkit-details-marker
+  display: none
+
+ul, li
+  list-style-type: none
