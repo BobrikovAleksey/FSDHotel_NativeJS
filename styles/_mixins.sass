@@ -1,6 +1,53 @@
 @import vars
 
+// border
+=borderRBL($size, $color)
+  border-right: $size solid $color
+  border-bottom: $size solid $color
+  border-left: $size solid $color
+=radiusBottom($radius)
+  border-bottom-right-radius: $radius
+  border-bottom-left-radius: $radius
+
+// flex
+=flexCol()
+  display: flex
+  flex-direction: column
+=flexJcC()
+  display: flex
+  justify-content: center
+=flexAiC()
+  display: flex
+  align-items: center
+=flexCC()
+  +flexJcC
+  align-items: center
+=flexJcSb()
+  display: flex
+  justify-content: space-between
+=flexSbC()
+  +flexJcSb
+  align-items: center
+
+// position
+=absoluteTR($top, $right)
+  position: absolute
+  top: $top
+  right: $right
+=absoluteTRSingle($pos)
+  +absoluteTR($pos, $pos)
+=absoluteTL($top, $left)
+  position: absolute
+  top: $top
+  left: $left
+=absoluteTLSingle($pos)
+  +absoluteTL($pos, $pos)
+
 // text
+=textEllipsis()
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
 =textCSW($color, $size, $weight)
   color: $color
   font-size: $size

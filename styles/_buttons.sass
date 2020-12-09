@@ -1,0 +1,53 @@
+@import vars, mixins
+
+$height: 44rem / $FontSize
+
+button
+  cursor: pointer
+  width: 98rem / $FontSize
+  height: $height
+  +textCSWH(inherit, 12rem / $FontSize, 700, 15rem / $FontSize)
+  text-transform: uppercase
+  background: none
+  border: none
+  position: relative
+  &.button_lg
+    width: 320rem / $FontSize
+  &.button_purple
+    color: $background
+    background: linear-gradient(180deg, $Purple 0%, $PurpleLight 100%)
+    border-radius: $height / 2
+    &:hover
+      filter: saturate(220%)
+    &[disabled]
+      filter: opacity(50%)
+  &.button_white
+    $border: 2px
+    color: $Purple
+    background: $background
+    background-clip: content-box
+    border-radius: $height / 2
+    padding: $border
+    &:hover:not([disabled])
+      @extend .button_purple
+      filter: none
+    &:before
+      z-index: -1
+      content: ""
+      width: 100%
+      height: 100%
+      background: linear-gradient(180deg, $Purple 0%, $PurpleLight 100%)
+      border-radius: inherit
+      display: block
+      +absoluteTLSingle(0)
+    &[disabled]
+      color: rgba($Purple, 50%)
+    &[disabled]:before
+      filter: opacity(50%)
+  & .button__icon
+    width: $height
+    height: $height
+    +flexCC
+    +absoluteTRSingle(0)
+    & svg
+      fill: $background
