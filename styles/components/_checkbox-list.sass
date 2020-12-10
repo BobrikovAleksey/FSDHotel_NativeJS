@@ -1,0 +1,65 @@
+@import ../vars, ../mixins
+
+$width: 320rem / $FontSize
+$box: 20rem / $FontSize
+
+.checkbox-list
+  width: $width
+  +flexCol
+  &__label
+    margin-bottom: 11rem / $FontSize
+  &__list
+    +flexCol
+  &__item
+    display: flex
+    padding: (6rem / $FontSize) (12rem / $FontSize) (6rem / $FontSize) 0
+    position: relative
+    & input[type="checkbox"]
+      display: none
+  &__box
+    pointer-events: none
+    width: $box
+    height: $box
+    background: $background
+    border: 1px solid $DarkShade25
+    border-radius: 4px
+    +flexCC
+    +absoluteTL(5rem / $FontSize, 0)
+  &__check
+    visibility: hidden
+    transform: rotate(-45deg)
+    width: $box / 2.5
+    height: $box / 3.333
+    background: linear-gradient(180deg, $Purple 0%, $PurpleLight 100%)
+    background-clip: padding-box
+    display: block
+    position: relative
+    &:before
+      content: ""
+      width: 100%
+      height: 100%
+      background: $background
+      display: block
+      +absoluteBLSingle(2px)
+  &__title
+    cursor: pointer
+    display: inline-block
+    margin: 0
+    & p
+      pointer-events: none
+      +textCSWH($DarkShade50, 14rem / $FontSize, 400, 18rem / $FontSize)
+      text-transform: none
+      display: inherit
+      margin-left: $box * 1.5
+  &__item input[type="checkbox"]:checked ~ .checkbox-list__box
+    border-color: $Purple
+    .checkbox-list__check
+      visibility: visible
+  &__title
+    cursor: pointer
+    display: inline-block
+    margin: 0
+    &:hover ~ .checkbox-list__box
+      background: lighten($Purple, 15%)
+    &:hover ~ .checkbox-list__box .checkbox-list__check:before
+      background: lighten($Purple, 15%)

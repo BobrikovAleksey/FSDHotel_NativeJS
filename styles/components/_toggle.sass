@@ -1,0 +1,45 @@
+@import ../vars, ../mixins
+
+$width: 320rem / $FontSize
+$box: 20rem / $FontSize
+
+.toggle
+  width: $width
+  +flexAiC
+  padding: (6rem / $FontSize) $box (6rem / $FontSize) 0
+  position: relative
+  & input[type="checkbox"]
+    display: none
+  &__box
+    pointer-events: none
+    width: $box * 2
+    height: $box
+    background: $background
+    border: 1px solid $DarkShade25
+    border-radius: $box / 2
+    +flexAiC
+    padding: 0 4px
+    &:before
+      content: ""
+      width: $box * 0.6
+      height: $box * 0.6
+      background: $DarkShade25
+      border-radius: 50%
+      display: block
+  &__title
+    cursor: pointer
+    +flexAiC
+    margin: 0
+    & p
+      pointer-events: none
+      +textCSWH($DarkShade75, 14rem / $FontSize, 400, 24rem / $FontSize)
+      text-transform: none
+      display: inherit
+      margin-left: $box / 2
+  & input[type="checkbox"]:checked ~ .toggle__title .toggle__box
+    border-color: $Purple
+    justify-content: flex-end
+    &:before
+      background: linear-gradient(180deg, $Purple 0%, $PurpleLight 100%)
+  &__title:hover > .toggle__box
+    background: lighten($Purple, 15%)

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap')
-@import vars, mixins
+@import fonts, vars, mixins
 
 *
   box-sizing: border-box
@@ -63,15 +63,18 @@ p
 ul, li
   list-style-type: none
 
-@import buttons, cm-select, pagination
-
 .demo
-  margin: 32px
+  margin: 2rem
 
 .block
   display: flex
   flex-direction: column
-  & label
+  margin: 1rem
+  &__label
     margin-bottom: 5rem / $FontSize
   &__row
     margin-bottom: 1rem
+
+@import buttons, cm-select, pagination
+@import components/bullet-list, components/checkbox-list, components/like-button
+@import components/radio-group, components/toggle

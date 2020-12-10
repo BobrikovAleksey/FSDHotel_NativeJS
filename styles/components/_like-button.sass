@@ -1,0 +1,46 @@
+@import ../vars, ../mixins
+
+$width: 40rem / $FontSize
+$box: $width / 2
+
+.like-button
+  width: $width
+  +flexAiC
+  padding: (6rem / $FontSize) 0
+  & input[type="checkbox"]
+    display: none
+  &__box
+    cursor: pointer
+    overflow: hidden
+    width: $box * 2
+    height: $box
+    background: $background
+    border: 1px solid $DarkShade25
+    border-radius: $box / 2
+    +flexSbC
+  &__icon, &__icon_active, &__counter
+    pointer-events: none
+    width: $box
+    height: 100%
+    +textCSWH($DarkShade25, 10rem / $FontSize, 400, 12)
+  &__icon
+    +flexCC
+    &_active
+      color: $Purple
+      +flexCC
+      display: none
+  &__counter
+    text-transform: none
+    +flexAiC
+    padding: 2px
+  & input[type="checkbox"]:checked
+    & ~ .like-button__box
+      border-color: $Purple
+    & ~ .like-button__box .like-button__icon
+      display: none
+    & ~ .like-button__box .like-button__icon_active
+      display: flex
+    & ~ .like-button__box .like-button__counter
+      color: $Purple
+  &__box:hover
+    background: lighten($Purple, 15%)

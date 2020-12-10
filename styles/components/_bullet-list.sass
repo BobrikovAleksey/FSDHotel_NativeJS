@@ -1,0 +1,23 @@
+@import ../vars, ../mixins
+
+$width: 320rem / $FontSize
+$marker: 10rem / $FontSize
+
+.bullet-list
+  width: $width
+  +flexCol
+  &__label
+    margin-bottom: 9rem / $FontSize
+  &__list
+    +flexCol
+  &__item
+    +textCSWH($DarkShade75, 14rem / $FontSize, 400, 24rem / $FontSize)
+    position: relative
+    padding: ($marker / 2) $marker ($marker / 2) ($marker * 2)
+    & span
+      width: $marker
+      height: $marker
+      background: $DarkShade25
+      border-radius: 50%
+      display: block
+      +absoluteTL(12rem / $FontSize, 0)
