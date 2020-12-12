@@ -3,6 +3,7 @@
 $height: 44rem / $FontSize
 
 button
+  font-family: Montserrat, serif
   cursor: pointer
   width: 98rem / $FontSize
   height: $height
@@ -51,3 +52,16 @@ button
     +absoluteTRSingle(0)
     & svg
       fill: $background
+
+.button-link
+  height: 17rem / $FontSize
+  font-family: Montserrat, serif
+  +textCSWH($Purple, 12rem / $FontSize, 700, 15rem / $FontSize)
+  text-decoration: none
+  text-transform: uppercase
+  &:hover
+    filter: saturate(220%)
+  &[disabled]
+    cursor: default
+    pointer-events: none
+    color: $DarkShade50

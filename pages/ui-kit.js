@@ -8,10 +8,6 @@ template = `
         <input type="text" placeholder="Email"/>
     </div><br>
     <div class="block">
-        <label class="block__label">Dropdown</label>
-        <div class="cm-select"></div>
-    </div><br>
-    <div class="block">
         <label class="block__label">Buttons</label>
         <div class="block__row">
             <button class="button_purple">Click me</button>
@@ -35,38 +31,43 @@ template = `
         <label class="block__label">Pagination</label>
         <div class="pagination"></div>
     </div><br>
-    
+
+
+
+
+    <div class="block">
+        <cm-select ref="demoCmSelect"></cm-select>
+    </div><br>
+
+    <div class="block">
+        <cm-select-expanded ref="demoCmSelectExpended" />
+    </div><br>
+
     <div class="block">
         <checkbox-list ref="demoCheckboxList"></checkbox-list>
-    </div>
+    </div><br>
     
     <div class="block">
         <radio-group ref="demoRadioGroup"></radio-group>
-    </div>
+    </div><br>
     
     <div class="block">
         <label class="block__label">Toggle</label>
         <toggle ref="demoToggle"></toggle>
-    </div>
+    </div><br>
     
     <div class="block">
         <label class="block__label">Like button</label>
         <like-button ref="demoLikeButton"></like-button>
-    </div>
+    </div><br>
     
     <div class="block">
         <bullet-list ref="demoBulletList"></bullet-list>
-    </div>
+    </div><br>
 `;
 
 el = document.querySelector('.demo');
 
 if (el) {
     el.insertAdjacentHTML('afterbegin', template);
-}
-
-el = document.querySelector('button .i-arrow-right');
-
-if (el) {
-    el.insertAdjacentHTML('afterbegin', arrowRight);
 }

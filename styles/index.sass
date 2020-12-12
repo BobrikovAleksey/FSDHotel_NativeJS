@@ -11,7 +11,7 @@
     outline: none
 
 html
-  font-size: #{$FontSize}px
+  font-size: 14px
 
 body
   user-select: none
@@ -19,6 +19,7 @@ body
   +textCSWH($DarkShade75, 1rem, 400, 24rem / $FontSize)
 
 a
+  height: 17rem / $FontSize
   +textCSWH($Purple, 12rem / $FontSize, 700, 15rem / $FontSize)
   text-decoration: none
   text-transform: uppercase
@@ -31,6 +32,7 @@ details > summary
   list-style: none
 
 input
+  font-family: Montserrat, serif
   background: none
   width: 320rem / $FontSize
   height: 44rem / $FontSize
@@ -43,6 +45,11 @@ input
     color: $DarkShade25
   &:hover, &:focus
     border-color: $borderColor-focus
+  &[type=number]
+    &, &:hover, &:focus
+      -moz-appearance: textfield
+    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+      -webkit-appearance: none
 
 h1
   +textCSWH($DarkShade, 24rem / $FontSize, 700, 29rem / $FontSize)
@@ -75,6 +82,7 @@ ul, li
   &__row
     margin-bottom: 1rem
 
-@import buttons, cm-select, pagination
-@import components/bullet-list, components/checkbox-list, components/like-button
-@import components/radio-group, components/toggle
+@import buttons, pagination
+@import components/selects
+@import components/bullet-list, components/checkbox-list, components/radio-group
+@import components/like-button, components/toggle
