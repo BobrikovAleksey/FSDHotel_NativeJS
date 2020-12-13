@@ -5,8 +5,8 @@
   font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
-  src: url(/styles/fonts/MaterialIcons-Regular.eot);
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(/styles/fonts/MaterialIcons-Regular.woff2) format("woff2"), url(/styles/fonts/MaterialIcons-Regular.woff) format("woff"), url(/styles/fonts/MaterialIcons-Regular.ttf) format("truetype");
+  src: url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.eot?raw=true");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.woff2?raw=true") format("woff2"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.woff?raw=true") format("woff"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.ttf?raw=true") format("truetype");
 }
 .material-icons {
   font-family: "Material Icons";
@@ -230,8 +230,8 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
-  src: url(/styles/fonts/MaterialIcons-Regular.eot);
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(/styles/fonts/MaterialIcons-Regular.woff2) format("woff2"), url(/styles/fonts/MaterialIcons-Regular.woff) format("woff"), url(/styles/fonts/MaterialIcons-Regular.ttf) format("truetype");
+  src: url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.eot?raw=true");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.woff2?raw=true") format("woff2"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.woff?raw=true") format("woff"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.ttf?raw=true") format("truetype");
 }
 .material-icons {
   font-family: "Material Icons";
@@ -434,8 +434,8 @@ button.button_lg {
   font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
-  src: url(/styles/fonts/MaterialIcons-Regular.eot);
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(/styles/fonts/MaterialIcons-Regular.woff2) format("woff2"), url(/styles/fonts/MaterialIcons-Regular.woff) format("woff"), url(/styles/fonts/MaterialIcons-Regular.ttf) format("truetype");
+  src: url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.eot?raw=true");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.woff2?raw=true") format("woff2"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.woff?raw=true") format("woff"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.ttf?raw=true") format("truetype");
 }
 .material-icons {
   font-family: "Material Icons";
