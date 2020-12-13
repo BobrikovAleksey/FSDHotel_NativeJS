@@ -1,0 +1,123 @@
+@import vars
+
+/**************************************************
+/*                     Border                     *
+/**************************************************
+
+// border-1 calc rem
+=borderTCalc($size, $color: inherit)
+  border-top: $size solid $color
+=borderBCalc($size, $color: inherit)
+  border-bottom: $size solid $color
+=borderLCalc($size, $color: inherit)
+  border-left: $size solid $color
+=borderRCalc($size, $color: inherit)
+  border-right: $size solid $color
+
+// border-2
+=borderTB($size, $color: inherit)
+  border-top: $size solid $color
+  border-bottom: $size solid $color
+=borderTL($size, $color: inherit)
+  border-top: $size solid $color
+  border-left: $size solid $color
+=borderTR($size, $color: inherit)
+  border-top: $size solid $color
+  border-right: $size solid $color
+=borderBL($size, $color: inherit)
+  border-bottom: $size solid $color
+  border-left: $size solid $color
+=borderBR($size, $color: inherit)
+  border-bottom: $size solid $color
+  border-right: $size solid $color
+=borderLR($size, $color: inherit)
+  border-left: $size solid $color
+  border-right: $size solid $color
+
+// border-2 calc rem
+=borderTB($size, $color: inherit)
+  +borderTB($size / $FontSize, $color)
+=borderTL($size, $color: inherit)
+  +borderTL($size / $FontSize, $color)
+=borderTR($size, $color: inherit)
+  +borderTR($size / $FontSize, $color)
+=borderBL($size, $color: inherit)
+  +borderBL($size / $FontSize, $color)
+=borderBR($size, $color: inherit)
+  +borderBR($size / $FontSize, $color)
+=borderLR($size, $color: inherit)
+  +borderLR($size / $FontSize, $color)
+
+// border-3
+=borderTBL($size, $color: inherit)
+  +borderTB($size, $color)
+  border-left: $size solid $color
+=borderTBR($size, $color: inherit)
+  +borderTB($size, $color)
+  border-right: $size solid $color
+=borderTLR($size, $color: inherit)
+  +borderTL($size, $color)
+  border-right: $size solid $color
+=borderBLR($size, $color: inherit)
+  +borderBL($size, $color)
+  border-right: $size solid $color
+
+// border-3 calc rem
+=borderTBLCalc($size, $color: inherit)
+  +borderTBL($size / $FontSize, $color)
+=borderTBRCalc($size, $color: inherit)
+  +borderTBR($size / $FontSize, $color)
+=borderTLRCalc($size, $color: inherit)
+  +borderTLR($size / $FontSize, $color)
+=borderBLRCalc($size, $color: inherit)
+  +borderBLR($size / $FontSize, $color)
+
+// border-4 calc rem
+=borderCalc($size, $color: inherit)
+  border: $size solid $color
+
+// radius
+=borderRadiusTop($radius)
+  border-top-right-radius: $radius
+  border-top-left-radius: $radius
+=borderRadiusBottom($radius)
+  border-bottom-right-radius: $radius
+  border-bottom-left-radius: $radius
+=borderRadiusLeft($radius)
+  border-top-left-radius: $radius
+  border-bottom-left-radius: $radius
+=borderRadiusRight($radius)
+  border-top-right-radius: $radius
+  border-bottom-right-radius: $radius
+=borderRadiusTopBL($radius)
+  +borderRadiusTop($radius)
+  border-bottom-left-radius: $radius
+=borderRadiusTopBR($radius)
+  +borderRadiusTop($radius)
+  border-bottom-right-radius: $radius
+=borderRadiusBottomTL($radius)
+  +borderRadiusLeft($radius)
+  border-top-left-radius: $radius
+=borderRadiusBottomTR($radius)
+  +borderRadiusLeft($radius)
+  border-top-right-radius: $radius
+
+// radius calc rem
+=borderRadiusTopCalc($radius)
+  +borderRadiusTop($radius / $FontSize)
+=borderRadiusBottomCalc($radius)
+  +borderRadiusBottom($radius / $FontSize)
+=borderRadiusLeftCalc($radius)
+  +borderRadiusLeft($radius / $FontSize)
+=borderRadiusRightCalc($radius)
+  +borderRadiusRight($radius / $FontSize)
+=borderRadiusTopBLCalc($radius)
+  +borderRadiusTopBL($radius / $FontSize)
+=borderRadiusTopBRCalc($radius)
+  +borderRadiusTopBR($radius / $FontSize)
+=borderRadiusBottomTLCalc($radius)
+  +borderRadiusBottomTL($radius / $FontSize)
+=borderRadiusBottomTRCalc($radius)
+  +borderRadiusBottomTR($radius / $FontSize)
+=borderRadiusCalc($radius)
+  border-radius: $radius / $FontSize

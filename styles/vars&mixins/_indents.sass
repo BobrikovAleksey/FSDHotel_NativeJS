@@ -1,0 +1,149 @@
+@import vars
+
+/**************************************************
+/*                    Indents                     *
+/**************************************************
+
+// margin-1 calc rem
+=marginTCalc($size)
+  margin-top: $size / $FontSize
+=marginBCalc($size)
+  margin-bottom: $size / $FontSize
+=marginLCalc($size)
+  margin-left: $size / $FontSize
+=marginRCalc($size)
+  margin-right: $size / $FontSize
+
+// margin-2
+=marginTB($top, $bottom: $top)
+  margin-top: $top
+  margin-bottom: $bottom
+=marginTL($top, $left: $top)
+  margin-top: $top
+  margin-left: $left
+=marginTR($top, $right: $top)
+  margin-top: $top
+  margin-right: $right
+=marginBL($bottom, $left: $bottom)
+  margin-bottom: $bottom
+  margin-left: $left
+=marginBR($bottom, $right: $bottom)
+  margin-bottom: $bottom
+  margin-right: $right
+=marginLR($left, $right: $left)
+  margin-left: $left
+  margin-right: $right
+
+// margin-2 calc rem
+=marginTBCalc($top, $bottom: $top)
+  +marginTB($top / $FontSize, $bottom / $FontSize)
+=marginTLCalc($top, $left: $top)
+  +marginTL($top / $FontSize, $left / $FontSize)
+=marginTRCalc($top, $right: $top)
+  +marginTR($top / $FontSize, $right / $FontSize)
+=marginBLCalc($bottom, $left: $bottom)
+  +marginBL($bottom / $FontSize, $left / $FontSize)
+=marginBRCalc($bottom, $right: $bottom)
+  +marginBR($bottom / $FontSize, $right / $FontSize)
+=marginLRCalc($left, $right: $left)
+  +marginLR($left / $FontSize, $right / $FontSize)
+
+// margin-3
+=marginTBL($top, $bottom: $top, $left: $top)
+  +marginTB($top, $bottom)
+  margin-left: $left
+=marginTBR($top, $bottom: $top, $right: $top)
+  +marginTB($top, $bottom)
+  margin-right: $right
+=marginTLR($top, $left: $top, $right: $top)
+  +marginTL($top, $left)
+  margin-right: $right
+=marginBLR($bottom, $left: $bottom, $right: $bottom)
+  +marginBL($bottom, $left)
+  margin-right: $right
+
+// margin-3 calc rem
+=marginTBLCalc($top, $bottom: $top, $left: $top)
+  +marginTBL($top / $FontSize, $bottom / $FontSize, $left / $FontSize)
+=marginTBRCalc($top, $bottom: $top, $right: $top)
+  +marginTBR($top / $FontSize, $bottom / $FontSize, $right / $FontSize)
+=marginTLRCalc($top, $left: $top, $right: $top)
+  +marginTLR($top / $FontSize, $left / $FontSize, $right / $FontSize)
+=marginBLRCalc($bottom, $left: $bottom, $right: $bottom)
+  +marginBLR($bottom / $FontSize, $left / $FontSize, $right / $FontSize)
+
+// margin-4 calc rem
+=marginCalc($top, $right: $top, $bottom: $top, $left: $right)
+  margin: ($top / $FontSize) ($right / $FontSize) ($bottom / $FontSize) ($left / $FontSize)
+
+// padding-1 calc rem
+=paddingTCalc($size)
+  padding-top: $size / $FontSize
+=paddingBCalc($size)
+  padding-bottom: $size / $FontSize
+=paddingLCalc($size)
+  padding-left: $size / $FontSize
+=paddingRCalc($size)
+  padding-right: $size / $FontSize
+
+// padding-2
+=paddingTB($top, $bottom: $top)
+  padding-top: $top
+  padding-bottom: $bottom
+=paddingTL($top, $left: $top)
+  padding-top: $top
+  padding-left: $left
+=paddingTR($top, $right: $top)
+  padding-top: $top
+  padding-right: $right
+=paddingBL($bottom, $left: $bottom)
+  padding-bottom: $bottom
+  padding-left: $left
+=paddingBR($bottom, $right: $bottom)
+  padding-bottom: $bottom
+  padding-right: $right
+=paddingLR($left, $right: $left)
+  padding-left: $left
+  padding-right: $right
+
+// padding-2 calc rem
+=paddingTBCalc($top, $bottom: $top)
+  +paddingTB($top / $FontSize, $bottom / $FontSize)
+=paddingTLCalc($top, $left: $top)
+  +paddingTL($top / $FontSize, $left / $FontSize)
+=paddingTRCalc($top, $right: $top)
+  +paddingTR($top / $FontSize, $right / $FontSize)
+=paddingBLCalc($bottom, $left: $bottom)
+  +paddingBL($bottom / $FontSize, $left / $FontSize)
+=paddingBRCalc($bottom, $right: $bottom)
+  +paddingBR($bottom / $FontSize, $right / $FontSize)
+=paddingLRCalc($left, $right: $left)
+  +paddingLR($left / $FontSize, $right / $FontSize)
+
+// padding-3
+=paddingTBL($top, $bottom: $top, $left: $top)
+  +paddingTB($top, $bottom)
+  padding-left: $left
+=paddingTBR($top, $bottom: $top, $right: $top)
+  +paddingTB($top, $bottom)
+  padding-right: $right
+=paddingTLR($top, $left: $top, $right: $top)
+  +paddingTL($top, $left)
+  padding-right: $right
+=paddingBLR($bottom, $left: $bottom, $right: $bottom)
+  +paddingBL($bottom, $left)
+  padding-right: $right
+
+// padding-3 calc rem
+=paddingTBLCalc($top, $bottom: $top, $left: $top)
+  +paddingTBL($top / $FontSize, $bottom / $FontSize, $left / $FontSize)
+=paddingTBRCalc($top, $bottom: $top, $right: $top)
+  +paddingTBR($top / $FontSize, $bottom / $FontSize, $right / $FontSize)
+=paddingTLRCalc($top, $left: $top, $right: $top)
+  +paddingTLR($top / $FontSize, $left / $FontSize, $right / $FontSize)
+=paddingBLRCalc($bottom, $left: $bottom, $right: $bottom)
+  +paddingBLR($bottom / $FontSize, $left / $FontSize, $right / $FontSize)
+
+// padding-4 calc rem
+=paddingCalc($top, $right: $top, $bottom: $top, $left: $right)
+  padding: ($top / $FontSize) ($right / $FontSize) ($bottom / $FontSize) ($left / $FontSize)

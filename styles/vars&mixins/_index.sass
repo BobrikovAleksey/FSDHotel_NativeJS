@@ -1,0 +1,18 @@
+@import fonts, vars, border, display, indents, position, text
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap')
+
+/**************************************************
+/*                      Main                      *
+/**************************************************
+
+=MontserratSerif()
+  font-family: Montserrat, serif
+
+=WidthCalc($size)
+  width: $size / $FontSize
+=HeightCalc($size)
+  height: $size / $FontSize
+=WHCalc($width, $height: $width)
+  +WidthCalc($width)
+  +HeightCalc($height)

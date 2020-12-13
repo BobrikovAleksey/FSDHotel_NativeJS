@@ -1,0 +1,41 @@
+@import vars
+
+/**************************************************
+/*                    Position                    *
+/**************************************************
+
+// absolute
+=absoluteTL($top: 0, $left: $top)
+  position: absolute
+  top: $top
+  left: $left
+=absoluteTR($top: 0, $right: $top)
+  position: absolute
+  top: $top
+  right: $right
+=absoluteBL($bottom: 0, $left: $bottom)
+  position: absolute
+  bottom: $bottom
+  left: $left
+=absoluteBR($bottom: 0, $right: $bottom)
+  position: absolute
+  bottom: $bottom
+  right: $right
+
+// absolute calc rem
+=absoluteTLCalc($top: 0, $left: $top)
+  position: absolute
+  top: $top / $FontSize
+  left: $left / $FontSize
+=absoluteTRCalc($top: 0, $right: $top)
+  position: absolute
+  top: $top / $FontSize
+  right: $right / $FontSize
+=absoluteBLCalc($bottom: 0, $left: $bottom)
+  position: absolute
+  bottom: $bottom / $FontSize
+  left: $left / $FontSize
+=absoluteBRCalc($bottom: 0, $right: $bottom)
+  position: absolute
+  bottom: $bottom / $FontSize
+  right: $right / $FontSize
