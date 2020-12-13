@@ -30,20 +30,27 @@ $PurpleLighten15: lighten($Purple, 15%)
 
 // text
 $text: $DarkShade
+$textLighten1: $DarkShade75
+$textLighten2: $DarkShade50
+$textLighten3: $DarkShade25
 
 // background
 $background: white
 
 // border
-$borderColor: $DarkShade25
-$borderColor-focus: $DarkShade50
+$borderColor: $textLighten3
+$borderColor-focus: $textLighten2
 
 
 /**************************************************
 /*                 Objects sizes                  *
 /**************************************************
 
+// input
+$inputWidth-lg: 320rem / $FontSize
+$inputHeight-md: 44rem / $FontSize
+
 // border
-$borderSize-sm: 1px
-$borderSize-md: 2px
-$borderRadius-sm: 4px
+$borderSize-sm: 1rem / $FontSize
+$borderSize-md: 2rem / $FontSize
+$borderRadius-sm: 4rem / $FontSize

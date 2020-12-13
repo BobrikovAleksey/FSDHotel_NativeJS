@@ -1,0 +1,70 @@
+@import vars&mixins/index
+
+html
+  font-size: 14px
+
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+  &:active
+    outline: none
+  &:focus
+    outline: none
+
+body
+  user-select: none
+  +MontserratSerif
+  +textSHCWLsCalc(14rem, 24rem, $textLighten1, 400)
+
+h1
+  +textSHCWCalc(24rem, 29rem, $text, 700)
+
+h2
+  +textSHCWCalc(19rem, 23rem, $text, 700)
+
+h3, .label
+  +textSHCWTCalc(12rem, 15rem, $text, 700, uppercase)
+
+p
+  +textSHCWCalc(14rem, 24rem, $textLighten1)
+
+a
+  +HeightCalc(18rem)
+  +textSHCWCalc(14rem, 20rem, $textLighten1)
+  text-decoration: none
+  &[disabled]
+    cursor: default
+    pointer-events: none
+    color: $textLighten2
+
+ul, li
+  list-style-type: none
+
+details > summary
+  list-style: none
+
+summary::-webkit-details-marker
+  display: none
+
+button
+  +MontserratSerif
+
+input
+  +MontserratSerif
+  width: $inputWidth-lg
+  height: $inputHeight-md
+  +textSHCCalc(14rem, 24rem, $textLighten1)
+  background: $background
+  border: $borderSize-sm solid $borderColor
+  border-radius: $borderRadius-sm
+  +paddingCalc(13rem, 15rem)
+  &::placeholder
+    color: $textLighten3
+  &:hover, &:focus
+    border-color: $borderColor-focus
+  &[type=number]
+    &, &:hover, &:focus
+      -moz-appearance: textfield
+    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+      -webkit-appearance: none

@@ -106,7 +106,7 @@
   color: $color
 
 // text-3 calc rem
-=textSCHCalc($size, $color: $text, $height: auto)
+=textSHCCalc($size, $height, $color: $text)
   +textSCH($size / $FontSize, $color, $height / $FontSize)
 =textSCWCalc($size, $color: $text, $weight: 400)
   +textSCW($size / $FontSize, $color, $weight)
@@ -147,7 +147,7 @@
 =textSHCLsCalc($size, $height, $color: $text, $spacing: 0)
   +textSCHLs($size / $FontSize, $color, $height / $FontSize, $spacing: 0)
 =textSHCTCalc($size, $height, $color: $text, $transform: none)
-  +textSCHT($size / $FontSize, $color: $text, $height / $FontSize, $transform: none)
+  +textSCHT($size / $FontSize, $color, $height / $FontSize, $transform: none)
 =textHCWLsCalc($height, $color: $text, $weight: 400, $spacing: 0)
   +textHCWLs($height / $FontSize, $color, $weight, $spacing)
 =textHCWTCalc($height, $color: $text, $weight: 400, $transform: none)
@@ -164,9 +164,9 @@
   letter-spacing: $spacing
 
 // text-5 calc rem
-=textSCHWTCalc($size, $height, $color: $text, $weight: 400, $transform: none)
+=textSHCWTCalc($size, $height, $color: $text, $weight: 400, $transform: none)
   +textSCHWT($size / $FontSize, $color, $height / $FontSize, $weight, $transform)
-=textSCHWLsCalc($size, $height, $color: $text, $weight: 400, $spacing: 0)
+=textSHCWLsCalc($size, $height, $color: $text, $weight: 400, $spacing: 0)
   +textSCHWLs($size / $FontSize, $color, $height / $FontSize, $weight, $spacing)
 
 // text-6
@@ -175,5 +175,5 @@
   letter-spacing: $spacing
 
 // text-6 calc rem
-=textSCHWTLsCalc($size, $height, $color: $text, $weight: 400, $transform: none, $spacing: 0)
+=textSHCWTLsCalc($size, $height, $color: $text, $weight: 400, $transform: none, $spacing: 0)
   +textSCHWTLs($size / $FontSize, $color, $height / $FontSize, $weight, $transform, $spacing)
