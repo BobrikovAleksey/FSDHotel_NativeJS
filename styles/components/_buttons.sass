@@ -18,11 +18,11 @@ button
     cursor: default
     color: $textLighten2
   &.button
-    +WidthCalc(98rem)
     height: $inputHeight-md
     color: $background
     background: $PurpleGradient
     border-radius: $inputHeight-md / 2
+    +paddingLRCalc(20rem)
     position: relative
     &:not([disabled])
       &:focus
@@ -34,39 +34,29 @@ button
     &[disabled]
       filter: opacity(50%)
     &_white
+      z-index: 0
       color: $Purple
-      background: $background
-      background-clip: content-box
-      padding: $borderSize-md
-      &:not([disabled])
-        &:hover, &:active
-          color: $background
-          background: $PurpleGradient
-          background-clip: padding-box
-        &:hover, &:active
-          filter: none
-      &[disabled]
-        filter: none
-        color: rgba($Purple, 50%)
-        &:before
-          filter: opacity(50%)
+      background: $PurpleGradient
+      border: none
+      position: relative
       &:before
-        content: ""
         z-index: -1
-        width: 100%
-        height: 100%
-        background: $PurpleGradient
-        border-radius: inherit
-        display: block
+        content: ""
+        width: calc(100% - #{$borderSize-md} * 2)
+        height: calc(100% - #{$borderSize-md} * 2)
+        box-sizing: border-box
+        background: $background
+        border-radius: $inputHeight-md / 2 - $borderSize-md
+        +flexPlacement(center, center)
+        +absoluteTLCalc(2rem)
+    & .material-icons
+      &:not(.left), &.left
+        width: $inputHeight-md
+        height: $inputHeight-md
+        +flexPlacement(center, center)
+      &:not(.left)
+        +absoluteTR()
+      &.left
         +absoluteTL()
-  & .material-icons
-    &:not(.left), &.left
-      width: $inputHeight-md
-      height: $inputHeight-md
-      +flexPlacement(center, center)
-    &:not(.left)
-      +absoluteTR()
-    &.left
-      +absoluteTL()
   &.button_lg
     width: $inputWidth-lg

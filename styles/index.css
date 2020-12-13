@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
@@ -155,7 +156,7 @@ h2 {
   font-weight: 700;
 }
 
-h3, .label, .ui-block__label {
+h3, .label, .ui__label {
   font-size: 0.8571428571rem;
   color: #1F2041;
   line-height: 1.0714285714rem;
@@ -366,11 +367,12 @@ button[disabled] {
   color: rgba(31, 32, 65, 0.5);
 }
 button.button {
-  width: 7rem;
   height: 3.1428571429rem;
   color: white;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 1.5714285714rem;
+  padding-left: 1.4285714286rem;
+  padding-right: 1.4285714286rem;
   position: relative;
 }
 button.button:not([disabled]):focus {
@@ -386,51 +388,40 @@ button.button[disabled] {
   filter: opacity(50%);
 }
 button.button_white {
+  z-index: 0;
   color: #BC9CFF;
-  background: white;
-  background-clip: content-box;
-  padding: 0.1428571429rem;
-}
-button.button_white:not([disabled]):hover, button.button_white:not([disabled]):active {
-  color: white;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  background-clip: padding-box;
-}
-button.button_white:not([disabled]):hover, button.button_white:not([disabled]):active {
-  filter: none;
-}
-button.button_white[disabled] {
-  filter: none;
-  color: rgba(188, 156, 255, 0.5);
-}
-button.button_white[disabled]:before {
-  filter: opacity(50%);
+  border: none;
+  position: relative;
 }
 button.button_white:before {
-  content: "";
   z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border-radius: inherit;
-  display: block;
+  content: "";
+  width: calc(100% - 0.1428571429rem * 2);
+  height: calc(100% - 0.1428571429rem * 2);
+  box-sizing: border-box;
+  background: white;
+  border-radius: 1.4285714286rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0.1428571429rem;
+  left: 0.1428571429rem;
 }
-button .material-icons:not(.left), button .material-icons.left {
+button.button .material-icons:not(.left), button.button .material-icons.left {
   width: 3.1428571429rem;
   height: 3.1428571429rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-button .material-icons:not(.left) {
+button.button .material-icons:not(.left) {
   position: absolute;
   top: 0;
   right: 0;
 }
-button .material-icons.left {
+button.button .material-icons.left {
   position: absolute;
   top: 0;
   left: 0;
@@ -439,16 +430,251 @@ button.button_lg {
   width: 22.8571428571rem;
 }
 
-.ui-block {
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/styles/fonts/MaterialIcons-Regular.eot);
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(/styles/fonts/MaterialIcons-Regular.woff2) format("woff2"), url(/styles/fonts/MaterialIcons-Regular.woff) format("woff"), url(/styles/fonts/MaterialIcons-Regular.ttf) format("truetype");
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                     Border                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Display                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Indents                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Position                    * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Text                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+.header {
+  background: white;
+}
+.header__container {
+  max-width: 1440px;
+  min-width: 340px;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 140px;
+}
+.header__logo {
+  height: 2.8571428571rem;
+}
+.header .menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.header .menu__link {
+  height: 1.5714285714rem;
+  font-size: 1rem;
+  color: rgba(31, 32, 65, 0.5);
+  line-height: 1.2857142857rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.header .menu__item {
+  margin-left: 20px;
+}
+.header .menu__item:first-of-type {
+  margin-left: 0;
+}
+.header .menu__item:first-of-type .menu__link {
+  font-weight: 700;
+}
+.header .menu__item .material-icons {
+  line-height: 1.5714285714rem;
+  margin-left: 0.0714285714rem;
+}
+.header .menu__button {
+  height: 2.4285714286rem;
+}
+.header .menu__icon {
+  cursor: pointer;
+  width: 2.8571428571rem;
+  height: 2.8571428571rem;
+  font-size: 2.2857142857rem;
+  color: white;
+  font-size: 2.2857142857rem;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 1.4285714286rem;
+  display: none;
+}
+.header .menu__icon:hover, .header .menu__icon:active {
+  filter: saturate(250%);
+}
+.header .menu__account {
+  font-size: 1rem;
+  color: rgba(31, 32, 65, 0.5);
+  line-height: 1.2857142857rem;
+  font-weight: 400;
+  border-left: 0.0714285714rem solid rgba(31, 32, 65, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1.4285714286rem;
+}
+
+@media (max-width: 1440px) {
+  .header__container {
+    padding: 0 calc(140px - (1440px - 100vw) * 0.1785714286);
+  }
+  .header .menu__item {
+    margin-left: calc(20px - (1440px - 100vw) * 0.0074404762);
+  }
+}
+@media (max-width: 768px) {
+  .header__container {
+    padding: 0 calc(20px - (768px - 100vw) * 0.023364486);
+  }
+  .header .menu {
+    display: none;
+  }
+  .header .menu__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 340px) {
+  .header__container {
+    padding: 0 10px;
+  }
+}
+.ui__container {
+  max-width: 1440px;
+  min-width: 340px;
+  margin: 0 auto;
+  padding: 3rem 140px;
+}
+.ui__block {
   display: flex;
   flex-direction: column;
-  margin: 1rem 1rem 1rem 1rem;
 }
-.ui-block__label {
+.ui__label {
   margin-bottom: 0.3571428571rem;
 }
-.ui-block__row {
+.ui__row {
   margin-bottom: 1rem;
+}
+
+@media (max-width: 1440px) {
+  .ui__container {
+    padding: 3rem calc(140px - (1440px - 100vw) * 0.1785714286);
+  }
+}
+@media (max-width: 768px) {
+  .ui__container {
+    padding: 2rem calc(20px - (768px - 100vw) * 0.023364486);
+  }
+}
+@media (max-width: 340px) {
+  .ui__container {
+    padding: 2rem 10px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

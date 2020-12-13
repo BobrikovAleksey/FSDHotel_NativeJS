@@ -16,3 +16,19 @@
 =WHCalc($width, $height: $width)
   +WidthCalc($width)
   +HeightCalc($height)
+
+=MaxWidthCalc($size)
+  max-width: $size / $FontSize
+=MaxHeightCalc($size)
+  max-height: $size / $FontSize
+=MaxWHCalc($width, $height: $width)
+  +MaxWidthCalc($width)
+  +MaxHeightCalc($height)
+
+=MinWidthCalc($size)
+  min-width: $size / $FontSize
+=MinHeightCalc($size)
+  min-height: $size / $FontSize
+=MinWHCalc($width, $height: $width)
+  +MinWidthCalc($width)
+  +MinHeightCalc($height)

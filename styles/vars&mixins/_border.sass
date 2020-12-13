@@ -6,13 +6,13 @@
 
 // border-1 calc rem
 =borderTCalc($size, $color: inherit)
-  border-top: $size solid $color
+  border-top: ($size / $FontSize) solid $color
 =borderBCalc($size, $color: inherit)
-  border-bottom: $size solid $color
+  border-bottom: ($size / $FontSize) solid $color
 =borderLCalc($size, $color: inherit)
-  border-left: $size solid $color
+  border-left: ($size / $FontSize) solid $color
 =borderRCalc($size, $color: inherit)
-  border-right: $size solid $color
+  border-right: ($size / $FontSize) solid $color
 
 // border-2
 =borderTB($size, $color: inherit)

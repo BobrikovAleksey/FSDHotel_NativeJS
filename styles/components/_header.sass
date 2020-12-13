@@ -1,0 +1,68 @@
+@import ../vars&mixins/index
+
+.header
+  background: $background
+  &__container
+    max-width: $MaxWidth
+    min-width: $MinWidth
+    +HeightCalc(70rem)
+    +flexPlacement(space-between, center)
+    margin: 0 auto
+    padding: 0 $MaxHorizontalPadding
+  &__logo
+    +HeightCalc(40rem)
+  & .menu
+    +flexPlacement(flex-start, center)
+    &__link
+      +HeightCalc(22rem)
+      +textSHCWCalc(14rem, 18rem, $textLighten2)
+      +flexPlacement(flex-start, center)
+    &__item
+      margin-left: 20px
+      &:first-of-type
+        margin-left: 0
+        & .menu__link
+          font-weight: 700
+      & .material-icons
+        +textHeightCalc(22rem)
+        +marginLCalc(1rem)
+    &__button
+      height: $inputHeight-sm
+    &__icon
+      cursor: pointer
+      +WidthCalc(40rem)
+      +HeightCalc(40rem)
+      +textSCCalc(32rem, $background)
+      +textSizeCalc(32rem)
+      background: $PurpleGradient
+      +borderRadiusCalc(20rem)
+      display: none
+      &:hover, &:active
+        filter: saturate(250%)
+    &__account
+      +textSHCWCalc(14rem, 18rem, $textLighten2)
+      +borderLCalc(1rem, $DarkShade10)
+      +flexPlacement(center)
+      +paddingLCalc(20rem)
+
+@media (max-width: $MaxWidth)
+  .header
+    &__container
+      padding: 0 calc(#{$MaxHorizontalPadding} - (#{$MaxWidth} - 100vw) * #{(140 - 20) / (1440 - 768)})
+    & .menu
+      &__item
+        margin-left: calc(20px - (#{$MaxWidth} - 100vw) * #{(20 - 15) / (1440 - 768)})
+
+@media (max-width: $BreakPointWidth)
+  .header
+    &__container
+      padding: 0 calc(20px - (768px - 100vw) * #{(20 - 10) / (768 - 340)})
+    & .menu
+      display: none
+      &__icon
+        +flexPlacement(center)
+
+@media (max-width: $MinWidth)
+  .header
+    &__container
+      padding: 0 10px

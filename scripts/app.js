@@ -4,6 +4,7 @@ import bulletList from '../components/bullet-list.js';
 import checkboxList from '../components/checkbox-list.js';
 import cmSelect from '../components/cm-select.js';
 import cmSelectExpanded from '../components/cm-select-expanded.js';
+import cmHeader from '../components/cm-header.js';
 import likeButton from '../components/like-button.js';
 import radioGroup from '../components/radio-group.js';
 import toggle from '../components/toggle.js';
@@ -14,6 +15,7 @@ const app = {
         'checkbox-list': checkboxList,
         'cm-select': cmSelect,
         cmSelectExpanded,
+        cmHeader,
         'like-button': likeButton,
         'radio-group': radioGroup,
         toggle,
@@ -34,6 +36,7 @@ const app = {
             const object = new component(params);
 
             object.render(node);
+
             this.refs[refName] = object;
         }
     },
@@ -58,20 +61,22 @@ const app = {
     },
 };
 
-app.renderOld(bulletList.type);
-app.renderOld(checkboxList.type);
-app.renderOld(cmSelect.type);
-app.renderOld(likeButton.type);
-app.renderOld('radio-group');
-app.renderOld('toggle');
+app.render(cmHeader.getType(), 'demoHeader', {});
 
-app.render(cmSelectExpanded.getType(), 'demoCmSelectExpended', {
-    type: 'single',
-    list: [
-        { name: 'adults', title: 'Взрослые', units: [ 'гость', 'гостя', 'гостей' ], min: 0, max: 9, value: 2 },
-        { name: 'children', title: 'Дети', min: 0, max: 9, value: 1 },
-        { name: 'babies', title: 'Младенцы', min: 0, max: 9, value: 0 },
-    ],
-    placeholder: 'Сколько гостей',
-    title: 'Dropdown',
-});
+// app.renderOld(bulletList.type);
+// app.renderOld(checkboxList.type);
+// app.renderOld(cmSelect.type);
+// app.renderOld(likeButton.type);
+// app.renderOld('radio-group');
+// app.renderOld('toggle');
+
+// app.render(cmSelectExpanded.getType(), 'demoCmSelectExpended', {
+//     type: 'single',
+//     list: [
+//         { name: 'adults', title: 'Взрослые', units: [ 'гость', 'гостя', 'гостей' ], min: 0, max: 9, value: 2 },
+//         { name: 'children', title: 'Дети', min: 0, max: 9, value: 1 },
+//         { name: 'babies', title: 'Младенцы', min: 0, max: 9, value: 0 },
+//     ],
+//     placeholder: 'Сколько гостей',
+//     title: 'Dropdown',
+// });
