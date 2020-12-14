@@ -21,14 +21,19 @@ const template = `
                 </li>
 
                 <li class="menu__item">
-                    <button class="button button_white menu__button">Войти</button>
+                    <button class="button button_white menu__button">
+                        <span>Войти</span>
+                        <i class="material-icons">login</i>
+                    </button>
                 </li>
 
                 <li class="menu__item">
-                    <button class="button menu__button">Зарегистрироваться</button>
+                    <button class="button menu__button">
+                        <span>Зарегистрироваться</span>
+                    </button>
                 </li>
 
-                <li class="menu__item menu__account" style="display: none">
+                <li class="menu__item menu__account menu__hide">
                     <p>Юлий Цезарь</p>
                 </li>
             </ul>

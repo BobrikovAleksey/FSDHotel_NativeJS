@@ -23,7 +23,7 @@ function getElement(object) {
 
 const toggle = {
     node: null,
-    type: 'toggle-list',
+    type: 'toggle',
     data: {
         checked: true,
         name: 'offers',

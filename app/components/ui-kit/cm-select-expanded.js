@@ -15,9 +15,9 @@ const template = `
                 <ul>{{ list }}</ul>
 
                 <div class="select__control-panel">
-                    <button class="button-link" data-clear>Очистить</button>
+                    <button data-clear>Очистить</button>
 
-                    <button class="button-link" data-apply>Применить</button>
+                    <button data-apply>Применить</button>
                 </div>
             </div>
         </div>

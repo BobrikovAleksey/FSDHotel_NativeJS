@@ -4,7 +4,7 @@
 // import checkboxList from '../components/checkbox-list.js';
 // import cmSelect from '../components/cm-select.js';
 // import cmSelectExpanded from '../components/cm-select-expanded.js';
-import cmHeader from '../components/cm-header.js';
+import cmHeader from './components/cm-header.js';
 // import likeButton from '../components/like-button.js';
 // import radioGroup from '../components/radio-group.js';
 // import toggle from '../components/toggle.js';

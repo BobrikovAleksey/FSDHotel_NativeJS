@@ -1,7 +1,4 @@
-// noinspection CheckTagEmptyBody
-template = `
-    <cm-header ref="demoHeader"></cm-header>
-
+let template = `
     <div class="ui__container">
         <h1>This one is the sub-section or widget title</h1><br>
     
@@ -33,6 +30,10 @@ template = `
                 <button>Click me</a>
                 <button style="margin-left: 1rem" disabled>Click me</a>
             </div>
+
+            <div class="ui__block">
+                <cm-select-expanded ref="demoCmSelectExpended" />
+            </div><br>
     
             <div class="ui__row">
                 <button class="button button_lg">Go to<i class="material-icons">arrow_forward</i></button>
@@ -47,10 +48,6 @@ template = `
 
 <!--    <div class="ui-block">-->
 <!--        <cm-select ref="demoCmSelect"></cm-select>-->
-<!--    </div><br>-->
-
-<!--    <div class="ui-block">-->
-<!--        <cm-select-expanded ref="demoCmSelectExpended" />-->
 <!--    </div><br>-->
 
 <!--    <div class="ui-block">-->
