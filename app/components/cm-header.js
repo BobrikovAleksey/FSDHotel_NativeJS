@@ -4,11 +4,11 @@ import icons from './icons.js';
 const template = `
     <header class="header">
         <div class="header__container">
-            <a class="header__logo" href="/">${ icons.logo }</a>
+            <a class="header__logo" href="/#">${ icons.logo }</a>
 
             <ul class="menu">
                 <li class="menu__item">
-                    <a class="menu__link" href="#" data-key="0">О нас</a>
+                    <a class="menu__link" href="/#/about/" data-key="0">О нас</a>
                 </li>
 
                 <li class="menu__item menu__item_drop">
@@ -19,26 +19,26 @@ const template = `
                     <div class="menu__dropdown menu__hide">
                         <ul class="menu__submenu">
                             <li class="menu__sub-item">
-                                <a class="menu__sub-link" href="#" data-key="1">Услуга</a>
+                                <a class="menu__sub-link" href="/#/services/1" data-key="1">Услуга</a>
                             </li>
 
                             <li class="menu__sub-item">
-                                <a class="menu__sub-link" href="#" data-key="1">Услуга</a>
+                                <a class="menu__sub-link" href="/#/services/2" data-key="1">Услуга</a>
                             </li>
 
                             <li class="menu__sub-item">
-                                <a class="menu__sub-link" href="#" data-key="1">Услуга</a>
+                                <a class="menu__sub-link" href="/#/services/3" data-key="1">Услуга</a>
                             </li>
                         </ul>               
                     </div>
                 </li>
 
                 <li class="menu__item">
-                    <a class="menu__link" href="#" data-key="2">Вакансии</a>
+                    <a class="menu__link" href="/#/vacancies/" data-key="2">Вакансии</a>
                 </li>
 
                 <li class="menu__item">
-                    <a class="menu__link" href="#" data-key="3">Новости</a>
+                    <a class="menu__link" href="/#/news/" data-key="3">Новости</a>
                 </li>
 
                 <li class="menu__item menu__item_drop">
@@ -49,13 +49,13 @@ const template = `
                     <div class="menu__dropdown menu__hide">
                         <ul class="menu__submenu">
                             <li class="menu__sub-item">
-                                <a class="menu__sub-link" href="#" data-key="4">Соглашение</a>
+                                <a class="menu__sub-link" href="/#/agreements/1/" data-key="4">Соглашение</a>
                             </li>
                             <li class="menu__sub-item">
-                                <a class="menu__sub-link" href="#" data-key="4">Соглашение</a>
+                                <a class="menu__sub-link" href="/#/agreements/2/" data-key="4">Соглашение</a>
                             </li>
                             <li class="menu__sub-item">
-                                <a class="menu__sub-link" href="#" data-key="4">Соглашение</a>
+                                <a class="menu__sub-link" href="/#/agreements/3/" data-key="4">Соглашение</a>
                             </li>
                         </ul>               
                     </div>

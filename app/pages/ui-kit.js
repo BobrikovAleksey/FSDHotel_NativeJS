@@ -1,4 +1,6 @@
-let template = `
+'use strict';
+
+const template = `
     <div class="ui__container">
         <h1>This one is the sub-section or widget title</h1><br>
     
@@ -73,8 +75,4 @@ let template = `
 <!--    </div><br>-->
 `;
 
-el = document.querySelector('.ui');
-
-if (el) {
-    el.insertAdjacentHTML('afterbegin', template);
-}
+export default template;
