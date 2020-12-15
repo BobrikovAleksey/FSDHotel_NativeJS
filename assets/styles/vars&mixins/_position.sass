@@ -39,3 +39,39 @@
   position: absolute
   bottom: $bottom / $FontSize
   right: $right / $FontSize
+
+// fixed
+=fixedTL($top: 0, $left: $top)
+  position: fixed
+  top: $top
+  left: $left
+=fixedTR($top: 0, $right: $top)
+  position: fixed
+  top: $top
+  right: $right
+=fixedBL($bottom: 0, $left: $bottom)
+  position: fixed
+  bottom: $bottom
+  left: $left
+=fixedBR($bottom: 0, $right: $bottom)
+  position: fixed
+  bottom: $bottom
+  right: $right
+
+// fixed calc rem
+=fixedTLCalc($top: 0, $left: $top)
+  position: fixed
+  top: $top / $FontSize
+  left: $left / $FontSize
+=fixedTRCalc($top: 0, $right: $top)
+  position: fixed
+  top: $top / $FontSize
+  right: $right / $FontSize
+=fixedBLCalc($bottom: 0, $left: $bottom)
+  position: fixed
+  bottom: $bottom / $FontSize
+  left: $left / $FontSize
+=fixedBRCalc($bottom: 0, $right: $bottom)
+  position: fixed
+  bottom: $bottom / $FontSize
+  right: $right / $FontSize

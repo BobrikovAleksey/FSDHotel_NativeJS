@@ -5,8 +5,8 @@
   font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
-  src: url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.eot?raw=true");
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.woff2?raw=true") format("woff2"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.woff?raw=true") format("woff"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.ttf?raw=true") format("truetype");
+  src: url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/assets/styles/fonts/MaterialIcons-Regular.eot?raw=true");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/assets/styles/fonts/MaterialIcons-Regular.woff2?raw=true") format("woff2"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/assets/styles/fonts/MaterialIcons-Regular.woff?raw=true") format("woff"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/assets/styles/fonts/MaterialIcons-Regular.ttf?raw=true") format("truetype");
 }
 .material-icons {
   font-family: "Material Icons";
@@ -125,10 +125,7 @@ html {
   padding: 0;
   margin: 0;
 }
-*:active {
-  outline: none;
-}
-*:focus {
+*:active, *:focus {
   outline: none;
 }
 
@@ -230,8 +227,8 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
-  src: url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.eot?raw=true");
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.woff2?raw=true") format("woff2"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.woff?raw=true") format("woff"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.ttf?raw=true") format("truetype");
+  src: url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/assets/styles/fonts/MaterialIcons-Regular.eot?raw=true");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/assets/styles/fonts/MaterialIcons-Regular.woff2?raw=true") format("woff2"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/assets/styles/fonts/MaterialIcons-Regular.woff?raw=true") format("woff"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/assets/styles/fonts/MaterialIcons-Regular.ttf?raw=true") format("truetype");
 }
 .material-icons {
   font-family: "Material Icons";
@@ -356,9 +353,6 @@ button {
 button:not([disabled]):not(.button):hover, button:not([disabled]):not(.button):active {
   filter: saturate(250%);
 }
-button:not([disabled]):not(.button):active {
-  text-shadow: none;
-}
 button:not([disabled]):not(.button):focus {
   text-shadow: 0 0 1px #8BA4F9;
 }
@@ -381,9 +375,6 @@ button.button:not([disabled]):focus {
 button.button:not([disabled]):hover, button.button:not([disabled]):active {
   filter: saturate(250%);
 }
-button.button:not([disabled]):active {
-  box-shadow: none;
-}
 button.button[disabled] {
   filter: opacity(50%);
 }
@@ -395,6 +386,7 @@ button.button_white {
   position: relative;
 }
 button.button_white:before {
+  pointer-events: none;
   z-index: -1;
   content: "";
   width: calc(100% - 0.1428571429rem * 2);
@@ -408,6 +400,9 @@ button.button_white:before {
   position: absolute;
   top: 0.1428571429rem;
   left: 0.1428571429rem;
+}
+button.button .material-icons {
+  pointer-events: none;
 }
 button.button .material-icons:not(.left), button.button .material-icons.left {
   width: 3.1428571429rem;
@@ -434,8 +429,8 @@ button.button_lg {
   font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
-  src: url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.eot?raw=true");
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.woff2?raw=true") format("woff2"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.woff?raw=true") format("woff"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/styles/fonts/MaterialIcons-Regular.ttf?raw=true") format("truetype");
+  src: url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/assets/styles/fonts/MaterialIcons-Regular.eot?raw=true");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/assets/styles/fonts/MaterialIcons-Regular.woff2?raw=true") format("woff2"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/assets/styles/fonts/MaterialIcons-Regular.woff?raw=true") format("woff"), url("https://raw.githubusercontent.com/BobrikovAleksey/FSDHotel_Layout_html/master/assets/styles/fonts/MaterialIcons-Regular.ttf?raw=true") format("truetype");
 }
 .material-icons {
   font-family: "Material Icons";
@@ -549,8 +544,8 @@ button.button_lg {
   background: white;
 }
 .header__container {
-  max-width: 1440px;
-  min-width: 340px;
+  max-width: 1439px;
+  min-width: 339px;
   height: 5rem;
   display: flex;
   justify-content: space-between;
@@ -566,6 +561,27 @@ button.button_lg {
   justify-content: flex-start;
   align-items: center;
 }
+.header .menu__dropdown {
+  z-index: 101;
+  background: none;
+  display: none;
+  padding-top: 0.3571428571rem;
+  position: absolute;
+  top: 1.5714285714rem;
+  left: 0;
+}
+.header .menu__item {
+  position: relative;
+  margin-left: 20px;
+}
+.header .menu__item:first-of-type {
+  margin-left: 0;
+}
+.header .menu__item .material-icons {
+  pointer-events: none;
+  line-height: 1.5714285714rem;
+  margin-left: 0.0714285714rem;
+}
 .header .menu__link {
   height: 1.5714285714rem;
   font-size: 1rem;
@@ -576,28 +592,55 @@ button.button_lg {
   justify-content: flex-start;
   align-items: center;
 }
-.header .menu__item {
-  margin-left: 20px;
+.header .menu__link:not(.menu__link_active):hover, .header .menu__link:active {
+  border-bottom: 1px solid rgba(31, 32, 65, 0.5);
 }
-.header .menu__item:first-of-type {
-  margin-left: 0;
-}
-.header .menu__item:first-of-type .menu__link {
+.header .menu__link_active {
+  pointer-events: none;
+  cursor: default;
   font-weight: 700;
 }
-.header .menu__item .material-icons {
-  line-height: 1.5714285714rem;
-  margin-left: 0.0714285714rem;
+.header .menu__submenu {
+  min-width: 10.2857142857rem;
+  max-width: 14rem;
+  background: white;
+  border: 0.0714285714rem solid rgba(31, 32, 65, 0.25);
+  border-radius: 0.2857142857rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.4285714286rem 1.4285714286rem 1.4285714286rem 1.4285714286rem;
+}
+.header .menu__sub-item {
+  margin-top: 0.7857142857rem;
+}
+.header .menu__sub-item:first-of-type {
+  margin-top: 0;
+}
+.header .menu__sub-link {
+  height: 1.4285714286rem;
+  font-size: 1rem;
+  color: rgba(31, 32, 65, 0.5);
+  line-height: 1.2142857143rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.header .menu__sub-link:hover {
+  text-decoration: underline;
 }
 .header .menu__button {
   height: 2.4285714286rem;
+  position: relative;
+}
+.header .menu__button .fa {
+  font-size: 1.7142857143rem;
+  display: none;
 }
 .header .menu__icon {
   cursor: pointer;
   width: 2.8571428571rem;
   height: 2.8571428571rem;
-  font-size: 2.2857142857rem;
-  color: white;
   font-size: 2.2857142857rem;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 1.4285714286rem;
@@ -606,7 +649,13 @@ button.button_lg {
 .header .menu__icon:hover, .header .menu__icon:active {
   filter: saturate(250%);
 }
+.header .menu__icon .material-icons {
+  pointer-events: none;
+  font-size: 2.2857142857rem;
+  color: white;
+}
 .header .menu__account {
+  max-width: 22.8571428571rem;
   font-size: 1rem;
   color: rgba(31, 32, 65, 0.5);
   line-height: 1.2857142857rem;
@@ -617,39 +666,129 @@ button.button_lg {
   align-items: center;
   padding-left: 1.4285714286rem;
 }
+.header .menu__account p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .header .menu__hide {
   display: none;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1439px) {
   .header__container {
-    padding: 0 calc(140px - (1440px - 100vw) * 0.1785714286);
+    padding: 0 calc(140px - (1439px - 100vw) * 0.1785714286);
   }
   .header .menu__item {
-    margin-left: calc(20px - (1440px - 100vw) * 0.0074404762);
+    margin-left: calc(20px - (1439px - 100vw) * 0.0074404762);
+  }
+  .header .menu__button span {
+    display: inline-block;
+  }
+  .header .menu__button .fa {
+    display: none;
+  }
+  .header .menu__account {
+    max-width: calc(320px - (1439px - 100vw) * 0.2529761905);
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1079px) {
+  .header .menu span {
+    display: none;
+  }
+  .header .menu .fa {
+    display: inline-block;
+  }
+}
+@media (max-width: 767px) {
   .header__container {
     padding: 0 calc(20px - (768px - 100vw) * 0.023364486);
   }
-  .header .menu {
-    display: none;
+  .header__logo {
+    z-index: 202;
   }
-  .header .menu__icon {
+  .header .menu {
+    z-index: 201;
+    min-width: 100vw;
+    min-height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5rem 5rem 5rem 5rem;
+  }
+  .header .menu__item {
+    margin-top: 1.4285714286rem;
+    margin-left: 0;
+  }
+  .header .menu__item:first-of-type {
+    margin-top: 0;
+  }
+  .header .menu__item_drop {
+    margin-left: 1.7142857143rem;
+  }
+  .header .menu__item .material-icons {
+    line-height: 1.5714285714rem;
+    margin-left: 0.0714285714rem;
+  }
+  .header .menu__link {
+    height: 2rem;
+    font-size: 1.2857142857rem;
+    color: rgba(31, 32, 65, 0.75);
+    line-height: 1.7142857143rem;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+  .header .menu__dropdown:not(.menu__hide) {
+    z-index: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.0714285714rem;
+    position: relative;
+    margin-left: -1.7142857143rem;
+    top: 0;
+  }
+  .header .menu__submenu {
+    min-width: auto;
+    max-width: 100%;
+    border: none;
+    padding: 0;
+  }
+  .header .menu__sub-item {
+    margin-top: 1.0714285714rem;
+  }
+  .header .menu__sub-link {
+    height: 1.7142857143rem;
+    font-size: 1.1428571429rem;
+    color: rgba(31, 32, 65, 0.5);
+    line-height: 1.5rem;
+    font-weight: 400;
+  }
+  .header .menu__icon {
+    z-index: 202;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header .menu span {
+    display: inline-block;
+  }
+  .header .menu .fa {
+    display: none;
+  }
 }
-@media (max-width: 340px) {
+@media (max-width: 339px) {
   .header__container {
     padding: 0 10px;
   }
 }
 .ui__container {
-  max-width: 1440px;
-  min-width: 340px;
+  max-width: 1439px;
+  min-width: 339px;
   margin: 0 auto;
   padding: 3rem 140px;
 }
@@ -664,19 +803,19 @@ button.button_lg {
   margin-bottom: 1rem;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1439px) {
   .ui__container {
-    padding: 3rem calc(140px - (1440px - 100vw) * 0.1785714286);
+    padding: 2rem calc(140px - (1439px - 100vw) * 0.1785714286);
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .ui__container {
-    padding: 2rem calc(20px - (768px - 100vw) * 0.023364486);
+    padding: 1rem calc(20px - (768px - 100vw) * 0.023364486);
   }
 }
-@media (max-width: 340px) {
+@media (max-width: 339px) {
   .ui__container {
-    padding: 2rem 10px;
+    padding: 1rem 10px;
   }
 }
 

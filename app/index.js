@@ -1,5 +1,6 @@
 'use strict';
 
+import $router from './components/cm-header.js';
 // import bulletList from '../components/bullet-list.js';
 // import checkboxList from '../components/checkbox-list.js';
 // import cmSelect from '../components/cm-select.js';
@@ -20,7 +21,8 @@ const app = {
         // 'radio-group': radioGroup,
         // toggle,
     },
-    refs: {},
+    $router,
+    $refs: {},
 
     /**
      * Добавляет компонент в DOM
@@ -35,9 +37,9 @@ const app = {
         if (node) {
             const object = new component(params);
 
-            object.render(node);
+            object.render(this, node);
 
-            this.refs[refName] = object;
+            this.$refs[refName] = object;
         }
     },
 
@@ -55,7 +57,7 @@ const app = {
             el.node = item.nextElementSibling;
             item.parentNode.removeChild(item);
             if (ref) {
-                this.refs[ref] = el;
+                this.$refs[ref] = el;
             }
         });
     },
@@ -80,3 +82,6 @@ app.render(cmHeader.getType(), 'demoHeader', {});
 //     placeholder: 'Сколько гостей',
 //     title: 'Dropdown',
 // });
+
+
+

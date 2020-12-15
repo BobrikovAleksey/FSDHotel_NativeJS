@@ -13,37 +13,76 @@
     +HeightCalc(40rem)
   & .menu
     +flexPlacement(flex-start, center)
+    &__dropdown
+      z-index: 101
+      background: none
+      display: none
+      +paddingTCalc(5rem)
+      +absoluteTLCalc(22rem, 0)
+    &__item
+      position: relative
+      margin-left: 20px
+      &:first-of-type
+        margin-left: 0
+      & .material-icons
+        pointer-events: none
+        +textHeightCalc(22rem)
+        +marginLCalc(1rem)
     &__link
       +HeightCalc(22rem)
       +textSHCWCalc(14rem, 18rem, $textLighten2)
       +flexPlacement(flex-start, center)
-    &__item
-      margin-left: 20px
+      &:not(.menu__link_active):hover, &:active
+        border-bottom: 1px solid $textLighten2
+      &_active
+        pointer-events: none
+        cursor: default
+        font-weight: 700
+    &__submenu
+      +MinWidthCalc(144rem)
+      +MaxWidthCalc(196rem)
+      background: $background
+      border: $borderSize-sm solid $borderColor
+      border-radius: $borderRadius-sm
+      +flexDirection(column)
+      +paddingCalc(20rem)
+    &__sub-item
+      +marginTCalc(11rem)
       &:first-of-type
-        margin-left: 0
-        & .menu__link
-          font-weight: 700
-      & .material-icons
-        +textHeightCalc(22rem)
-        +marginLCalc(1rem)
+        margin-top: 0
+    &__sub-link
+      +HeightCalc(20rem)
+      +textSHCWCalc(14rem, 17rem, $textLighten2)
+      +flexPlacement(flex-start, center)
+      &:hover
+        text-decoration: underline
     &__button
       height: $inputHeight-sm
+      position: relative
+      & .fa
+        +textSizeCalc(24rem)
+        display: none
     &__icon
       cursor: pointer
       +WidthCalc(40rem)
       +HeightCalc(40rem)
-      +textSCCalc(32rem, $background)
       +textSizeCalc(32rem)
       background: $PurpleGradient
       +borderRadiusCalc(20rem)
       display: none
       &:hover, &:active
         filter: saturate(250%)
+      & .material-icons
+        pointer-events: none
+        +textSCCalc(32rem, $background)
     &__account
+      max-width: $inputWidth-lg
       +textSHCWCalc(14rem, 18rem, $textLighten2)
-      +borderLCalc(1rem, $DarkShade10)
+      +borderLCalc(1rem, $textLighten4)
       +flexPlacement(center)
       +paddingLCalc(20rem)
+      & p
+        +textEllipsis
     &__hide
       display: none
 
@@ -54,15 +93,73 @@
     & .menu
       &__item
         margin-left: calc(20px - (#{$MaxWidth} - 100vw) * #{(20 - 15) / (1440 - 768)})
+      &__button
+        & span
+          display: inline-block
+        & .fa
+          display: none
+      &__account
+        max-width: calc(320px - (#{$MaxWidth} - 100vw) * #{(320 - 150) / (1440 - 768)})
+
+@media (max-width: 1079px)
+  .header
+    & .menu
+      & span
+        display: none
+      & .fa
+        display: inline-block
 
 @media (max-width: $BreakPointWidth)
   .header
     &__container
       padding: 0 calc(20px - (768px - 100vw) * #{(20 - 10) / (768 - 340)})
+    &__logo
+      z-index: 202
     & .menu
-      display: none
-      &__icon
+      z-index: 201
+      min-width: 100vw
+      min-height: 100vh
+      background: $background
+      +flexDirection(column)
+      +fixedTL()
+      +paddingCalc(70rem)
+      &__item
+        +marginTLCalc(20rem, 0)
+        &:first-of-type
+          margin-top: 0
+        &_drop
+          +marginLCalc(24rem)
+        & .material-icons
+          +textHeightCalc(22rem)
+          +marginLCalc(1rem)
+      &__link
+        +HeightCalc(28rem)
+        +textSHCCalc(18rem, 24rem, $textLighten1)
         +flexPlacement(center)
+      &__dropdown:not(.menu__hide)
+        z-index: auto
+        +flexPlacement(center)
+        +paddingTCalc(15rem)
+        position: relative
+        +marginLCalc(-24rem)
+        top: 0
+      &__submenu
+        min-width: auto
+        max-width: 100%
+        border: none
+        padding: 0
+      &__sub-item
+        +marginTCalc(15rem)
+      &__sub-link
+        +HeightCalc(24rem)
+        +textSHCWCalc(16rem, 21rem, $textLighten2)
+      &__icon
+        z-index: 202
+        +flexPlacement(center)
+      & span
+        display: inline-block
+      & .fa
+        display: none
 
 @media (max-width: $MinWidth)
   .header

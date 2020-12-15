@@ -10,8 +10,6 @@ button
   &:not([disabled]):not(.button)
     &:hover, &:active
       filter: saturate(250%)
-    &:active
-      text-shadow: none
     &:focus
       text-shadow: 0 0 1px $PurpleLight
   &[disabled]
@@ -29,8 +27,6 @@ button
         box-shadow: 0 0 5px $PurpleLight
       &:hover, &:active
         filter: saturate(250%)
-      &:active
-        box-shadow: none
     &[disabled]
       filter: opacity(50%)
     &_white
@@ -40,6 +36,7 @@ button
       border: none
       position: relative
       &:before
+        pointer-events: none
         z-index: -1
         content: ""
         width: calc(100% - #{$borderSize-md} * 2)
@@ -50,6 +47,7 @@ button
         +flexPlacement(center, center)
         +absoluteTLCalc(2rem)
     & .material-icons
+      pointer-events: none
       &:not(.left), &.left
         width: $inputHeight-md
         height: $inputHeight-md
