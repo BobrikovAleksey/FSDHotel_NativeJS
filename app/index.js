@@ -20,6 +20,11 @@ import cmHeader from './components/cm-header.js';
 // import radioGroup from '../components/radio-group.js';
 // import toggle from '../components/toggle.js';
 
+const $config = {
+    baseUrl: '/FSDHotel_Layout_html/#/',
+    // baseUrl: '/#/',
+};
+
 const $router = new Router({ mode: 'hash', root: '/' });
 
 $router
@@ -85,6 +90,7 @@ const app = {
     },
 
     $refs: {},
+    $config,
     $router,
     $storage,
     $actions,

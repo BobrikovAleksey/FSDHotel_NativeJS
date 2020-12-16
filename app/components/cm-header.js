@@ -5,11 +5,11 @@ const template = `
     <!--suppress CheckTagEmptyBody -->
     <header class="header">
         <div class="header__container">
-            <a class="header__logo" href="/#">${ icons.logo }</a>
+            <a class="header__logo" href="{{ url }}">${ icons.logo }</a>
 
             <ul class="menu">
                 <li class="menu__item">
-                    <a class="menu__link" href="/#/about/" data-key="0">О нас</a>
+                    <a class="menu__link" href="{{ url }}about/" data-key="0">О нас</a>
                 </li>
 
                 <li class="menu__item menu__item_drop">
@@ -20,26 +20,26 @@ const template = `
                     <div class="menu__dropdown hide">
                         <ul class="menu__submenu">
                             <li class="menu__sub-item">
-                                <a class="menu__sub-link" href="/#/services/1" data-key="1">Услуга</a>
+                                <a class="menu__sub-link" href="{{ url }}services/1" data-key="1">Услуга</a>
                             </li>
 
                             <li class="menu__sub-item">
-                                <a class="menu__sub-link" href="/#/services/2" data-key="1">Услуга</a>
+                                <a class="menu__sub-link" href="{{ url }}services/2" data-key="1">Услуга</a>
                             </li>
 
                             <li class="menu__sub-item">
-                                <a class="menu__sub-link" href="/#/services/3" data-key="1">Услуга</a>
+                                <a class="menu__sub-link" href="{{ url }}services/3" data-key="1">Услуга</a>
                             </li>
                         </ul>               
                     </div>
                 </li>
 
                 <li class="menu__item">
-                    <a class="menu__link" href="/#/vacancies/" data-key="2">Вакансии</a>
+                    <a class="menu__link" href="{{ url }}vacancies/" data-key="2">Вакансии</a>
                 </li>
 
                 <li class="menu__item">
-                    <a class="menu__link" href="/#/news/" data-key="3">Новости</a>
+                    <a class="menu__link" href="{{ url }}news/" data-key="3">Новости</a>
                 </li>
 
                 <li class="menu__item menu__item_drop">
@@ -50,13 +50,13 @@ const template = `
                     <div class="menu__dropdown hide">
                         <ul class="menu__submenu">
                             <li class="menu__sub-item">
-                                <a class="menu__sub-link" href="/#/agreements/1/" data-key="4">Соглашение</a>
+                                <a class="menu__sub-link" href="{{ url }}agreements/1/" data-key="4">Соглашение</a>
                             </li>
                             <li class="menu__sub-item">
-                                <a class="menu__sub-link" href="/#/agreements/2/" data-key="4">Соглашение</a>
+                                <a class="menu__sub-link" href="{{ url }}agreements/2/" data-key="4">Соглашение</a>
                             </li>
                             <li class="menu__sub-item">
-                                <a class="menu__sub-link" href="/#/agreements/3/" data-key="4">Соглашение</a>
+                                <a class="menu__sub-link" href="{{ url }}agreements/3/" data-key="4">Соглашение</a>
                             </li>
                         </ul>               
                     </div>
@@ -88,6 +88,17 @@ const template = `
         </div>
     </header>
 `;
+
+/**
+ * Возвращает подготовленный html-шаблон
+ * @param url string
+ * @returns {string}
+ */
+const getTemplate = (url = '/#/') => {
+    const urlPattern = /{{\s*url\s*}}/g;
+
+    return template.replace(urlPattern, url);
+};
 
 const _switchSubmenuSm = (dropdown) => {
     if (dropdown.classList.contains('hide')) {
@@ -278,13 +289,14 @@ class cmHeader {
      * @param node
      */
     render(app, node) {
-        node.insertAdjacentHTML('afterend', template);
         this.$app = app;
         this.$refs = this.$app.$refs;
         this.$router = this.$app.$router;
         this.$storage = this.$app.$storage;
         this.$actions = this.$app.$actions;
         this.$getters = this.$app.$getters;
+
+        node.insertAdjacentHTML('afterend', getTemplate(this.$app.$config.baseUrl));
         this.$el = node.nextElementSibling;
         node.parentNode.removeChild(node);
 
