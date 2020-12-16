@@ -1,77 +1,89 @@
 @import vars
 
 /**************************************************
-/*                    Position                    *
+/*                    Absolute                    *
 /**************************************************
 
-// absolute
-=absoluteTL($top: 0, $left: $top)
+// top
+=absoluteTop($top: 0, $unit: rem)
   position: absolute
-  top: $top
-  left: $left
-=absoluteTR($top: 0, $right: $top)
-  position: absolute
-  top: $top
-  right: $right
-=absoluteBL($bottom: 0, $left: $bottom)
-  position: absolute
-  bottom: $bottom
-  left: $left
-=absoluteBR($bottom: 0, $right: $bottom)
-  position: absolute
-  bottom: $bottom
-  right: $right
+  top: $top + $unit
 
-// absolute calc rem
-=absoluteTLCalc($top: 0, $left: $top)
+// bottom
+=absoluteBottom($bottom: 0, $unit: rem)
   position: absolute
-  top: $top / $FontSize
-  left: $left / $FontSize
-=absoluteTRCalc($top: 0, $right: $top)
-  position: absolute
-  top: $top / $FontSize
-  right: $right / $FontSize
-=absoluteBLCalc($bottom: 0, $left: $bottom)
-  position: absolute
-  bottom: $bottom / $FontSize
-  left: $left / $FontSize
-=absoluteBRCalc($bottom: 0, $right: $bottom)
-  position: absolute
-  bottom: $bottom / $FontSize
-  right: $right / $FontSize
+  bottom: $bottom + $unit
 
-// fixed
-=fixedTL($top: 0, $left: $top)
-  position: fixed
-  top: $top
-  left: $left
-=fixedTR($top: 0, $right: $top)
-  position: fixed
-  top: $top
-  right: $right
-=fixedBL($bottom: 0, $left: $bottom)
-  position: fixed
-  bottom: $bottom
-  left: $left
-=fixedBR($bottom: 0, $right: $bottom)
-  position: fixed
-  bottom: $bottom
-  right: $right
+// left
+=absoluteLeft($left: 0, $unit: rem)
+  position: absolute
+  left: $left + $unit
 
-// fixed calc rem
-=fixedTLCalc($top: 0, $left: $top)
+// right
+=absoluteRight($right: 0, $unit: rem)
+  position: absolute
+  right: $right + $unit
+
+// top - left
+=absoluteTopLeft($top: 0, $left: $top, $unit: rem)
+  +absoluteTop($top, $unit)
+  left: $left + $unit
+
+// top - right
+=absoluteTopRight($top: 0, $right: $top, $unit: rem)
+  +absoluteTop($top, $unit)
+  right: $right + $unit
+
+// bottom - left
+=absoluteBottomLeft($bottom: 0, $left: $bottom, $unit: rem)
+  +absoluteBottom($bottom, $unit)
+  left: $left + $unit
+
+// bottom - right
+=absoluteBottomRight($bottom: 0, $right: $bottom, $unit: rem)
+  +absoluteBottom($bottom, $unit)
+  right: $right + $unit
+
+/**************************************************
+/*                     Fixed                      *
+/**************************************************
+
+// top
+=fixedTop($top: 0, $unit: rem)
   position: fixed
-  top: $top / $FontSize
-  left: $left / $FontSize
-=fixedTRCalc($top: 0, $right: $top)
+  top: $top + $unit
+
+// bottom
+=fixedBottom($bottom: 0, $unit: rem)
   position: fixed
-  top: $top / $FontSize
-  right: $right / $FontSize
-=fixedBLCalc($bottom: 0, $left: $bottom)
+  bottom: $bottom + $unit
+
+// left
+=fixedLeft($left: 0, $unit: rem)
   position: fixed
-  bottom: $bottom / $FontSize
-  left: $left / $FontSize
-=fixedBRCalc($bottom: 0, $right: $bottom)
+  left: $left + $unit
+
+// right
+=fixedRight($right: 0, $unit: rem)
   position: fixed
-  bottom: $bottom / $FontSize
-  right: $right / $FontSize
+  right: $right + $unit
+
+// top - left
+=fixedTopLeft($top: 0, $left: $top, $unit: rem)
+  +fixedTop($top, $unit)
+  left: $left + $unit
+
+// top - right
+=fixedTopRight($top: 0, $right: $top, $unit: rem)
+  +fixedTop($top, $unit)
+  right: $right + $unit
+
+// bottom - left
+=fixedBottomLeft($bottom: 0, $left: $bottom, $unit: rem)
+  +fixedBottom($bottom, $unit)
+  left: $left + $unit
+
+// bottom - right
+=fixedBottomRight($bottom: 0, $right: $bottom, $unit: rem)
+  +fixedBottom($bottom, $unit)
+  right: $right + $unit

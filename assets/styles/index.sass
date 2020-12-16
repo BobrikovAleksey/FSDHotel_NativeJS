@@ -1,31 +1,27 @@
 @import main, components/buttons
 @import components/header
 
-.ui
-  &__container
-    max-width: $MaxWidth
-    min-width: $MinWidth
-    margin: 0 auto
-    padding: 3rem $MaxHorizontalPadding
-  &__block
-    +flexDirection(column)
-  &__label
-    @extend .label
-    +marginBCalc(5rem)
-  &__row
-    +marginBCalc(14rem)
+.ui__container
+  max-width: $SiteMaxWidthPx
+  min-width: $SiteMinWidthPx
+  padding: 3rem $HorizontalMaxPaddingPx
+  margin: 0 auto
+  @media (max-width: $SiteMaxWidthPx)
+    padding: 2rem calc(#{$HorizontalMaxPaddingPx} - (#{$SiteMaxWidthPx} - 100vw) * #{($HorizontalMaxPadding - $HorizontalMinPadding) / ($SiteMaxWidth - $SiteWidthBreakpoint)})
+  @media (max-width: $SiteWidthBreakpointPx)
+    padding: 1rem calc(#{$HorizontalMinPaddingPx} - (#{$SiteWidthBreakpointPx} - 100vw) * #{($HorizontalMinPadding / 2) / ($SiteWidthBreakpoint - $SiteMinWidth)})
+  @media (max-width: $SiteMinWidthPx)
+    +padding(1, $HorizontalMinPadding / 28)
 
-@media (max-width: $MaxWidth)
-  .ui__container
-      padding: 2rem calc(#{$MaxHorizontalPadding} - (#{$MaxWidth} - 100vw) * #{(140 - 20) / (1440 - 768)})
+.ui__block
+  +flexDirection(column)
 
-@media (max-width: $BreakPointWidth)
-  .ui__container
-    padding: 1rem calc(20px - (768px - 100vw) * #{(20 - 10) / (768 - 340)})
+.ui__label
+  @extend .label
+  +marginBottom(5/14)
 
-@media (max-width: $MinWidth)
-  .ui__container
-    padding: 1rem 10px
+.ui__row
+  +marginBottom(1)
 
 //@import pagination
 //@import components/selects

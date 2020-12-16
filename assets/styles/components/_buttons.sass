@@ -3,58 +3,61 @@
 button
   cursor: pointer
   overflow: hidden
-  +HeightCalc(22rem)
-  +textSHCWTCalc(12rem, 15rem, $Purple, 700, uppercase)
+  +Height(22/14)
+  +textColorSizeHeightWeightTransform($Purple, 12/14, 15/14, 700, uppercase)
   background: inherit
   border: none
-  &:not([disabled]):not(.button)
-    &:hover, &:active
-      filter: saturate(250%)
-    &:focus
-      text-shadow: 0 0 1px $PurpleLight
   &[disabled]
     cursor: default
     color: $textLighten2
-  &.button
-    height: $inputHeight-md
-    color: $background
-    background: $PurpleGradient
-    border-radius: $inputHeight-md / 2
-    +paddingLRCalc(20rem)
-    position: relative
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+    &:not([disabled])
+      &:hover, &:active
+        filter: saturate(250%)
+      &:not(.button):focus
+        text-shadow: 0 0 1px $PurpleLight
+
+button.button
+  +Height($inputHeight-md / 14)
+  color: $background
+  background: $PurpleGradient
+  +borderRadius($inputHeight-md / 28)
+  +paddingLeftRight(20/14)
+  position: relative
+  &[disabled]
+    filter: opacity(50%)
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
     &:not([disabled])
       &:focus
         box-shadow: 0 0 5px $PurpleLight
-      &:hover, &:active
-        filter: saturate(250%)
-    &[disabled]
-      filter: opacity(50%)
-    &_white
-      z-index: 0
-      color: $Purple
-      background: $PurpleGradient
-      border: none
-      position: relative
-      &:before
-        pointer-events: none
-        z-index: -1
-        content: ""
-        width: calc(100% - #{$borderSize-md} * 2)
-        height: calc(100% - #{$borderSize-md} * 2)
-        box-sizing: border-box
-        background: $background
-        border-radius: $inputHeight-md / 2 - $borderSize-md
-        +flexPlacement(center, center)
-        +absoluteTLCalc(2rem)
-    & .material-icons
-      pointer-events: none
-      &:not(.left), &.left
-        width: $inputHeight-md
-        height: $inputHeight-md
-        +flexPlacement(center, center)
-      &:not(.left)
-        +absoluteTR()
-      &.left
-        +absoluteTL()
-  &.button_lg
-    width: $inputWidth-lg
+
+button.button_white
+  z-index: 0
+  color: $Purple
+  background: $PurpleGradient
+  border: none
+  position: relative
+  &:before
+    z-index: -1
+    content: ""
+    pointer-events: none
+    box-sizing: border-box
+    width: calc(100% - #{($borderSize-md * 2) / 14 + rem})
+    height: calc(100% - #{($borderSize-md * 2) / 14 + rem})
+    background: $background
+    border-radius: (($inputHeight-md - $borderSize-md) / 28) + rem
+    display: block
+    +absoluteTopLeft(2/14)
+
+button.button_lg
+  +Width($inputWidth-lg / 14)
+
+button .material-icons
+  pointer-events: none
+  &:not(.left), &.left
+    +WidthHeight($inputHeight-md / 14)
+    +flexPlacement(center, center)
+    &:not(.left)
+      +absoluteTopRight()
+    &.left
+      +absoluteTopLeft()

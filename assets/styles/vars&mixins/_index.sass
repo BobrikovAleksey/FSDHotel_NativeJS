@@ -9,26 +9,26 @@
 =MontserratSerif()
   font-family: Montserrat, serif
 
-=WidthCalc($size)
-  width: $size / $FontSize
-=HeightCalc($size)
-  height: $size / $FontSize
-=WHCalc($width, $height: $width)
-  +WidthCalc($width)
-  +HeightCalc($height)
+=Width($size, $unit: rem)
+  width: $size + $unit
+=Height($size, $unit: rem)
+  height: $size + $unit
+=WidthHeight($width, $height: $width, $unit: rem)
+  +Width($width, $unit)
+  +Height($height, $unit)
 
-=MaxWidthCalc($size)
-  max-width: $size / $FontSize
-=MaxHeightCalc($size)
-  max-height: $size / $FontSize
-=MaxWHCalc($width, $height: $width)
-  +MaxWidthCalc($width)
-  +MaxHeightCalc($height)
+=WidthMax($size, $unit: rem)
+  max-width: $size + $unit
+=HeightMax($size, $unit: rem)
+  max-height: $size + $unit
+=WidthHeightMax($width, $height: $width, $unit: rem)
+  +WidthMax($width, $unit)
+  +HeightMax($height, $unit)
 
-=MinWidthCalc($size)
-  min-width: $size / $FontSize
-=MinHeightCalc($size)
-  min-height: $size / $FontSize
-=MinWHCalc($width, $height: $width)
-  +MinWidthCalc($width)
-  +MinHeightCalc($height)
+=WidthMin($size, $unit: rem)
+  min-width: $size + $unit
+=HeightMin($size, $unit: rem)
+  min-height: $size + $unit
+=WidthHeightMin($width, $height: $width, $unit: rem)
+  +WidthMin($width, $unit)
+  +HeightMin($height, $unit)

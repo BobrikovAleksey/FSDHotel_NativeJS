@@ -12,7 +12,6 @@ import uiKit from './pages/ui-kit.js';
 
 // components
 import cmHeader from './components/cm-header.js';
-
 // import bulletList from '../components/bullet-list.js';
 // import checkboxList from '../components/checkbox-list.js';
 // import cmSelect from '../components/cm-select.js';
@@ -21,32 +20,59 @@ import cmHeader from './components/cm-header.js';
 // import radioGroup from '../components/radio-group.js';
 // import toggle from '../components/toggle.js';
 
-const router = new Router({ mode: 'hash', root: '/' });
+const $router = new Router({ mode: 'hash', root: '/' });
 
-router
+$router
     .add(/about/, () => {
-        app.renderPage(about);
+        app.renderPage(about, {
+            page: 0,
+        });
     })
     .add(/services\/(.*)/, (service) => {
-        app.renderPage(services, { service });
+        app.renderPage(services, {
+            page: 1,
+            service,
+        });
     })
     .add(/vacancies/, () => {
-        app.renderPage(vacancies);
+        app.renderPage(vacancies, {
+            page: 2,
+        });
     })
     .add(/news/, () => {
-        app.renderPage(news);
+        app.renderPage(news, {
+            page: 3,
+        });
     })
     .add(/agreements\/(.*)/, (argument) => {
-        app.renderPage(agreements, { argument });
+        app.renderPage(agreements, {
+            page: 4,
+            argument,
+        });
     })
     .add('', () => {
         app.renderPage(uiKit);
     });
 
-const app = {
-    $router: router,
-    $refs: {},
+const $storage = {
+    page: -1,
+    logIn: false,
+};
 
+const $actions = {
+    /** @param page number */
+    setPage: (page) => $storage.page = page,
+    /** @param logIn boolean */
+    logIn: (logIn = true) => $storage.logIn = logIn,
+    logOut: () => $storage.logIn = false,
+};
+
+const $getters = {
+    getLogIn: () => $storage.logIn,
+    getPage: () => $storage.page,
+};
+
+const app = {
     components: {
         cmHeader,
         // 'bullet-list': bulletList,
@@ -58,18 +84,25 @@ const app = {
         // toggle,
     },
 
+    $refs: {},
+    $router,
+    $storage,
+    $actions,
+    $getters,
+
     /**
      * Обновляет главный контент страницы
      * @param template string
-     * @param param object
+     * @param params object
      */
-    renderPage(template, param = {}) {
-        const page = document.querySelector('main');
-        page.innerHTML = '';
-        page.insertAdjacentHTML('afterbegin', template);
+    renderPage(template, params = {}) {
+        this.$actions.setPage(params.page ?? -1);
+
+        const content = document.querySelector('main');
+
+        content.innerHTML = '';
+        content.insertAdjacentHTML('afterbegin', template);
     },
-
-
 
     /**
      * Добавляет компонент в DOM
@@ -85,33 +118,12 @@ const app = {
             const object = new component(params);
 
             object.render(this, node);
-
             this.$refs[refName] = object;
         }
-    },
-
-    /**
-     * Добавляет компонент в DOM
-     * @param name
-     */
-    renderOld(name) {
-        const nodeList = document.querySelectorAll(name);
-        nodeList.forEach((item) => {
-            const ref = item.hasAttribute('ref') ? item.getAttribute('ref') : null;
-            const el = Object.assign(this.components[name]);
-            item.insertAdjacentHTML('afterend', el.getElement(el));
-
-            el.node = item.nextElementSibling;
-            item.parentNode.removeChild(item);
-            if (ref) {
-                this.$refs[ref] = el;
-            }
-        });
     },
 };
 
 app.render(cmHeader.getType(), 'demoHeader', {});
-
 // app.render(cmSelectExpanded.getType(), 'demoCmSelectExpended', {
 //     type: 'single',
 //     list: [

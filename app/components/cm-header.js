@@ -2,6 +2,7 @@ import icons from './icons.js';
 
 
 const template = `
+    <!--suppress CheckTagEmptyBody -->
     <header class="header">
         <div class="header__container">
             <a class="header__logo" href="/#">${ icons.logo }</a>
@@ -12,11 +13,11 @@ const template = `
                 </li>
 
                 <li class="menu__item menu__item_drop">
-                    <p class="menu__link" data-key="1">
+                    <p class="menu__link" data-key="1" tabindex="0">
                         Услуги<i class="material-icons">expand_more</i>
                     </p>
 
-                    <div class="menu__dropdown menu__hide">
+                    <div class="menu__dropdown hide">
                         <ul class="menu__submenu">
                             <li class="menu__sub-item">
                                 <a class="menu__sub-link" href="/#/services/1" data-key="1">Услуга</a>
@@ -42,11 +43,11 @@ const template = `
                 </li>
 
                 <li class="menu__item menu__item_drop">
-                    <p class="menu__link" data-key="4">
+                    <p class="menu__link" data-key="4" tabindex="0">
                         Соглашения<i class="material-icons">expand_more</i>
                     </p>
 
-                    <div class="menu__dropdown menu__hide">
+                    <div class="menu__dropdown hide">
                         <ul class="menu__submenu">
                             <li class="menu__sub-item">
                                 <a class="menu__sub-link" href="/#/agreements/1/" data-key="4">Соглашение</a>
@@ -80,82 +81,29 @@ const template = `
                 </li>
             </ul>
 
-            <span class="menu__icon">
-                <i class="material-icons">menu</i>
+            <span class="header__menu-icon" tabindex="0">
+                <i class="material-icons icon-menu">menu</i>
+                <i class="material-icons icon-close hide">close</i>
             </span>
         </div>
     </header>
 `;
 
-const data = {
-    $app: null,
-    $el: null,
-    $refs: null,
-    $router: null,
-
-    active: 0,
-    login: false,
-};
-
-
-/**
- * Показывает выпадающее меню
- * @param key
- */
-const showDropdown = (key = -1) => {
-    const sKey = String(key);
-    const items = data.$el.querySelectorAll('.menu__dropdown');
-
-    items.forEach((el) => {
-        if (!el.hasAttribute('data-key')) return;
-
-        if (el.getAttribute('data-key') === sKey) {
-            if (el.classList.contains('menu__hide')) {
-                el.classList.remove('menu__hide');
-            }
-        } else {
-            if (!el.classList.contains('menu__hide')) {
-                el.classList.add('menu__hide');
-            }
-        }
-    });
-};
-
-/**
- * Клик по ссылкам главного меню
- * @param event
- */
-const clickMenuLink = (event) => {
-    const el = event.target;
-
-    if (!el.hasAttribute('data-key')) return;
-    const key = event.target.getAttribute('data-key');
-    const items = data.$el.querySelectorAll('.menu__link');
-
-    items.forEach((el) => {
-        if (el.hasAttribute('data-key') && el.getAttribute('data-key') === key) {
-            if (!el.classList.contains('menu__link_active')) {
-                el.classList.add('menu__link_active');
-            }
-        } else {
-            if (el.classList.contains('menu__link_active')) {
-                el.classList.remove('menu__link_active');
-            }
-        }
-    });
-
-    data.active = Number(key);
-};
-
-const switchMenuDrop = (event) => {
-    const el = event.target.nextElementSibling;
-    if (!el.hasAttribute('data-key')) {
-        showDropdown();
-        return;
+const _switchSubmenuSm = (dropdown) => {
+    if (dropdown.classList.contains('hide')) {
+        dropdown.classList.remove('hide');
+    } else {
+        dropdown.classList.add('hide');
     }
+}
 
-    showDropdown(el.getAttribute('data-key'));
-};
+const _switchSubmenuLg = (dropdown) => {
+    if (dropdown.classList.contains('hide')) {
+        dropdown.classList.remove('hide');
+    } else {
+        dropdown.classList.add('hide');
+    }
+}
 
 
 class cmHeader {
@@ -164,23 +112,165 @@ class cmHeader {
 
     /**
      * Конструктор класса
-     * @param object { active: number, login: boolean }
      */
-    constructor({ active = 0, login = false } = {}) {
-        data.active = typeof active === 'number' ? active : 0;
-        data.login = typeof login === 'boolean' ? login : false;
+    constructor() {
+        //
     };
 
-    actions() { return {
+    data = {
+        //
+    };
 
-    };};
+    actions = {
+        /**
+         * Обрабатывает клик по лого
+         */
+        clickLogo: function () {
+            this.actions.switchMenu(null, false);
+            this.actions.update();
+        }.bind(this),
 
-    getters() { return {
-        getActive: () => data.active,
-        getApp: () => data.$app,
-        getEl: () => data.$el,
-        isLogin: () => data.login,
-    };};
+        /**
+         * Обрабатывает клик по ссылкам главного меню
+         */
+        clickMenuLink: function () {
+            this.actions.switchMenu(null, false);
+            this.actions.update();
+        }.bind(this),
+
+        /**
+         * Обрабатывает клик по регистрации
+         */
+        signUp: function () {
+            this.$actions.logIn();
+            this.actions.switchMenu(null, false);
+            this.actions.update();
+        }.bind(this),
+
+        /**
+         * Обрабатывает клик по входу
+         */
+        logIn: function () {
+            this.$actions.logIn();
+            this.actions.switchMenu(null, false);
+            this.actions.update();
+        }.bind(this),
+
+        /**
+         * Обрабатывает клик по выходу
+         */
+        logOut: function () {
+            this.$actions.logOut();
+            this.actions.switchMenu(null, false);
+            this.actions.update();
+        }.bind(this),
+
+        /**
+         * Показывает выпадающее меню по ключу, остальные скрывает
+         * @param key string [data-key]
+         */
+        showMenuDropdown: function (key = '') {
+            const items = this.$el.querySelectorAll('.menu__item_drop');
+
+            items.forEach((el) => {
+                const link = el.querySelector('.menu__link');
+                const dropdown = el.querySelector('.menu__dropdown');
+
+                if (link.hasAttribute('data-key') && link.getAttribute('data-key') === key) {
+                    dropdown.classList.contains('hide') && dropdown.classList.remove('hide');
+                } else {
+                    !dropdown.classList.contains('hide') && dropdown.classList.add('hide');
+                }
+            });
+        }.bind(this),
+
+        /**
+         * Скрывает все выпадающие меню
+         */
+        hideMenuDropdown: function () {
+            this.actions.showMenuDropdown();
+        }.bind(this),
+
+        /**
+         * Отображает/скрывает меню на малых разрешениях
+         * @param event
+         * @param visibility boolean|null
+         */
+        switchMenu: function (event, visibility = null) {
+            if (document.body.clientWidth > 767) return;
+
+            const menu = this.$el.querySelector('.menu').classList;
+            const iconMenu = this.$el.querySelector('.icon-menu').classList;
+            const iconClose = this.$el.querySelector('.icon-close').classList;
+
+            if (typeof visibility !== 'boolean') {
+                visibility = !menu.contains('menu__show');
+            }
+
+            this.actions.hideMenuDropdown();
+
+            if (visibility) {
+                !menu.contains('menu__show') && menu.add('menu__show');
+                !iconMenu.contains('hide') && iconMenu.add('hide');
+                iconClose.contains('hide') && iconClose.remove('hide');
+
+            } else {
+                menu.contains('menu__show') && menu.remove('menu__show');
+                iconMenu.contains('hide') && iconMenu.remove('hide');
+                !iconClose.contains('hide') && iconClose.add('hide');
+            }
+        }.bind(this),
+
+        /**
+         * Отображает/скрывает выпадающее меню на малых разрешениях
+         * @param event
+         */
+        switchSubmenu: function (event) {
+            const dropdown = event.target.parentNode.querySelector('.menu__dropdown');
+            if (document.body.clientWidth < 768) {
+                _switchSubmenuSm(dropdown);
+            } else {
+                _switchSubmenuLg(dropdown);
+            }
+        }.bind(this),
+
+        /**
+         * Обновляет меню
+         */
+        update: function () {
+            setTimeout(() => {
+                const items = this.$el.querySelectorAll('.menu__link');
+
+                items.forEach((el) => {
+                    if (Number(el.getAttribute('data-key')) === this.$getters.getPage()) {
+                        !el.classList.contains('menu__link_active') && el.classList.add('menu__link_active');
+                    } else {
+                        el.classList.contains('menu__link_active') && el.classList.remove('menu__link_active');
+                    }
+                });
+            }, 50);
+
+            const buttons = this.$el.querySelectorAll('button.menu__button');
+            const account = this.$el.querySelector('.menu__item.menu__account');
+
+            if (this.$getters.getLogIn()) {
+                account.classList.contains('hide') && account.classList.remove('hide');
+                buttons.forEach((el) => {
+                    !el.parentElement.classList.contains('hide') && el.parentElement.classList.add('hide');
+                });
+
+            } else {
+                buttons.forEach((el) => {
+                    el.parentElement.classList.contains('hide') && el.parentElement.classList.remove('hide');
+                });
+                !account.classList.contains('hide') && account.classList.add('hide');
+            }
+        }.bind(this),
+    };
+
+    getters = {
+        //
+    };
 
     /**
      * Размещает html-элемент в DOM вместо указанного
@@ -189,32 +279,63 @@ class cmHeader {
      */
     render(app, node) {
         node.insertAdjacentHTML('afterend', template);
-        data.$app = app;
-        data.$refs = app.$refs;
-        data.$router = app.$router;
-        data.$el = node.nextElementSibling;
+        this.$app = app;
+        this.$refs = this.$app.$refs;
+        this.$router = this.$app.$router;
+        this.$storage = this.$app.$storage;
+        this.$actions = this.$app.$actions;
+        this.$getters = this.$app.$getters;
+        this.$el = node.nextElementSibling;
         node.parentNode.removeChild(node);
 
-        let items = data.$el.querySelectorAll('.menu__link[href]');
-        if (data.active < 0 || data.active >= items.length) data.active = 0;
-        items[data.active].classList.add('menu__link_active');
-        items.forEach((el) => el.addEventListener('click', clickMenuLink));
+        // logo
+        let item = this.$el.querySelector('a.header__logo');
+        item.addEventListener('click', this.actions.clickLogo);
+        item.addEventListener('keydown', (event) => {
+            event.key === 'Enter' && this.actions.clickLogo();
+        });
 
-        items = data.$el.querySelectorAll('.menu__sub-link[href]');
-        items.forEach((el) => el.addEventListener('click', clickMenuLink));
+        // log in
+        item = this.$el.querySelector('button.button_white');
+        item.addEventListener('click', this.actions.logIn);
+        item.addEventListener('keydown', (event) => {
+            event.key === 'Enter' && this.actions.logIn();
+        });
 
-        items = data.$el.querySelectorAll('p.menu__link');
-        items.forEach((el) => el.addEventListener('click', switchMenuDrop));
+        // sign up
+        item = this.$el.querySelector('button:not(.button_white)');
+        item.addEventListener('click', this.actions.signUp);
+        item.addEventListener('keydown', (event) => {
+            event.key === 'Enter' && this.actions.signUp();
+        });
 
-        if (data.login) {
-            items = data.$el.querySelectorAll('.menu__item .menu__button');
-            items.forEach((el) => {
-                el.parentElement.classList.add('menu__hide');
-            });
-        } else {
-            const item = data.$el.querySelector('.menu__item.menu__account');
-            item.classList.add('menu__hide');
-        }
+        // account
+        item = this.$el.querySelector('li.menu__item.menu__account');
+        item.addEventListener('click', this.actions.logOut);
+        item.addEventListener('keydown', (event) => {
+            event.key === 'Enter' && this.actions.logOut();
+        });
+
+        // links
+        let items = [].slice.call(this.$el.querySelectorAll('a.menu__link')).concat(
+            [].slice.call(this.$el.querySelectorAll('a.menu__sub-link'))
+        );
+        items.forEach((el) => el.addEventListener('click', this.actions.clickMenuLink));
+
+        // drop
+        items = this.$el.querySelectorAll('p.menu__link');
+        items.forEach((el) => el.addEventListener('click', this.actions.switchSubmenu));
+        item.addEventListener('keydown', (event) => {
+            event.key === 'Enter' && this.actions.switchSubmenu(event);
+        });
+
+        item = this.$el.querySelector('span.header__menu-icon');
+        item.addEventListener('click', this.actions.switchMenu);
+        item.addEventListener('keydown', (event) => {
+            event.key === 'Enter' && this.actions.switchMenu(event);
+        });
+
+        this.actions.update();
     };
 }
 

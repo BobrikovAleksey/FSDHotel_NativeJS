@@ -4,176 +4,184 @@
 /*                      Text                      *
 /**************************************************
 
+// ellipsis
 =textEllipsis()
   overflow: hidden
   white-space: nowrap
   text-overflow: ellipsis
 
-// text-1 calc rem
-=textSizeCalc($size)
-  font-size: $size / $FontSize
-=textHeightCalc($size)
-  line-height: $size / $FontSize
+// box ellipsis
+=textBoxEllipsis($lines)
+  overflow: hidden
+  display: -webkit-box
+  -webkit-box-orient: vertical
+  -webkit-line-clamp: $lines
 
-// text-2
-=textSC($size, $color: $text)
-  font-size: $size
+// size
+=textSize($size, $unit: rem)
+  font-size: $size + $unit
+
+// line height
+=textHeight($size, $unit: rem)
+  line-height: $size + $unit
+
+// size - line height
+=textSizeHeight($size, $height, $unit: rem)
+  font-size: $size + $unit
+  line-height: $height + $unit
+=textHeightSize($height, $size, $unit: rem)
+  +textSizeHeight($size, $height, $unit: rem)
+
+// size - color
+=textSizeColor($size, $color: $text, $unit: rem)
+  font-size: $size + $unit
   color: $color
-=textSH($size, $height: auto)
-  font-size: $size
-  line-height: $height
-=textSW($size, $weight: 400)
-  font-size: $size
+=textColorSize($color, $size, $unit: rem)
+  +textSizeColor($size, $color, $unit)
+
+// size - weight
+=textSizeWeight($size, $weight: 400, $unit: rem)
+  font-size: $size + $unit
   font-weight: $weight
-=textSLs($size, $spacing: 0)
-  font-size: $size
+=textWeightSize($weight, $size, $unit: rem)
+  +textSizeWeight($size, $weight, $unit)
+
+// size - letter spacing
+=textSizeSpacing($size, $spacing: 0, $unit: rem)
+  font-size: $size + $unit
   letter-spacing: $spacing
-=textST($size, $transform: none)
-  font-size: $size
+=textSpacingSize($spacing, $size, $unit: rem)
+  +textSizeSpacing($size, $spacing, $unit)
+
+// size - transform
+=textSizeTransform($size, $transform: none, $unit: rem)
+  font-size: $size + $unit
   text-transform: $transform
-=textHC($height, $color: $text)
-  line-height: $height
+=textTransformSize($transform, $size, $unit: rem)
+  +textSizeTransform($size, $transform, $unit)
+
+// size - line height - color
+=textSizeHeightColor($size, $height, $color: $text, $unit: rem)
+  font-size: $size + $unit
+  line-height: $height + $unit
   color: $color
-=textHW($height, $weight: 400)
-  line-height: $height
-  font-weight: $weight
-=textHLs($height, $spacing: 0)
-  line-height: $height
-  letter-spacing: $spacing
-=textHT($height, $transform: none)
-  line-height: $height
-  text-transform: $transform
-=textWLs($weight, $spacing: 0)
-  font-weight: $weight
-  letter-spacing: $spacing
-=textWT($weight, $transform: none)
-  font-weight: $weight
-  text-transform: $transform
-=textLsT($spacing: 0, $transform: none)
-  letter-spacing: $spacing
-  text-transform: $transform
+=textSizeColorHeight($size, $color, $height, $unit: rem)
+  +textSizeHeightColor($size, $height, $color, $unit)
+=textHeightSizeColor($height, $size, $color: $text, $unit: rem)
+  +textSizeHeightColor($size, $height, $color, $unit)
+=textHeightColorSize($height, $color, $size, $unit: rem)
+  +textSizeHeightColor($size, $height, $color, $unit)
+=textColorSizeHeight($color, $size, $height, $unit: rem)
+  +textSizeHeightColor($size, $height, $color, $unit)
+=textColorHeightSize($color, $height, $size, $unit: rem)
+  +textSizeHeightColor($size, $height, $color, $unit)
 
-// text-2 calc rem
-=textSCCalc($size, $color: $text)
-  +textSC($size / $FontSize, $color)
-=textSHCalc($size, $height)
-  +textSH($size / $FontSize, $height / $FontSize)
-=textSWCalc($size, $weight: 400)
-  +textSW($size / $FontSize, $weight)
-=textSLsCalc($size, $spacing: 0)
-  +textSLs($size / $FontSize, $spacing)
-=textSTCalc($size, $transform: none)
-  +textST($size / $FontSize, $transform)
-=textHCCalc($height, $color: $text)
-  +textHC($height / $FontSize, $color)
-=textHWCalc($height, $weight: 400)
-  +textHW($height / $FontSize, $weight)
-=textHLsCalc($height, $spacing: 0)
-  +textHLs($height / $FontSize, $spacing)
-=textHTCalc($height, $transform: none)
-  +textHT($height / $FontSize, $transform)
-
-// text-3
-=textSCH($size, $color: $text, $height: auto)
-  +textSC($size, $color)
-  line-height: $height
-=textSCW($size, $color: $text, $weight: 400)
-  +textSC($size, $color)
-  font-weight: $weight
-=textSCLs($size, $color: $text, $spacing: 0)
-  +textSC($size, $color)
-  letter-spacing: $spacing
-=textSCT($size, $color: $text, $transform: none)
-  +textSC($size, $color)
-  text-transform: $transform
-=textHCW($height, $color: $text, $weight: 400)
-  +textHC($height, $color)
-  font-weight: $weight
-=textHCLs($height, $color: $text, $spacing: 0)
-  +textHC($height, $color)
-  letter-spacing: $spacing
-=textHCT($height, $color: $text, $transform: none)
-  +textHC($height, $color)
-  text-transform: $transform
-=textWCLs($weight, $color: $text, $spacing: 0)
-  +textWLs($weight, $spacing)
+// size - line height - color - weight
+=textSizeHeightColorWeight($size, $height, $color: $text, $weight: 400, $unit: rem)
+  font-size: $size + $unit
+  line-height: $height + $unit
   color: $color
-=textWCT($weight, $color: $text, $transform: none)
-  +textWT($weight, $transform)
-  color: $color
-=textLsCT($spacing, $color: $text, $transform: none)
-  +textLsT($spacing, $transform)
-  color: $color
-
-// text-3 calc rem
-=textSHCCalc($size, $height, $color: $text)
-  +textSCH($size / $FontSize, $color, $height / $FontSize)
-=textSCWCalc($size, $color: $text, $weight: 400)
-  +textSCW($size / $FontSize, $color, $weight)
-=textSCLsCalc($size, $color: $text, $spacing: 0)
-  +textSCLs($size / $FontSize, $color, $spacing)
-=textSCTCalc($size, $color: $text, $transform: none)
-  +textSCT($size / $FontSize, $color, $transform)
-=textHCWCalc($height, $color: $text, $weight: 400)
-  +textHCW($height / $FontSize, $color, $weight)
-=textHCLsCalc($height, $color: $text, $spacing: 0)
-  +textHCLs($height / $FontSize, $color, $spacing)
-=textHCTCalc($height, $color: $text, $transform: none)
-  +textHCT($height / $FontSize, $color, $transform)
-
-// text-4
-=textSCHW($size, $color: $text, $height: auto, $weight: 400)
-  +textSCH($size, $color, $height)
   font-weight: $weight
-=textSCHLs($size, $color: $text, $height: auto, $spacing: 0)
-  +textSCH($size, $color, $height)
+=textSizeColorHeightWeight($size, $color, $height, $weight: 400, $unit: rem)
+  +textSizeHeightColorWeight($size, $height, $color, $weight, $unit)
+=textHeightSizeColorWeight($height, $size, $color: $text, $weight: 400, $unit: rem)
+  +textSizeHeightColorWeight($size, $height, $color, $weight, $unit)
+=textHeightColorSizeWeight($height, $color, $size, $weight: 400, $unit: rem)
+  +textSizeHeightColorWeight($size, $height, $color, $weight, $unit)
+=textColorSizeHeightWeight($color, $size, $height, $weight: 400, $unit: rem)
+  +textSizeHeightColorWeight($size, $height, $color, $weight, $unit)
+=textColorHeightSizeWeight($color, $height, $size, $weight: 400, $unit: rem)
+  +textSizeHeightColorWeight($size, $height, $color, $weight, $unit)
+
+// size - line height - color - letter spacing
+=textSizeHeightColorSpacing($size, $height, $color: $text, $spacing: 0, $unit: rem)
+  font-size: $size + $unit
+  line-height: $height + $unit
+  color: $color
   letter-spacing: $spacing
-=textSCHT($size, $color: $text, $height: auto, $transform: none)
-  +textSCH($size, $color, $height)
+=textSizeColorHeightSpacing($size, $color, $height, $spacing: 0, $unit: rem)
+  +textSizeHeightColorSpacing($size, $height, $color, $spacing, $unit)
+=textHeightSizeColorSpacing($height, $size, $color: $text, $spacing: 0, $unit: rem)
+  +textSizeHeightColorSpacing($size, $height, $color, $spacing, $unit)
+=textHeightColorSizeSpacing($height, $color, $size, $spacing: 0, $unit: rem)
+  +textSizeHeightColorSpacing($size, $height, $color, $spacing, $unit)
+=textColorSizeHeightSpacing($color, $size, $height, $spacing: 0, $unit: rem)
+  +textSizeHeightColorSpacing($size, $height, $color, $spacing, $unit)
+=textColorHeightSizeSpacing($color, $height, $size, $spacing: 0, $unit: rem)
+  +textSizeHeightColorSpacing($size, $height, $color, $spacing, $unit)
+
+// size - line height - color - transform
+=textSizeHeightColorTransform($size, $height, $color: $text, $transform: none, $unit: rem)
+  font-size: $size + $unit
+  line-height: $height + $unit
+  color: $color
   text-transform: $transform
-=textHCWLs($height, $color: $text, $weight: 400, $spacing: 0)
-  +textHCW($height, $color, $weight)
+=textSizeColorHeightTransform($size, $color, $height, $transform: none, $unit: rem)
+  +textSizeHeightColorTransform($size, $height, $color, $transform, $unit)
+=textHeightSizeColorTransform($height, $size, $color: $text, $transform: none, $unit: rem)
+  +textSizeHeightColorTransform($size, $height, $color, $transform, $unit)
+=textHeightColorSizeTransform($height, $color, $size, $transform: none, $unit: rem)
+  +textSizeHeightColorTransform($size, $height, $color, $transform, $unit)
+=textColorSizeHeightTransform($color, $size, $height, $transform: none, $unit: rem)
+  +textSizeHeightColorTransform($size, $height, $color, $transform, $unit)
+=textColorHeightSizeTransform($color, $height, $size, $transform: none, $unit: rem)
+  +textSizeHeightColorTransform($size, $height, $color, $transform, $unit)
+
+// size - line height - color - weight - letter spacing
+=textSizeHeightColorWeightSpacing($size, $height, $color: $text, $weight: 400, $spacing: 0, $unit: rem)
+  font-size: $size + $unit
+  line-height: $height + $unit
+  color: $color
+  font-weight: $weight
   letter-spacing: $spacing
-=textHCWT($height, $color: $text, $weight: 400, $transform: none)
-  +textHCW($height, $color, $weight)
-  text-transform: $transform
-=textHCLsT($height, $color: $text, $spacing: 0, $transform: none)
-  +textHCLs($height, $color, $spacing)
-  text-transform: $transform
+=textSizeColorHeightWeightSpacing($size, $color, $height, $weight: 400, $spacing: 0, $unit: rem)
+  +textSizeHeightColorWeightSpacing($size, $height, $color, $weight, $spacing, $unit)
+=textHeightSizeColorWeightSpacing($height, $size, $color: $text, $weight: 400, $spacing: 0, $unit: rem)
+  +textSizeHeightColorWeightSpacing($size, $height, $color, $weight, $spacing, $unit)
+=textHeightColorSizeWeightSpacing($height, $color, $size, $weight: 400, $spacing: 0, $unit: rem)
+  +textSizeHeightColorWeightSpacing($size, $height, $color, $weight, $spacing, $unit)
+=textColorSizeHeightWeightSpacing($color, $size, $height, $weight: 400, $spacing: 0, $unit: rem)
+  +textSizeHeightColorWeightSpacing($size, $height, $color, $weight, $spacing, $unit)
+=textColorHeightSizeWeightSpacing($color, $height, $size, $weight: 400, $spacing: 0, $unit: rem)
+  +textSizeHeightColorWeightSpacing($size, $height, $color, $weight, $spacing, $unit)
 
-// text-4 calc rem
-=textSHCWCalc($size, $height, $color: $text, $weight: 400)
-  +textSCHW($size / $FontSize, $color, $height / $FontSize, $weight)
-=textSHCLsCalc($size, $height, $color: $text, $spacing: 0)
-  +textSCHLs($size / $FontSize, $color, $height / $FontSize, $spacing: 0)
-=textSHCTCalc($size, $height, $color: $text, $transform: none)
-  +textSCHT($size / $FontSize, $color, $height / $FontSize, $transform: none)
-=textHCWLsCalc($height, $color: $text, $weight: 400, $spacing: 0)
-  +textHCWLs($height / $FontSize, $color, $weight, $spacing)
-=textHCWTCalc($height, $color: $text, $weight: 400, $transform: none)
-  +textHCWT($height / $FontSize, $color, $weight, $transform)
-=textHCLsTCalc($height, $color: $text, $spacing: 0, $transform: none)
-  +textHCLsT($height / $FontSize, $color, $spacing, $transform)
-
-// text-5
-=textSCHWT($size, $color: $text, $height: auto, $weight: 400, $transform: none)
-  +textSCHW($size, $color, $height, $weight)
+// size - line height - color - weight - transform
+=textSizeHeightColorWeightTransform($size, $height, $color: $text, $weight: 400, $transform: none, $unit: rem)
+  font-size: $size + $unit
+  line-height: $height + $unit
+  color: $color
+  font-weight: $weight
   text-transform: $transform
-=textSCHWLs($size, $color: $text, $height: auto, $weight: 400, $spacing: 0)
-  +textSCHW($size, $color, $height, $weight)
+=textSizeColorHeightWeightTransform($size, $color, $height, $weight: 400, $transform: none, $unit: rem)
+  +textSizeHeightColorWeightTransform($size, $height, $color, $weight, $transform, $unit)
+=textHeightSizeColorWeightTransform($height, $size, $color: $text, $weight: 400, $transform: none, $unit: rem)
+  +textSizeHeightColorWeightTransform($size, $height, $color, $weight, $transform, $unit)
+=textHeightColorSizeWeightTransform($height, $color, $size, $weight: 400, $transform: none, $unit: rem)
+  +textSizeHeightColorWeightTransform($size, $height, $color, $weight, $transform, $unit)
+=textColorSizeHeightWeightTransform($color, $size, $height, $weight: 400, $transform: none, $unit: rem)
+  +textSizeHeightColorWeightTransform($size, $height, $color, $weight, $transform, $unit)
+=textColorHeightSizeWeightTransform($color, $height, $size, $weight: 400, $transform: none, $unit: rem)
+  +textSizeHeightColorWeightTransform($size, $height, $color, $weight, $transform, $unit)
+
+
+// size - line height - color - weight - letter spacing - transform
+=textSizeHeightColorWeightSpacingTransform($size, $height, $color: $text, $weight: 400, $spacing: 0, $transform: none, $unit: rem)
+  font-size: $size + $unit
+  line-height: $height + $unit
+  color: $color
+  font-weight: $weight
   letter-spacing: $spacing
+  text-transform: $transform
+=textSizeColorHeightWeightSpacingTransform($size, $color, $height, $weight: 400, $spacing: 0, $transform: none, $unit: rem)
+  +textSizeHeightColorWeightSpacingTransform($size, $height, $color, $weight, $spacing, $transform, $unit)
+=textHeightSizeColorWeightSpacingTransform($height, $size, $color: $text, $weight: 400, $spacing: 0, $transform: none, $unit: rem)
+  +textSizeHeightColorWeightSpacingTransform($size, $height, $color, $weight, $spacing, $transform, $unit)
+=textHeightColorSizeWeightSpacingTransform($height, $color, $size, $weight: 400, $spacing: 0, $transform: none, $unit: rem)
+  +textSizeHeightColorWeightSpacingTransform($size, $height, $color, $weight, $spacing, $transform, $unit)
+=textColorSizeHeightWeightSpacingTransform($color, $size, $height, $weight: 400, $spacing: 0, $transform: none, $unit: rem)
+  +textSizeHeightColorWeightSpacingTransform($size, $height, $color, $weight, $spacing, $transform, $unit)
+=textColorHeightSizeWeightSpacingTransform($color, $height, $size, $weight: 400, $spacing: 0, $transform: none, $unit: rem)
+  +textSizeHeightColorWeightSpacingTransform($size, $height, $color, $weight, $spacing, $transform, $unit)
 
-// text-5 calc rem
-=textSHCWTCalc($size, $height, $color: $text, $weight: 400, $transform: none)
-  +textSCHWT($size / $FontSize, $color, $height / $FontSize, $weight, $transform)
-=textSHCWLsCalc($size, $height, $color: $text, $weight: 400, $spacing: 0)
-  +textSCHWLs($size / $FontSize, $color, $height / $FontSize, $weight, $spacing)
 
-// text-6
-=textSCHWTLs($size, $color: $text, $height: auto, $weight: 400, $transform: none, $spacing: 0)
-  +textSCHWT($size / $FontSize, $color, $height / $FontSize, $weight, $transform)
-  letter-spacing: $spacing
 
-// text-6 calc rem
-=textSHCWTLsCalc($size, $height, $color: $text, $weight: 400, $transform: none, $spacing: 0)
-  +textSCHWTLs($size / $FontSize, $color, $height / $FontSize, $weight, $transform, $spacing)

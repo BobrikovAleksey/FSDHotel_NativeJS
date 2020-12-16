@@ -1,7 +1,7 @@
 @import vars&mixins/index
 
 html
-  font-size: 14px
+  font-size: $HtmlFontSizePx
 
 *
   box-sizing: border-box
@@ -13,27 +13,27 @@ html
 body
   user-select: none
   +MontserratSerif
-  +textSHCWLsCalc(14rem, 24rem, $textLighten1, 400)
+  +textColorSizeHeightWeight($textLighten1, 1, 24/14)
 
 h1
-  +textSHCWCalc(24rem, 29rem, $text, 700)
+  +textColorSizeHeightWeight($text, 24/14, 29/14, 700)
 
 h2
-  +textSHCWCalc(19rem, 23rem, $text, 700)
+  +textColorSizeHeightWeight($text, 19/14, 23/14, 700)
 
 h3, .label
-  +textSHCWTCalc(12rem, 15rem, $text, 700, uppercase)
+  +textColorSizeHeightWeightTransform($text, 12/14, 15/14, 700, uppercase)
 
 p
-  +textSHCWCalc(14rem, 24rem, $textLighten1)
+  +textColorSizeHeightWeight($textLighten1, 1, 24/14)
 
 a
-  +HeightCalc(18rem)
-  +textSHCWCalc(14rem, 20rem, $textLighten1)
+  +Height(18/14)
   text-decoration: none
+  +textColorSizeHeightWeight($textLighten1, 1, 20/14)
   &[disabled]
-    cursor: default
     pointer-events: none
+    cursor: default
     color: $textLighten2
 
 ul, li
@@ -50,19 +50,20 @@ button
 
 input
   +MontserratSerif
-  width: $inputWidth-lg
-  height: $inputHeight-md
-  +textSHCCalc(14rem, 24rem, $textLighten1)
+  width: $inputWidth-lg-px
+  +Height($inputHeight-md / 14)
+  +textColorSizeHeight($textLighten1, 1, 24/14)
   background: $background
-  border: $borderSize-sm solid $borderColor
-  border-radius: $borderRadius-sm
-  +paddingCalc(13rem, 15rem)
+  +border($borderSize-sm / 14, $borderColor)
+  +borderRadius($borderRadius-sm / 14)
+  +padding(13/14, 15/14)
   &::placeholder
     color: $textLighten3
-  &:hover, &:focus
-    border-color: $borderColor-focus
-  &[type=number]
-    &, &:hover, &:focus
-      -moz-appearance: textfield
-    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
-      -webkit-appearance: none
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+    &:hover, &:focus
+      border-color: $borderColor-focus
+    &[type=number]
+      &, &:hover, &:focus
+        -moz-appearance: textfield
+      &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+        -webkit-appearance: none

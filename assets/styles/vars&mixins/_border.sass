@@ -4,120 +4,168 @@
 /*                     Border                     *
 /**************************************************
 
-// border-1 calc rem
-=borderTCalc($size, $color: inherit)
-  border-top: ($size / $FontSize) solid $color
-=borderBCalc($size, $color: inherit)
-  border-bottom: ($size / $FontSize) solid $color
-=borderLCalc($size, $color: inherit)
-  border-left: ($size / $FontSize) solid $color
-=borderRCalc($size, $color: inherit)
-  border-right: ($size / $FontSize) solid $color
+// top
+=borderTop($size, $color: '', $unit: rem)
+  border-top: ($size + $unit) solid $color
 
-// border-2
-=borderTB($size, $color: inherit)
-  border-top: $size solid $color
-  border-bottom: $size solid $color
-=borderTL($size, $color: inherit)
-  border-top: $size solid $color
-  border-left: $size solid $color
-=borderTR($size, $color: inherit)
-  border-top: $size solid $color
-  border-right: $size solid $color
-=borderBL($size, $color: inherit)
-  border-bottom: $size solid $color
-  border-left: $size solid $color
-=borderBR($size, $color: inherit)
-  border-bottom: $size solid $color
-  border-right: $size solid $color
-=borderLR($size, $color: inherit)
-  border-left: $size solid $color
-  border-right: $size solid $color
+// bottom
+=borderBottom($size, $color: '', $unit: rem)
+  border-bottom: ($size + $unit) solid $color
 
-// border-2 calc rem
-=borderTB($size, $color: inherit)
-  +borderTB($size / $FontSize, $color)
-=borderTL($size, $color: inherit)
-  +borderTL($size / $FontSize, $color)
-=borderTR($size, $color: inherit)
-  +borderTR($size / $FontSize, $color)
-=borderBL($size, $color: inherit)
-  +borderBL($size / $FontSize, $color)
-=borderBR($size, $color: inherit)
-  +borderBR($size / $FontSize, $color)
-=borderLR($size, $color: inherit)
-  +borderLR($size / $FontSize, $color)
+// left
+=borderLeft($size, $color: '', $unit: rem)
+  border-left: ($size + $unit) solid $color
 
-// border-3
-=borderTBL($size, $color: inherit)
-  +borderTB($size, $color)
-  border-left: $size solid $color
-=borderTBR($size, $color: inherit)
-  +borderTB($size, $color)
-  border-right: $size solid $color
-=borderTLR($size, $color: inherit)
-  +borderTL($size, $color)
-  border-right: $size solid $color
-=borderBLR($size, $color: inherit)
-  +borderBL($size, $color)
-  border-right: $size solid $color
+// right
+=borderRight($size, $color: '', $unit: rem)
+  border-right: ($size + $unit) solid $color
 
-// border-3 calc rem
-=borderTBLCalc($size, $color: inherit)
-  +borderTBL($size / $FontSize, $color)
-=borderTBRCalc($size, $color: inherit)
-  +borderTBR($size / $FontSize, $color)
-=borderTLRCalc($size, $color: inherit)
-  +borderTLR($size / $FontSize, $color)
-=borderBLRCalc($size, $color: inherit)
-  +borderBLR($size / $FontSize, $color)
+// top - bottom
+=borderTopBottom($size, $color: '', $unit: rem)
+  border-top: ($size + $unit) solid $color
+  border-bottom: ($size + $unit) solid $color
+=borderBottomTop($size, $color: '', $unit: rem)
+  +borderTopBottom($size, $color, $unit)
 
-// border-4 calc rem
-=borderCalc($size, $color: inherit)
-  border: $size solid $color
+// top - left
+=borderTopLeft($size, $color: '', $unit: rem)
+  border-top: ($size + $unit) solid $color
+  border-left: ($size + $unit) solid $color
+=borderLeftTop($size, $color: '', $unit: rem)
+  +borderTopLeft($size, $color, $unit)
 
-// radius
-=borderRadiusTop($radius)
-  border-top-right-radius: $radius
-  border-top-left-radius: $radius
-=borderRadiusBottom($radius)
-  border-bottom-right-radius: $radius
-  border-bottom-left-radius: $radius
-=borderRadiusLeft($radius)
-  border-top-left-radius: $radius
-  border-bottom-left-radius: $radius
-=borderRadiusRight($radius)
-  border-top-right-radius: $radius
-  border-bottom-right-radius: $radius
-=borderRadiusTopBL($radius)
-  +borderRadiusTop($radius)
-  border-bottom-left-radius: $radius
-=borderRadiusTopBR($radius)
-  +borderRadiusTop($radius)
-  border-bottom-right-radius: $radius
-=borderRadiusBottomTL($radius)
-  +borderRadiusLeft($radius)
-  border-top-left-radius: $radius
-=borderRadiusBottomTR($radius)
-  +borderRadiusLeft($radius)
-  border-top-right-radius: $radius
+// top - right
+=borderTopRight($size, $color: '', $unit: rem)
+  border-top: ($size + $unit) solid $color
+  border-right: ($size + $unit) solid $color
+=borderRightTop($size, $color: '', $unit: rem)
+  +borderTopRight($size, $color, $unit)
 
-// radius calc rem
-=borderRadiusTopCalc($radius)
-  +borderRadiusTop($radius / $FontSize)
-=borderRadiusBottomCalc($radius)
-  +borderRadiusBottom($radius / $FontSize)
-=borderRadiusLeftCalc($radius)
-  +borderRadiusLeft($radius / $FontSize)
-=borderRadiusRightCalc($radius)
-  +borderRadiusRight($radius / $FontSize)
-=borderRadiusTopBLCalc($radius)
-  +borderRadiusTopBL($radius / $FontSize)
-=borderRadiusTopBRCalc($radius)
-  +borderRadiusTopBR($radius / $FontSize)
-=borderRadiusBottomTLCalc($radius)
-  +borderRadiusBottomTL($radius / $FontSize)
-=borderRadiusBottomTRCalc($radius)
-  +borderRadiusBottomTR($radius / $FontSize)
-=borderRadiusCalc($radius)
-  border-radius: $radius / $FontSize
+// bottom - left
+=borderBottomLeft($size, $color: '', $unit: rem)
+  border-bottom: ($size + $unit) solid $color
+  border-left: ($size + $unit) solid $color
+=borderLeftBottom($size, $color: '', $unit: rem)
+  +borderBottomLeft($size, $color: '', $unit: rem)
+
+// bottom - right
+=borderBottomRight($size, $color: '', $unit: rem)
+  border-bottom: ($size + $unit) solid $color
+  border-right: ($size + $unit) solid $color
+=borderRightBottom($size, $color: '', $unit: rem)
+  +borderBottomRight($size, $color, $unit)
+
+// left - right
+=borderLeftRight($size, $color: '', $unit: rem)
+  border-left: ($size + $unit) solid $color
+  border-right: ($size + $unit) solid $color
+=borderRightLeft($size, $color: '', $unit: rem)
+  +borderLeftRight($size, $color, $unit)
+
+// top - bottom - left
+=borderTopBottomLeft($size, $color: '', $unit: rem)
+  border-top: ($size + $unit) solid $color
+  border-bottom: ($size + $unit) solid $color
+  border-left: ($size + $unit) solid $color
+=borderTopLeftBottom($size, $color: '', $unit: rem)
+  +borderTopBottomLeft($size, $color, $unit)
+=borderBottomTopLeft($size, $color: '', $unit: rem)
+  +borderTopBottomLeft($size, $color, $unit)
+=borderBottomLeftTop($size, $color: '', $unit: rem)
+  +borderTopBottomLeft($size, $color, $unit)
+=borderLeftTopBottom($size, $color: '', $unit: rem)
+  +borderTopBottomLeft($size, $color, $unit)
+=borderLeftBottomTop($size, $color: '', $unit: rem)
+  +borderTopBottomLeft($size, $color, $unit)
+
+// top - bottom - right
+=borderTopBottomRight($size, $color: '', $unit: rem)
+  border-top: ($size + $unit) solid $color
+  border-bottom: ($size + $unit) solid $color
+  border-right: ($size + $unit) solid $color
+=borderTopRightBottom($size, $color: '', $unit: rem)
+  +borderTopBottomRight($size, $color, $unit)
+=borderBottomTopRight($size, $color: '', $unit: rem)
+  +borderTopBottomRight($size, $color, $unit)
+=borderBottomRightTop($size, $color: '', $unit: rem)
+  +borderTopBottomRight($size, $color, $unit)
+=borderRightTopBottom($size, $color: '', $unit: rem)
+  +borderTopBottomRight($size, $color, $unit)
+=borderRightBottomTop($size, $color: '', $unit: rem)
+  +borderTopBottomRight($size, $color, $unit)
+
+// top - left - right
+=borderTopLeftRight($size, $color: '', $unit: rem)
+  border-top: ($size + $unit) solid $color
+  border-left: ($size + $unit) solid $color
+  border-right: ($size + $unit) solid $color
+=borderTopRightLeft($size, $color: '', $unit: rem)
+  +borderTopLeftRight($size, $color, $unit)
+=borderLeftTopRight($size, $color: '', $unit: rem)
+  +borderTopLeftRight($size, $color, $unit)
+=borderLeftRightTop($size, $color: '', $unit: rem)
+  +borderTopLeftRight($size, $color, $unit)
+=borderRightTopLeft($size, $color: '', $unit: rem)
+  +borderTopLeftRight($size, $color, $unit)
+=borderRightLeftTop($size, $color: '', $unit: rem)
+  +borderTopLeftRight($size, $color, $unit)
+
+// bottom - left - right
+=borderBottomLeftRight($size, $color: '', $unit: rem)
+  border-bottom: ($size + $unit) solid $color
+  border-left: ($size + $unit) solid $color
+  border-right: ($size + $unit) solid $color
+=borderBottomRightLeft($size, $color: '', $unit: rem)
+  +borderBottomLeftRight($size, $color, $unit)
+=borderLeftBottomRight($size, $color: '', $unit: rem)
+  +borderBottomLeftRight($size, $color, $unit)
+=borderLeftRightBottom($size, $color: '', $unit: rem)
+  +borderBottomLeftRight($size, $color, $unit)
+=borderRightBottomLeft($size, $color: '', $unit: rem)
+  +borderBottomLeftRight($size, $color, $unit)
+=borderRightLeftBottom($size, $color: '', $unit: rem)
+  +borderBottomLeftRight($size, $color, $unit)
+
+// all
+=border($size, $color: '', $unit: rem)
+  border: ($size + $unit) solid $color
+
+// radius top - left
+=borderRadiusTopLeft($radius, $unit: rem)
+  border-top-left-radius: $radius + $unit
+
+// radius top - right
+=borderRadiusTopRight($radius, $unit: rem)
+  border-top-right-radius: $radius + $unit
+
+// radius bottom - left
+=borderRadiusBottomLeft($radius, $unit: rem)
+  border-bottom-left-radius: $radius + $unit
+
+// radius bottom - right
+=borderRadiusBottomRight($radius, $unit: rem)
+  border-bottom-right-radius: $radius + $unit
+
+// radius top
+=borderRadiusTop($radius, $unit: rem)
+  border-top-left-radius: $radius + $unit
+  border-top-right-radius: $radius + $unit
+
+// radius bottom
+=borderRadiusBottom($radius, $unit: rem)
+  border-bottom-left-radius: $radius + $unit
+  border-bottom-right-radius: $radius + $unit
+
+// radius left
+=borderRadiusLeft($radius, $unit: rem)
+  border-top-left-radius: $radius + $unit
+  border-bottom-left-radius: $radius + $unit
+
+// radius right
+=borderRadiusRight($radius, $unit: rem)
+  border-top-right-radius: $radius + $unit
+  border-bottom-right-radius: $radius + $unit
+
+// radius all
+=borderRadius($radius, $unit: rem)
+  border-radius: $radius + $unit

@@ -35,7 +35,7 @@ const template = `
 
             <div class="ui__block">
                 <cm-select-expanded ref="demoCmSelectExpended" />
-            </div><br>
+            </div>
     
             <div class="ui__row">
                 <button class="button button_lg">Go to<i class="material-icons">arrow_forward</i></button>
