@@ -1,40 +1,63 @@
 const template = `
     <div class="bullet-list">
-        <label class="bullet-list__label">$title$</label>
-        <ul class="bullet-list__list">$list$</ul>
+        {{ label }}
+        <ul class="bullet-list__list">{{ list }}</ul>
     </div>
 `;
 
 /**
- * Возвращает html-элемент в виде строки
- *
- * @param object
+ * Возвращает подготовленный html-шаблон
+ * @param list array
+ * @param label string
  * @returns {string}
  */
-function getElement(object) {
-    let list = '';
-    object.data.list.forEach((el) => {
-        list += `<li class="bullet-list__item"><span></span>${el}</li>`;
-    });
+const getTemplate = (list, label) => {
+    const htmlLabel = `<label class="label bullet-list__label">${label}</label>`;
+    const htmlList = list.map((el) => `<li class="bullet-list__item">${el}</li>`);
 
-    let html = template.replaceAll('$title$', object.data.title);
-    html = html.replaceAll('$list$', list);
-    return html;
-}
-
-const bulletList = {
-    node: null,
-    type: 'bullet-list',
-    data: {
-        list: [
-            'Нельзя с питомцами',
-            'Без вечеринок и мероприятий',
-            'Время прибытия — после 13:00,<br>выезд до 12:00',
-        ],
-        title: 'Bullet list',
-    },
-
-    getElement,
+    return template.replace(/{{\s*label\s*}}/g, htmlLabel)
+                   .replace(/{{\s*list\s*}}/g, htmlList.join(''));
 };
 
-export default bulletList;
+// noinspection DuplicatedCode
+class BulletList {
+    static getTag() { return 'bullet-list'; };
+    static getType() { return 'BulletList'; };
+
+    /**
+     * Конструктор класса
+     * @param list array
+     * @param label string
+     */
+    constructor({ list = [], label = '' } = {}) {
+        this.data.label = typeof label === 'string' && label.length > 0 ? label : '';
+        this.data.list = Array.isArray(list) ? list : [];
+    };
+
+    data = {
+        list: [],
+        title: '',
+    };
+
+    /**
+     * Размещает html-элемент в DOM вместо указанного
+     * @param app
+     * @param node
+     * @param list array
+     * @param label string
+     */
+    render(app, node, { list = [], label = '' } = {}) {
+        this.$app = app;
+        this.$refs = this.$app.$refs;
+        this.$router = this.$app.$router;
+        this.$storage = this.$app.$storage;
+        this.$actions = this.$app.$actions;
+        this.$getters = this.$app.$getters;
+
+        node.insertAdjacentHTML('afterend', getTemplate(this.data.list, this.data.label));
+        this.$el = node.nextElementSibling;
+        node.parentNode.removeChild(node);
+    };
+}
+
+export default BulletList;

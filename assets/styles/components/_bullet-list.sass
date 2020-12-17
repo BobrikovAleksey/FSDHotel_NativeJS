@@ -1,23 +1,20 @@
-@import ../vars, ../mixins
-
-$width: 320rem / $FontSize
-$marker: 10rem / $FontSize
+@import ../vars&mixins/index
 
 .bullet-list
-  width: $width
-  +flexCol
+  width: $inputWidth-lg-px
+  +flexDirection(column)
   &__label
-    margin-bottom: 9rem / $FontSize
+    +marginBottom(9/14)
   &__list
-    +flexCol
+    +flexDirection(column)
   &__item
-    +textCSWH($DarkShade75, 14rem / $FontSize, 400, 24rem / $FontSize)
+    +textColorSizeHeightWeight($DarkShade75, 1, 24/14)
     position: relative
-    padding: ($marker / 2) $marker ($marker / 2) ($marker * 2)
-    & span
-      width: $marker
-      height: $marker
+    +padding(10/28, 10/14, 10/28, 10/7)
+    &:before
+      content: ''
+      +WidthHeight(10/14)
       background: $DarkShade25
       border-radius: 50%
       display: block
-      +absoluteTL(12rem / $FontSize, 0)
+      +absoluteTopLeft(12/14, 0)

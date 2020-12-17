@@ -6,4 +6,9 @@ const template = `
     </div>
 `;
 
-export default template;
+const components = [];
+
+export default {
+    template,
+    components,
+};

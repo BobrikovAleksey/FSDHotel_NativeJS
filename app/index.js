@@ -12,7 +12,7 @@ import uiKit from './pages/ui-kit.js';
 
 // components
 import cmHeader from './components/cm-header.js';
-// import bulletList from '../components/bullet-list.js';
+import BulletList from './components/ui-kit/bullet-list.js';
 // import checkboxList from '../components/checkbox-list.js';
 // import cmSelect from '../components/cm-select.js';
 // import cmSelectExpanded from '../components/cm-select-expanded.js';
@@ -79,8 +79,8 @@ const $getters = {
 
 const app = {
     components: {
-        cmHeader,
-        // 'bullet-list': bulletList,
+        [cmHeader.getType()]: cmHeader,
+        [BulletList.getType()]: BulletList,
         // 'checkbox-list': checkboxList,
         // 'cm-select': cmSelect,
         // cmSelectExpanded,
@@ -98,16 +98,20 @@ const app = {
 
     /**
      * Обновляет главный контент страницы
-     * @param template string
+     * @param page object
      * @param params object
      */
-    renderPage(template, params = {}) {
+    renderPage(page, params = {}) {
         this.$actions.setPage(params.page ?? -1);
 
         const content = document.querySelector('main');
 
         content.innerHTML = '';
-        content.insertAdjacentHTML('afterbegin', template);
+        content.insertAdjacentHTML('afterbegin', page['template']);
+
+        page['components'].forEach((el) => {
+            this.renderComponent(this.components[el['name']].getType(), el['ref'], el['params']);
+        });
     },
 
     /**
@@ -116,7 +120,7 @@ const app = {
      * @param refName string
      * @param params object
      */
-    render(componentName, refName, params = {}) {
+    renderComponent(componentName, refName, params = {}) {
         const component = this.components[componentName];
         const node = document.querySelector(`${ component.getTag() }[ref="${ refName }"]`);
 
@@ -129,7 +133,8 @@ const app = {
     },
 };
 
-app.render(cmHeader.getType(), 'demoHeader', {});
+app.renderComponent(cmHeader.getType(), 'demoHeader', {});
+
 // app.render(cmSelectExpanded.getType(), 'demoCmSelectExpended', {
 //     type: 'single',
 //     list: [
@@ -140,6 +145,8 @@ app.render(cmHeader.getType(), 'demoHeader', {});
 //     placeholder: 'Сколько гостей',
 //     title: 'Dropdown',
 // });
+
+
 
 
 

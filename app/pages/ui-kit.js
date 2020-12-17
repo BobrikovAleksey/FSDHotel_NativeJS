@@ -1,6 +1,7 @@
 'use strict';
 
 const template = `
+    <!--suppress CheckTagEmptyBody -->
     <div class="ui__container">
         <h1>This one is the sub-section or widget title</h1><br>
     
@@ -41,6 +42,10 @@ const template = `
                 <button class="button button_lg">Go to<i class="material-icons">arrow_forward</i></button>
             </div>
         </div><br>
+    
+        <div class="ui__block">
+            <bullet-list ref="demoBulletList"></bullet-list>
+        </div><br>
     </div>
 
 <!--    <div class="ui-block">-->
@@ -69,10 +74,24 @@ const template = `
 <!--        <label class="ui-block__label">Like button</label>-->
 <!--        <like-button ref="demoLikeButton"></like-button>-->
 <!--    </div><br>-->
-    
-<!--    <div class="ui-block">-->
-<!--        <bullet-list ref="demoBulletList"></bullet-list>-->
-<!--    </div><br>-->
 `;
 
-export default template;
+const components = [
+    {
+        name: 'BulletList',
+        ref: 'demoBulletList',
+        params: {
+            list: [
+                'Нельзя с питомцами',
+                'Без вечеринок и мероприятий',
+                'Время прибытия — после 13:00,<br>а выезд до 12:00',
+            ],
+            label: 'Bullet list',
+        },
+    },
+];
+
+export default {
+    template,
+    components,
+};
