@@ -1,46 +1,52 @@
-@import ../vars, ../mixins
+@import ../vars&mixins/index
 
-$width: 40rem / $FontSize
-$box: $width / 2
+$ButtonSize: 40/14
+$BoxSize: 20/14
 
 .like-button
-  width: $width
-  +flexAiC
-  padding: (6rem / $FontSize) 0
-  & input[type="checkbox"]
-    display: none
-  &__box
-    cursor: pointer
-    overflow: hidden
-    width: $box * 2
-    height: $box
-    background: $background
-    border: 1px solid $DarkShade25
-    border-radius: $box / 2
-    +flexSbC
-  &__icon, &__icon_active, &__counter
-    pointer-events: none
-    width: $box
-    height: 100%
-    +textCSWH($DarkShade25, 10rem / $FontSize, 400, 12)
-  &__icon
-    +flexCC
-    &_active
-      color: $Purple
-      +flexCC
+  +Width($ButtonSize)
+  background: $background
+  display: flex
+
+.like-button__box
+  cursor: pointer
+  overflow: hidden
+  width: inherit
+  +Height($BoxSize)
+  +border($borderSize-sm / 14, $DarkShade25)
+  +borderRadius($BoxSize)
+  +flexAlignItems(center)
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+    &:hover
+      background: lighten($Purple, 15%)
+
+.like-button__icon
+  pointer-events: none
+  +WidthHeight($BoxSize)
+  +flexPlacement(center)
+  & .material-icons
+    +textColorSizeHeightWeight($Purple, 10/14, 9/14)
+    &.border
+      display: block
+    &:not(.border)
       display: none
-  &__counter
-    text-transform: none
-    +flexAiC
-    padding: 2px
-  & input[type="checkbox"]:checked
+
+.like-button__counter
+  pointer-events: none
+  +WidthHeight($BoxSize)
+  text-transform: none
+  +textColorSizeHeightWeight($DarkShade25, 10/14, 12/14)
+  +flexAlignItems(center)
+  +padding(2/14)
+
+.like-button input[type="checkbox"]
+  display: none
+  &:checked
     & ~ .like-button__box
       border-color: $Purple
-    & ~ .like-button__box .like-button__icon
-      display: none
-    & ~ .like-button__box .like-button__icon_active
-      display: flex
     & ~ .like-button__box .like-button__counter
       color: $Purple
-  &__box:hover
-    background: lighten($Purple, 15%)
+    & ~ .like-button__box .like-button__icon .material-icons.border
+      display: none
+    & ~ .like-button__box .like-button__icon .material-icons:not(.border)
+      display: block

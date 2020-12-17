@@ -14,9 +14,9 @@ import uiKit from './pages/ui-kit.js';
 import cmHeader from './components/cm-header.js';
 import BulletList from './components/ui-kit/bullet-list.js';
 import CheckboxList from './components/ui-kit/checkbox-list.js';
+import LikeButton from './components/ui-kit/like-button.js';
 // import cmSelect from '../components/cm-select.js';
 // import cmSelectExpanded from '../components/cm-select-expanded.js';
-// import likeButton from '../components/like-button.js';
 // import radioGroup from '../components/radio-group.js';
 // import toggle from '../components/toggle.js';
 
@@ -82,9 +82,9 @@ const app = {
         [cmHeader.getType()]: cmHeader,
         [BulletList.getType()]: BulletList,
         [CheckboxList.getType()]: CheckboxList,
+        [LikeButton.getType()]: LikeButton,
         // 'cm-select': cmSelect,
         // cmSelectExpanded,
-        // 'like-button': likeButton,
         // 'radio-group': radioGroup,
         // toggle,
     },

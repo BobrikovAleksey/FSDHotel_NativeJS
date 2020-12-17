@@ -22,8 +22,8 @@ const getTemplate = (list, label) => {
 
 // noinspection DuplicatedCode
 class BulletList {
-    static getTag() { return 'bullet-list'; };
-    static getType() { return 'BulletList'; };
+    static getTag = () => 'bullet-list';
+    static getType = () => 'BulletList';
 
     /**
      * Конструктор класса
@@ -31,7 +31,7 @@ class BulletList {
      * @param label string
      */
     constructor({ list = [], label = '' } = {}) {
-        this.data.label = typeof label === 'string' && label.length > 0 ? label : '';
+        this.data.label = typeof label === 'string' ? label : '';
         this.data.list = Array.isArray(list) ? list : [];
     };
 
@@ -47,7 +47,7 @@ class BulletList {
      * @param list array
      * @param label string
      */
-    render(app, node, { list = [], label = '' } = {}) {
+    render(app, node) {
         this.$app = app;
         this.$refs = this.$app.$refs;
         this.$router = this.$app.$router;

@@ -28,8 +28,8 @@ const getTemplate = (list, label) => {
 
 // noinspection DuplicatedCode
 class CheckboxList {
-    static getTag() { return 'checkbox-list'; };
-    static getType() { return 'CheckboxList'; };
+    static getTag = () => 'checkbox-list';
+    static getType = () => 'CheckboxList';
 
     /**
      * Конструктор класса
@@ -47,6 +47,9 @@ class CheckboxList {
     };
 
     actions = {
+        /**
+         * Обрабатывает изменение в checkbox
+         */
         change: function (event) {
             const el = event.target;
             if (!el.hasAttribute('name')) return;
@@ -63,10 +66,8 @@ class CheckboxList {
      * Размещает html-элемент в DOM вместо указанного
      * @param app
      * @param node
-     * @param list array
-     * @param label string
      */
-    render(app, node, { list = [], label = '' } = {}) {
+    render(app, node) {
         this.$app = app;
         this.$refs = this.$app.$refs;
         this.$router = this.$app.$router;

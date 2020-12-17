@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
@@ -886,6 +887,200 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 
 .header .hide {
   display: none;
+}
+
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/MaterialIcons-Regular.eot");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                     Border                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Display                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Padding                     * */
+/************************************************** */
+/************************************************** */
+/*                     Margin                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Absolute                    * */
+/************************************************** */
+/************************************************** */
+/*                     Fixed                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Text                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+.like-button {
+  width: 2.8571428571rem;
+  background: white;
+  display: flex;
+}
+
+.like-button__box {
+  cursor: pointer;
+  overflow: hidden;
+  width: inherit;
+  height: 1.4285714286rem;
+  border: 0.0714285714rem solid rgba(31, 32, 65, 0.25);
+  border-radius: 1.4285714286rem;
+  display: flex;
+  align-items: center;
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  .like-button__box:hover {
+    background: #f0e9ff;
+  }
+}
+
+.like-button__icon {
+  pointer-events: none;
+  width: 1.4285714286rem;
+  height: 1.4285714286rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.like-button__icon .material-icons {
+  font-size: 0.7142857143rem;
+  line-height: 0.6428571429rem;
+  color: #BC9CFF;
+  font-weight: 400;
+}
+.like-button__icon .material-icons.border {
+  display: block;
+}
+.like-button__icon .material-icons:not(.border) {
+  display: none;
+}
+
+.like-button__counter {
+  pointer-events: none;
+  width: 1.4285714286rem;
+  height: 1.4285714286rem;
+  text-transform: none;
+  font-size: 0.7142857143rem;
+  line-height: 0.8571428571rem;
+  color: rgba(31, 32, 65, 0.25);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  padding: 0.1428571429rem 0.1428571429rem 0.1428571429rem 0.1428571429rem;
+}
+
+.like-button input[type=checkbox] {
+  display: none;
+}
+.like-button input[type=checkbox]:checked ~ .like-button__box {
+  border-color: #BC9CFF;
+}
+.like-button input[type=checkbox]:checked ~ .like-button__box .like-button__counter {
+  color: #BC9CFF;
+}
+.like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons.border {
+  display: none;
+}
+.like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons:not(.border) {
+  display: block;
 }
 
 @font-face {
