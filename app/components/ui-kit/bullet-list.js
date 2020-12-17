@@ -19,6 +19,7 @@ const getTemplate = (list, label) => {
                    .replace(/{{\s*list\s*}}/g, htmlList.join(''));
 };
 
+
 // noinspection DuplicatedCode
 class BulletList {
     static getTag() { return 'bullet-list'; };
@@ -36,7 +37,7 @@ class BulletList {
 
     data = {
         list: [],
-        title: '',
+        label: '',
     };
 
     /**

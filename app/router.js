@@ -1,5 +1,6 @@
 'use strict';
 
+// noinspection JSUnusedGlobalSymbols
 class Router {
     routes = [];
     root = '/';
@@ -56,7 +57,7 @@ class Router {
      * @returns {string}
      */
     getFragment = () => {
-        let fragment = '';
+        let fragment;
 
         if (this.mode === 'history') {
             fragment = this.clearSlashes(decodeURI(location.pathname + location.search)).replace(/\?(.*)$/, '');

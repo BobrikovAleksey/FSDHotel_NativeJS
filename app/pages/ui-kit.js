@@ -42,6 +42,10 @@ const template = `
                 <button class="button button_lg">Go to<i class="material-icons">arrow_forward</i></button>
             </div>
         </div><br>
+
+        <div class="ui__block">
+            <checkbox-list ref="demoCheckboxList"></checkbox-list>
+        </div><br>
     
         <div class="ui__block">
             <bullet-list ref="demoBulletList"></bullet-list>
@@ -55,10 +59,6 @@ const template = `
 
 <!--    <div class="ui-block">-->
 <!--        <cm-select ref="demoCmSelect"></cm-select>-->
-<!--    </div><br>-->
-
-<!--    <div class="ui-block">-->
-<!--        <checkbox-list ref="demoCheckboxList"></checkbox-list>-->
 <!--    </div><br>-->
     
 <!--    <div class="ui-block">-->
@@ -87,6 +87,18 @@ const components = [
                 'Время прибытия — после 13:00,<br>а выезд до 12:00',
             ],
             label: 'Bullet list',
+        },
+    },
+    {
+        name: 'CheckboxList',
+        ref: 'demoCheckboxList',
+        params: {
+            list: [
+                { name: 'smoke', label: 'Можно курить', checked: false },
+                { name: 'pets', label: 'Можно с питомцами', checked: true },
+                { name: 'guests', label: 'Можно пригласить гостей<br>(до 10 человек)', checked: true },
+            ],
+            label: 'Checkbox buttons',
         },
     },
 ];

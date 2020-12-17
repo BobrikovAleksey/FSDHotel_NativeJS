@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
@@ -1020,6 +1021,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   display: flex;
   flex-direction: column;
 }
+
 .bullet-list__item {
   font-size: 1rem;
   line-height: 1.7142857143rem;
@@ -1038,6 +1040,211 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   position: absolute;
   top: 0.8571428571rem;
   left: 0rem;
+}
+
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/MaterialIcons-Regular.eot");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                     Border                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Display                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Padding                     * */
+/************************************************** */
+/************************************************** */
+/*                     Margin                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Absolute                    * */
+/************************************************** */
+/************************************************** */
+/*                     Fixed                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Text                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+.checkbox-list {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+.checkbox-list__label {
+  margin-bottom: 0.7857142857rem;
+}
+.checkbox-list__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-list__box {
+  pointer-events: none;
+  width: 1.4285714286rem;
+  height: 1.4285714286rem;
+  background: white;
+  border: 0.0714285714rem solid rgba(31, 32, 65, 0.25);
+  border-radius: 0.2857142857rem;
+  position: absolute;
+  top: 0.3571428571rem;
+  left: 0rem;
+}
+.checkbox-list__box:before, .checkbox-list__box:after {
+  content: "";
+  transform: rotate(-45deg);
+  width: 0.5714285714rem;
+  height: 0.42861429rem;
+  visibility: hidden;
+  display: block;
+}
+.checkbox-list__box:before {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  position: absolute;
+  top: 0.4285714286rem;
+  left: 0.3571428571rem;
+}
+.checkbox-list__box:after {
+  background: white;
+  position: absolute;
+  top: 0.1428571429rem;
+  left: 0.3571428571rem;
+}
+
+.checkbox-list__title {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+}
+.checkbox-list__title p {
+  pointer-events: none;
+  font-size: 1rem;
+  line-height: 1.2857142857rem;
+  color: rgba(31, 32, 65, 0.5);
+  font-weight: 400;
+  text-transform: none;
+  display: inherit;
+  margin-left: 2.1428571429rem;
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  .checkbox-list__title:hover ~ .checkbox-list__box {
+    background: #f0e9ff;
+  }
+  .checkbox-list__title:hover ~ .checkbox-list__box:after {
+    background: #f0e9ff;
+  }
+}
+
+.checkbox-list__item {
+  display: flex;
+  padding: 0.4285714286rem 0.8571428571rem 0.4285714286rem 0rem;
+  position: relative;
+}
+.checkbox-list__item input[type=checkbox] {
+  display: none;
+}
+.checkbox-list__item input[type=checkbox]:checked ~ .checkbox-list__box {
+  border-color: #BC9CFF;
+}
+.checkbox-list__item input[type=checkbox]:checked ~ .checkbox-list__box:before, .checkbox-list__item input[type=checkbox]:checked ~ .checkbox-list__box:after {
+  visibility: visible;
 }
 
 .ui__container {

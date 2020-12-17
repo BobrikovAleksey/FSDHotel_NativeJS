@@ -328,6 +328,13 @@ class cmHeader {
             event.key === 'Enter' && this.actions.logOut();
         });
 
+        // menu icon
+        item = this.$el.querySelector('span.header__menu-icon');
+        item.addEventListener('click', this.actions.switchMenu);
+        item.addEventListener('keydown', (event) => {
+            event.key === 'Enter' && this.actions.switchMenu(event);
+        });
+
         // links
         let items = [].slice.call(this.$el.querySelectorAll('a.menu__link')).concat(
             [].slice.call(this.$el.querySelectorAll('a.menu__sub-link'))
@@ -337,15 +344,9 @@ class cmHeader {
         // drop
         items = this.$el.querySelectorAll('p.menu__link');
         items.forEach((el) => el.addEventListener('click', this.actions.switchSubmenu));
-        item.addEventListener('keydown', (event) => {
+        items.forEach((el) => el.addEventListener('keydown', (event) => {
             event.key === 'Enter' && this.actions.switchSubmenu(event);
-        });
-
-        item = this.$el.querySelector('span.header__menu-icon');
-        item.addEventListener('click', this.actions.switchMenu);
-        item.addEventListener('keydown', (event) => {
-            event.key === 'Enter' && this.actions.switchMenu(event);
-        });
+        }));
 
         this.actions.update();
     };

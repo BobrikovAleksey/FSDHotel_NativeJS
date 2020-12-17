@@ -13,7 +13,7 @@ import uiKit from './pages/ui-kit.js';
 // components
 import cmHeader from './components/cm-header.js';
 import BulletList from './components/ui-kit/bullet-list.js';
-// import checkboxList from '../components/checkbox-list.js';
+import CheckboxList from './components/ui-kit/checkbox-list.js';
 // import cmSelect from '../components/cm-select.js';
 // import cmSelectExpanded from '../components/cm-select-expanded.js';
 // import likeButton from '../components/like-button.js';
@@ -81,7 +81,7 @@ const app = {
     components: {
         [cmHeader.getType()]: cmHeader,
         [BulletList.getType()]: BulletList,
-        // 'checkbox-list': checkboxList,
+        [CheckboxList.getType()]: CheckboxList,
         // 'cm-select': cmSelect,
         // cmSelectExpanded,
         // 'like-button': likeButton,
