@@ -1,5 +1,24 @@
 @import ../vars&mixins/index
 
+=ButtonWhite()
+  z-index: 0
+  color: $Purple
+  background: $PurpleGradient
+  border: none
+  position: relative
+
+=ButtonWhite-Before()
+  z-index: -1
+  content: ""
+  pointer-events: none
+  box-sizing: border-box
+  width: calc(100% - #{($borderSize-md * 2) / 14 + rem})
+  height: calc(100% - #{($borderSize-md * 2) / 14 + rem})
+  background: $background
+  border-radius: (($inputHeight-md - $borderSize-md) / 28) + rem
+  display: block
+  +absoluteTopLeft(2/14)
+
 button
   cursor: pointer
   overflow: hidden
@@ -32,22 +51,9 @@ button.button
         box-shadow: 0 0 5px $PurpleLight
 
 button.button_white
-  z-index: 0
-  color: $Purple
-  background: $PurpleGradient
-  border: none
-  position: relative
+  +ButtonWhite
   &:before
-    z-index: -1
-    content: ""
-    pointer-events: none
-    box-sizing: border-box
-    width: calc(100% - #{($borderSize-md * 2) / 14 + rem})
-    height: calc(100% - #{($borderSize-md * 2) / 14 + rem})
-    background: $background
-    border-radius: (($inputHeight-md - $borderSize-md) / 28) + rem
-    display: block
-    +absoluteTopLeft(2/14)
+    +ButtonWhite-Before
 
 button.button_lg
   +Width($inputWidth-lg / 14)

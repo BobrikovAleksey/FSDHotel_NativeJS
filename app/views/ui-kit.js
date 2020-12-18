@@ -17,6 +17,15 @@ const template = `
         </div><br>
 
         <div class="ui__block">
+            <checkbox-list ref="demoCheckboxList"></checkbox-list>
+        </div><br>
+
+        <div class="ui__block">
+            <label class="label ui__label" style="margin-bottom: 16px;">Like button</label>
+            <like-button ref="demoLikeButton"></like-button>
+        </div><br>
+
+        <div class="ui__block">
             <label class="ui__label">Buttons</label>
 
             <div class="ui__row">
@@ -44,23 +53,14 @@ const template = `
         </div><br>
 
         <div class="ui__block">
-            <checkbox-list ref="demoCheckboxList"></checkbox-list>
-        </div><br>
-
-        <div class="ui__block">
-            <label class="ui-block__label">Like button</label>
-            <like-button ref="demoLikeButton"></like-button>
+            <label class="ui__label">Pagination</label>
+            <pagination ref="demoPagination"></pagination>
         </div><br>
 
         <div class="ui__block">
             <bullet-list ref="demoBulletList"></bullet-list>
         </div><br>
     </div>
-
-<!--    <div class="ui-block">-->
-<!--        <label class="ui-block__label">Pagination</label>-->
-<!--        <div class="pagination"></div>-->
-<!--    </div><br>-->
 
 <!--    <div class="ui-block">-->
 <!--        <cm-select ref="demoCmSelect"></cm-select>-->
@@ -107,6 +107,10 @@ const components = [
             value: 11,
             checked: false,
         },
+    }, {
+        name: 'Pagination',
+        ref: 'demoPagination',
+        params: {},
     },
 ];
 

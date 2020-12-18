@@ -1,20 +1,23 @@
 'use strict';
 
 import Router from './router.js';
+import State from './state.js';
 
-// pages
-import about from './pages/about.js';
-import agreements from './pages/agreements.js';
-import news from './pages/news.js';
-import services from './pages/services.js';
-import vacancies from './pages/vacancies.js';
-import uiKit from './pages/ui-kit.js';
+// views
+import about from './views/about.js';
+import agreements from './views/agreements.js';
+import news from './views/news.js';
+import services from './views/services.js';
+import vacancies from './views/vacancies.js';
+import uiKit from './views/ui-kit.js';
 
 // components
 import cmHeader from './components/cm-header.js';
 import BulletList from './components/ui-kit/bullet-list.js';
 import CheckboxList from './components/ui-kit/checkbox-list.js';
 import LikeButton from './components/ui-kit/like-button.js';
+import Pagination from './components/ui-kit/pagination.js';
+
 // import cmSelect from '../components/cm-select.js';
 // import cmSelectExpanded from '../components/cm-select-expanded.js';
 // import radioGroup from '../components/radio-group.js';
@@ -26,47 +29,49 @@ const $config = {
 };
 
 const $router = new Router({ mode: 'hash', root: '/' });
+const $state = new State({ mode: 'hash', root: '/' });
 
 $router
     .add(/about/, () => {
-        app.renderPage(about, {
-            page: 0,
+        app.renderView(about, {
+            view: 0,
         });
     })
     .add(/services\/(.*)/, (service) => {
-        app.renderPage(services, {
-            page: 1,
+        app.renderView(services, {
+            view: 1,
             service,
         });
     })
     .add(/vacancies/, () => {
-        app.renderPage(vacancies, {
-            page: 2,
+        app.renderView(vacancies, {
+            view: 2,
         });
     })
     .add(/news/, () => {
-        app.renderPage(news, {
-            page: 3,
+        app.renderView(news, {
+            view: 3,
         });
     })
     .add(/agreements\/(.*)/, (argument) => {
-        app.renderPage(agreements, {
-            page: 4,
+        app.renderView(agreements, {
+            view: 4,
             argument,
         });
     })
     .add('', () => {
-        app.renderPage(uiKit);
+        app.renderView(uiKit);
     });
 
 const $storage = {
-    page: -1,
+    view: -1,
+    page: 0,
     logIn: false,
 };
 
 const $actions = {
-    /** @param page number */
-    setPage: (page) => $storage.page = page,
+    /** @param view number */
+    setView: (view) => $storage.view = view,
     /** @param logIn boolean */
     logIn: (logIn = true) => $storage.logIn = logIn,
     logOut: () => $storage.logIn = false,
@@ -74,7 +79,7 @@ const $actions = {
 
 const $getters = {
     getLogIn: () => $storage.logIn,
-    getPage: () => $storage.page,
+    getView: () => $storage.view,
 };
 
 const app = {
@@ -83,6 +88,7 @@ const app = {
         [BulletList.getType()]: BulletList,
         [CheckboxList.getType()]: CheckboxList,
         [LikeButton.getType()]: LikeButton,
+        [Pagination.getType()]: Pagination,
         // 'cm-select': cmSelect,
         // cmSelectExpanded,
         // 'radio-group': radioGroup,
@@ -92,24 +98,25 @@ const app = {
     $refs: {},
     $config,
     $router,
+    $state,
     $storage,
     $actions,
     $getters,
 
     /**
      * Обновляет главный контент страницы
-     * @param page object
+     * @param view object
      * @param params object
      */
-    renderPage(page, params = {}) {
-        this.$actions.setPage(params.page ?? -1);
+    renderView(view, params = {}) {
+        this.$actions.setView(params.view ?? -1);
 
         const content = document.querySelector('main');
 
         content.innerHTML = '';
-        content.insertAdjacentHTML('afterbegin', page['template']);
+        content.insertAdjacentHTML('afterbegin', view['template']);
 
-        page['components'].forEach((el) => {
+        view['components'].forEach((el) => {
             this.renderComponent(this.components[el['name']].getType(), el['ref'], el['params']);
         });
     },
@@ -134,19 +141,3 @@ const app = {
 };
 
 app.renderComponent(cmHeader.getType(), 'demoHeader', {});
-
-// app.render(cmSelectExpanded.getType(), 'demoCmSelectExpended', {
-//     type: 'single',
-//     list: [
-//         { name: 'adults', title: 'Взрослые', units: [ 'гость', 'гостя', 'гостей' ], min: 0, max: 9, value: 2 },
-//         { name: 'children', title: 'Дети', min: 0, max: 9, value: 1 },
-//         { name: 'babies', title: 'Младенцы', min: 0, max: 9, value: 0 },
-//     ],
-//     placeholder: 'Сколько гостей',
-//     title: 'Dropdown',
-// });
-
-
-
-
-

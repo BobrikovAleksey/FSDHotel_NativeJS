@@ -4,6 +4,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
@@ -1442,6 +1444,407 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   visibility: visible;
 }
 
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/MaterialIcons-Regular.eot");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                     Border                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Display                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Padding                     * */
+/************************************************** */
+/************************************************** */
+/*                     Margin                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Absolute                    * */
+/************************************************** */
+/************************************************** */
+/*                     Fixed                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Text                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/MaterialIcons-Regular.eot");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                     Border                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Display                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Padding                     * */
+/************************************************** */
+/************************************************** */
+/*                     Margin                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Absolute                    * */
+/************************************************** */
+/************************************************** */
+/*                     Fixed                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Text                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+button {
+  cursor: pointer;
+  overflow: hidden;
+  height: 1.5714285714rem;
+  font-size: 0.8571428571rem;
+  line-height: 1.0714285714rem;
+  color: #BC9CFF;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: inherit;
+  border: none;
+}
+button[disabled] {
+  cursor: default;
+  color: rgba(31, 32, 65, 0.5);
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  button:not([disabled]):hover, button:not([disabled]):active {
+    filter: saturate(250%);
+  }
+  button:not([disabled]):not(.button):focus {
+    text-shadow: 0 0 1px #8BA4F9;
+  }
+}
+
+button.button {
+  height: 3.1428571429rem;
+  color: white;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 1.5714285714rem;
+  padding-left: 1.4285714286rem;
+  padding-right: 1.4285714286rem;
+  position: relative;
+}
+button.button[disabled] {
+  filter: opacity(50%);
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  button.button:not([disabled]):focus {
+    box-shadow: 0 0 5px #8BA4F9;
+  }
+}
+
+button.button_white {
+  z-index: 0;
+  color: #BC9CFF;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border: none;
+  position: relative;
+}
+button.button_white:before {
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  box-sizing: border-box;
+  width: calc(100% - 0.2857142857rem);
+  height: calc(100% - 0.2857142857rem);
+  background: white;
+  border-radius: 1.5rem;
+  display: block;
+  position: absolute;
+  top: 0.1428571429rem;
+  left: 0.1428571429rem;
+}
+
+button.button_lg {
+  width: 22.8571428571rem;
+}
+
+button .material-icons {
+  pointer-events: none;
+}
+button .material-icons:not(.left), button .material-icons.left {
+  width: 3.1428571429rem;
+  height: 3.1428571429rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button .material-icons:not(.left):not(.left), button .material-icons.left:not(.left) {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+}
+button .material-icons:not(.left).left, button .material-icons.left.left {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: column;
+}
+.pagination__panel {
+  display: flex;
+  align-items: center;
+}
+.pagination__label {
+  margin-top: 0.7142857143rem;
+}
+.pagination .hide {
+  display: none;
+}
+
+.pagination__dots, .pagination__button {
+  width: 2.8571428571rem;
+  height: 2.8571428571rem;
+  font-size: 0.8571428571rem;
+  line-height: 1.0714285714rem;
+  color: rgba(31, 32, 65, 0.5);
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination__button {
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+}
+.pagination__button_prev, .pagination__button_next {
+  color: white;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+.pagination__button_active {
+  cursor: default;
+  color: white;
+  font-weight: 700;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  .pagination__button_prev:hover, .pagination__button_next:hover {
+    filter: saturate(250%);
+  }
+  .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next) {
+    z-index: 0;
+    color: #BC9CFF;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border: none;
+    position: relative;
+  }
+  .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):before {
+    z-index: -1;
+    content: "";
+    pointer-events: none;
+    box-sizing: border-box;
+    width: calc(100% - 0.2857142857rem);
+    height: calc(100% - 0.2857142857rem);
+    background: white;
+    border-radius: 1.5rem;
+    display: block;
+    position: absolute;
+    top: 0.1428571429rem;
+    left: 0.1428571429rem;
+  }
+}
+
 .ui__container {
   max-width: 1440px;
   min-width: 340px;
@@ -1468,11 +1871,9 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   display: flex;
   flex-direction: column;
 }
-
 .ui__label {
   margin-bottom: 0.3571428571rem;
 }
-
 .ui__row {
   margin-bottom: 1rem;
 }

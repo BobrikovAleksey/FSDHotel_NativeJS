@@ -1,33 +1,165 @@
-template = `
-    <ul class="pagination__pages">
-        <li class="pagination__page pagination__page_prev"><span class="i-arrow-left pagination__icon"></span></li>
-        <li class="pagination__page">1</li>
-        <li class="pagination__page pagination__page_active">2</li>
-        <li class="pagination__page">3</li>
-        <li class="pagination__page">...</li>
-        <li class="pagination__page">8</li>
-        <li class="pagination__page">..</li>
-        <li class="pagination__page">14</li>
-        <li class="pagination__page">15</li>
-        <li class="pagination__page pagination__page_next"><span class="i-arrow-right pagination__icon"></span></li>
-    </ul>
-    <p class="pagination__label">1 – 12 из 100+ вариантов аренды</p>
-`;
+'use strict';
 
-el = document.querySelector('.pagination');
+import BaseComponent from './base-component.js';
 
-if (el) {
-    el.insertAdjacentHTML('afterbegin', template);
+// noinspection JSUnusedGlobalSymbols
+class Pagination extends BaseComponent {
+    template = `
+        <!--suppress CheckTagEmptyBody -->
+        <div class="pagination">
+            <ul class="pagination__panel">
+                <li class="pagination__button" data-first></li>
+                <li class="pagination__dots" data-dots>...</li>
+                <li class="pagination__button" data-page></li>
+                <li class="pagination__button" data-page></li>
+                <li class="pagination__button" data-page></li>
+                <li class="pagination__button" data-page></li>
+                <li class="pagination__button" data-page></li>
+                <li class="pagination__dots" data-dots>...</li>
+                <li class="pagination__button" data-last></li>
+                <li class="pagination__button pagination__button_next" data-next>
+                    <i class="material-icons">arrow_forward</i>
+                </li>
+            </ul>
+
+            <p class="pagination__label">
+                <span data-current></span> – 
+                <span data-total></span> из 
+                <span data-quantity></span> вариантов аренды
+            </p>
+        </div>
+    `;
+
+    static getTag = () => 'pagination';
+    static getType = () => 'Pagination';
+
+    constructor() {
+        super({ current: null, itemsOnPage: null, pageCount: null, totalItems: null });
+    };
+
+    click = function (event) {
+        this.$state.actions.setCurrentPage(parseInt(event.target.textContent));
+        this.update();
+    }.bind(this);
+
+    clickNext = function () {
+        this.$state.actions.setCurrentPage(this.$state.getters.getCurrentPage() + 1);
+        this.update();
+    }.bind(this);
+
+    _activate = function (classList, toggle) {
+        if (toggle) {
+            !classList.contains('pagination__button_active') && classList.add('pagination__button_active');
+        } else {
+            classList.contains('pagination__button_active') && classList.remove('pagination__button_active');
+        }
+    }.bind(this);
+
+    _hide = function (classList, toggle) {
+        if (toggle) {
+            !classList.contains('hide') && classList.add('hide');
+        } else {
+            classList.contains('hide') && classList.remove('hide');
+        }
+    }.bind(this);
+
+    _updateFirstButton = function (current, pageCount) {
+        this._hide(this.$objects.dots[0].classList, pageCount < 8);
+        if (current < 5) {
+            this._hide(this.$objects.dots[0].classList, true);
+            this._hide(this.$objects.pages[0].classList, false);
+        } else if (pageCount > 7) {
+            this._hide(this.$objects.dots[0].classList, false);
+            this._hide(this.$objects.pages[0].classList, true);
+        }
+
+        this.$objects.first.textContent = 1;
+        this._activate(this.$objects.first.classList, current === 1);
+    }.bind(this);
+
+    _updateLastButton = function (current, pageCount) {
+        this._hide(this.$objects.dots[1].classList, pageCount < 8);
+        if (current > pageCount - 4) {
+            this._hide(this.$objects.dots[1].classList, true);
+            this._hide(this.$objects.pages[this.$objects.pages.length-1].classList, false);
+        } else if (pageCount > 7) {
+            this._hide(this.$objects.dots[1].classList, false);
+            this._hide(this.$objects.pages[this.$objects.pages.length-1].classList, true);
+        }
+
+        this.$objects.last.textContent = pageCount;
+        this._activate(this.$objects.last.classList, current === pageCount);
+    }.bind(this);
+
+    _updatePageButtons = function (current, pageCount) {
+        const pages = this.$objects.pages;
+
+        pages.forEach((el, i) => {
+            let numb = current < 5 ? i + 2 : current + i - 2;
+            numb = current > pageCount - 4 ? (pageCount + i - 5) : numb;
+            el.textContent = numb;
+
+            this._hide(el.classList, numb <= 1 || numb >= pageCount);
+            this._activate(el.classList, current === numb);
+        });
+
+        if (!pages[0].classList.contains('hide') && pageCount > 7) {
+            this._hide(pages[0].classList, !this.$objects.dots[0].classList.contains('hide'));
+        }
+        if (!pages[1].classList.contains('hide') && pageCount > 7) {
+            this._hide(pages[pages.length-1].classList, !this.$objects.dots[1].classList.contains('hide'));
+        }
+    }.bind(this);
+
+    _updateNextButton = function (pageCount) {
+        const toggle = pageCount === 1;
+
+        this._hide(this.$objects.last.classList, toggle);
+        this._hide(this.$objects.next.classList, toggle);
+    }.bind(this);
+
+    update = function () {
+        let current = this.$state.getters.getCurrentPage();
+        const itemsOnPage = this.$state.getters.getItemsOnPage();
+        const pageCount = this.$state.getters.getPageCount();
+        const totalItems = this.$state.getters.getTotalItems();
+
+        if (!this.isStateChanged({ current, itemsOnPage, pageCount, totalItems })) return;
+        if (current > pageCount) {
+            this.$state.actions.setCurrentPage(pageCount);
+        } else if (current < 1) {
+            this.$state.actions.setCurrentPage(1);
+        }
+
+        current = this.$state.getters.getCurrentPage();
+        this.cache = { current, itemsOnPage, pageCount, totalItems };
+
+        this._updateLastButton(current, pageCount);
+        this._updateFirstButton(current, pageCount);
+        this._updatePageButtons(current, pageCount);
+        this._updateNextButton(pageCount);
+    }.bind(this);
+
+    render(app, node) {
+        super.render(app, node);
+
+        this.$objects = {
+            dots: this.$el.querySelectorAll('li[data-dots]'),
+            first: this.$el.querySelector('li[data-first]'),
+            last: this.$el.querySelector('li[data-last]'),
+            next: this.$el.querySelector('li[data-next]'),
+            pages: this.$el.querySelectorAll('li[data-page]'),
+        };
+
+        this.$objects.first.addEventListener('click', this.click);
+        this.$objects.last.addEventListener('click', this.click);
+        this.$objects.pages.forEach((el) => el.addEventListener('click', this.click));
+        this.$objects.next.addEventListener('click', this.clickNext);
+
+        this.update();
+        clearInterval(this.interval);
+        this.interval = setInterval(this.update, 100);
+    };
 }
 
-el = document.querySelector('.pagination__pages .i-arrow-left');
-
-if (el) {
-    el.insertAdjacentHTML('afterbegin', arrowLeft);
-}
-
-el = document.querySelector('.pagination__pages .i-arrow-right');
-
-if (el) {
-    el.insertAdjacentHTML('afterbegin', arrowRight);
-}
+export default Pagination;

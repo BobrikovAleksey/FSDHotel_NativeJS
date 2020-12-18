@@ -1,6 +1,5 @@
 import icons from './icons.js';
 
-
 const template = `
     <!--suppress CheckTagEmptyBody -->
     <header class="header">
@@ -253,7 +252,7 @@ class cmHeader {
                 const items = this.$el.querySelectorAll('.menu__link');
 
                 items.forEach((el) => {
-                    if (Number(el.getAttribute('data-key')) === this.$getters.getPage()) {
+                    if (Number(el.getAttribute('data-key')) === this.$getters.getView()) {
                         !el.classList.contains('menu__link_active') && el.classList.add('menu__link_active');
                     } else {
                         el.classList.contains('menu__link_active') && el.classList.remove('menu__link_active');

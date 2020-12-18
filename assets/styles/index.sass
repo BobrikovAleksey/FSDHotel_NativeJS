@@ -1,7 +1,7 @@
 @import main, components/buttons
 @import components/header
 @import components/like-button
-@import components/bullet-list, components/checkbox-list
+@import components/bullet-list, components/checkbox-list, components/pagination
 
 .ui__container
   max-width: $SiteMaxWidthPx
@@ -15,17 +15,16 @@
   @media (max-width: $SiteMinWidthPx)
     +padding(1, $HorizontalMinPadding / 28)
 
-.ui__block
-  +flexDirection(column)
+.ui
+  &__block
+    +flexDirection(column)
+  &__label
+    @extend .label
+    +marginBottom(5/14)
+  &__row
+    +marginBottom(1)
 
-.ui__label
-  @extend .label
-  +marginBottom(5/14)
-
-.ui__row
-  +marginBottom(1)
-
-//@import pagination
+//@import
 //@import components/selects
 //@import components/radio-group
 //@import components/toggle
