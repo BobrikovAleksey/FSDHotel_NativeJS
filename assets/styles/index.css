@@ -1819,17 +1819,17 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
 @media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  .pagination__button_prev:hover, .pagination__button_next:hover {
+  .pagination__button_prev:hover, .pagination__button_next:hover, .pagination__button_prev:focus, .pagination__button_next:focus {
     filter: saturate(250%);
   }
-  .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next) {
+  .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next), .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next) {
     z-index: 0;
     color: #BC9CFF;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border: none;
     position: relative;
   }
-  .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):before {
+  .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):before, .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):before {
     z-index: -1;
     content: "";
     pointer-events: none;

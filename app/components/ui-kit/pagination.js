@@ -8,23 +8,23 @@ class Pagination extends BaseComponent {
         <!--suppress CheckTagEmptyBody -->
         <div class="pagination">
             <ul class="pagination__panel">
-                <li class="pagination__button" data-first></li>
+                <li class="pagination__button" tabindex="0" data-first></li>
                 <li class="pagination__dots" data-dots>...</li>
-                <li class="pagination__button" data-page></li>
-                <li class="pagination__button" data-page></li>
-                <li class="pagination__button" data-page></li>
-                <li class="pagination__button" data-page></li>
-                <li class="pagination__button" data-page></li>
+                <li class="pagination__button" tabindex="0" data-page></li>
+                <li class="pagination__button" tabindex="0" data-page></li>
+                <li class="pagination__button" tabindex="0" data-page></li>
+                <li class="pagination__button" tabindex="0" data-page></li>
+                <li class="pagination__button" tabindex="0" data-page></li>
                 <li class="pagination__dots" data-dots>...</li>
-                <li class="pagination__button" data-last></li>
-                <li class="pagination__button pagination__button_next" data-next>
+                <li class="pagination__button" tabindex="0" data-last></li>
+                <li class="pagination__button pagination__button_next" tabindex="0" data-next>
                     <i class="material-icons">arrow_forward</i>
                 </li>
             </ul>
 
             <p class="pagination__label">
-                <span data-current></span> – 
-                <span data-total></span> из 
+                <span data-range-start></span> – 
+                <span data-range-end></span> из 
                 <span data-quantity></span> вариантов аренды
             </p>
         </div>
@@ -138,6 +138,10 @@ class Pagination extends BaseComponent {
         this._updateFirstButton(current, pageCount);
         this._updatePageButtons(current, pageCount);
         this._updateNextButton(pageCount);
+
+        this.$objects.start.textContent = itemsOnPage * (current - 1) + 1;
+        this.$objects.end.textContent = Math.min(itemsOnPage * current, totalItems);
+        this.$objects.quantity.textContent = totalItems;
     }.bind(this);
 
     render(app, node) {
@@ -149,12 +153,30 @@ class Pagination extends BaseComponent {
             last: this.$el.querySelector('li[data-last]'),
             next: this.$el.querySelector('li[data-next]'),
             pages: this.$el.querySelectorAll('li[data-page]'),
+            start: this.$el.querySelector('p span[data-range-start]'),
+            end: this.$el.querySelector('p span[data-range-end]'),
+            quantity: this.$el.querySelector('p span[data-quantity]'),
         };
 
         this.$objects.first.addEventListener('click', this.click);
+        this.$objects.first.addEventListener('keydown', (event) => {
+            event.key === 'Enter' && this.click(event);
+        });
+
         this.$objects.last.addEventListener('click', this.click);
+        this.$objects.last.addEventListener('keydown', (event) => {
+            event.key === 'Enter' && this.click(event);
+        });
+
         this.$objects.pages.forEach((el) => el.addEventListener('click', this.click));
+        this.$objects.pages.forEach((el) => el.addEventListener('keydown', (event) => {
+            event.key === 'Enter' && this.click(event);
+        }));
+
         this.$objects.next.addEventListener('click', this.clickNext);
+        this.$objects.next.addEventListener('keydown', (event) => {
+            event.key === 'Enter' && this.clickNext();
+        });
 
         this.update();
         clearInterval(this.interval);

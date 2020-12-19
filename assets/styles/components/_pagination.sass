@@ -28,9 +28,11 @@
     font-weight: 700
     background: $PurpleGradient
   @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
-    &_prev:hover, &_next:hover
+    &_prev:hover, &_next:hover,
+    &_prev:focus, &_next:focus
       filter: saturate(250%)
-    &:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next)
+    &:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next),
+    &:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next)
       +ButtonWhite
       &:before
         +ButtonWhite-Before
