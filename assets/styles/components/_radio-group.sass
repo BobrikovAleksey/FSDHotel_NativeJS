@@ -53,9 +53,7 @@ $BoxSize: 20/14
 
 .radio-group__item input[type="radio"]:not(:checked) ~ .radio-group__title
   @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
-    &:hover ~ .radio-group__box
+    &:hover ~ .radio-group__box, &:focus ~ .radio-group__box, &:active ~ .radio-group__box
       background: lighten($Purple, 15%)
-    &:active ~ .radio-group__box
-      background: $background
     &:active ~ .radio-group__box:before
       display: block

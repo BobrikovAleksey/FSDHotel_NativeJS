@@ -23,6 +23,11 @@ const template = `
         <div class="ui__block">
             <radio-group ref="demoRadioGroup"></radio-group>
         </div><br>
+    
+        <div class="ui__block">
+            <label class="ui__label">Toggle</label>
+            <toggle ref="demoToggle"></toggle>
+        </div><br>
 
         <div class="ui__block">
             <label class="label ui__label" style="margin-bottom: 16px;">Like button</label>
@@ -69,11 +74,6 @@ const template = `
 <!--    <div class="ui-block">-->
 <!--        <cm-select ref="demoCmSelect"></cm-select>-->
 <!--    </div><br>-->
-    
-<!--    <div class="ui-block">-->
-<!--        <label class="ui-block__label">Toggle</label>-->
-<!--        <toggle ref="demoToggle"></toggle>-->
-<!--    </div><br>-->
 `;
 
 const components = [
@@ -109,6 +109,14 @@ const components = [
             ],
             label: 'Radio buttons',
             name: 'sex',
+        },
+    }, {
+        name: 'Toggle',
+        ref: 'demoToggle',
+        params: {
+            checked: true,
+            name: 'offers',
+            label: 'Получать спецпредложения',
         },
     }, {
         name: 'LikeButton',

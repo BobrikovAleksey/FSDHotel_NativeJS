@@ -1,45 +1,51 @@
-@import ../vars, ../mixins
+@import ../vars&mixins/index
 
-$width: 320rem / $FontSize
-$box: 20rem / $FontSize
+$BoxSize: 20/14
 
 .toggle
-  width: $width
-  +flexAiC
-  padding: (6rem / $FontSize) $box (6rem / $FontSize) 0
+  +Width($inputWidth-lg / 14)
+  +flexAlignItems(center)
+  +padding(6/14, $BoxSize, 6/14, 0)
   position: relative
-  & input[type="checkbox"]
-    display: none
-  &__box
-    pointer-events: none
-    width: $box * 2
-    height: $box
-    background: $background
-    border: 1px solid $DarkShade25
-    border-radius: $box / 2
-    +flexAiC
-    padding: 0 4px
-    &:before
-      content: ""
-      width: $box * 0.6
-      height: $box * 0.6
-      background: $DarkShade25
-      border-radius: 50%
-      display: block
-  &__title
-    cursor: pointer
-    +flexAiC
-    margin: 0
-    & p
-      pointer-events: none
-      +textCSWH($DarkShade75, 14rem / $FontSize, 400, 24rem / $FontSize)
-      text-transform: none
-      display: inherit
-      margin-left: $box / 2
-  & input[type="checkbox"]:checked ~ .toggle__title .toggle__box
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+    &:active > input[type="checkbox"] ~ .toggle__label .toggle__box
+      justify-content: flex-end
+    &:active > input[type="checkbox"]:checked ~ .toggle__label .toggle__box
+      justify-content: flex-start
+
+.toggle input[type="checkbox"]
+  display: none
+  &:checked ~ .toggle__label .toggle__box
     border-color: $Purple
     justify-content: flex-end
     &:before
-      background: linear-gradient(180deg, $Purple 0%, $PurpleLight 100%)
-  &__title:hover > .toggle__box
-    background: lighten($Purple, 15%)
+      background: $PurpleGradient
+
+.toggle .toggle__label
+  cursor: pointer
+  +flexAlignItems(center)
+  margin: 0
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+    &:hover > .toggle__box, &:focus > .toggle__box, &:active > .toggle__box
+      background: lighten($Purple, 15%)
+
+.toggle .toggle__box
+  pointer-events: none
+  +WidthHeight($BoxSize * 2, $BoxSize)
+  background: $background
+  +border($borderSize-sm / 14, $DarkShade25)
+  +borderRadius($BoxSize / 2)
+  +flexAlignItems(center)
+  +padding(0, 4/14)
+  &:before
+    content: ""
+    +WidthHeight($BoxSize * 0.6)
+    background: $DarkShade25
+    border-radius: 50%
+    display: block
+
+.toggle .toggle__title
+  pointer-events: none
+  +textColorSizeHeightWeightTransform($DarkShade75, 1, 24/14)
+  display: inherit
+  +marginLeft($BoxSize / 2)

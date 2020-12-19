@@ -18,11 +18,10 @@ import CheckboxList from './components/ui-kit/checkbox-list.js';
 import LikeButton from './components/ui-kit/like-button.js';
 import Pagination from './components/ui-kit/pagination.js';
 import RadioGroup from './components/ui-kit/radio-group.js';
+import Toggle from './components/ui-kit/Toggle.js';
 
 // import cmSelect from '../components/cm-select.js';
 // import cmSelectExpanded from '../components/cm-select-expanded.js';
-// import radioGroup from '../components/radio-group.js';
-// import toggle from '../components/toggle.js';
 
 const $config = {
     baseUrl: '/FSDHotel_Layout_html/#/',
@@ -91,11 +90,10 @@ const app = {
         [LikeButton.getType()]: LikeButton,
         [Pagination.getType()]: Pagination,
         [RadioGroup.getType()]: RadioGroup,
+        [Toggle.getType()]: Toggle,
 
         // 'cm-select': cmSelect,
         // cmSelectExpanded,
-        // 'radio-group': radioGroup,
-        // toggle,
     },
 
     $refs: {},

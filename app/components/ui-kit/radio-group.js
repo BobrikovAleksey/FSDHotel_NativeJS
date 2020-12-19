@@ -16,7 +16,7 @@ class RadioGroup extends BaseComponent {
         <!--suppress CheckTagEmptyBody -->
         <div class="radio-group__item">
             <input type="radio">
-            <label class="radio-group__title"></label>
+            <label class="radio-group__title" tabindex="0"></label>
             <span class="radio-group__box"></span>
         </div>
     `;
@@ -28,6 +28,12 @@ class RadioGroup extends BaseComponent {
         super();
         this.data = { label, list, name }
     };
+
+    click = function (event) {
+        if (event.key !== 'Enter') return;
+
+        event.target.parentNode.querySelector('input[type="radio"]').checked = true;
+    }.bind(this);
 
     change = function (event) {
         const button = event.target;
@@ -58,6 +64,8 @@ class RadioGroup extends BaseComponent {
         list.querySelectorAll('.radio-group__title').forEach((el, i) => {
             el.setAttribute('for', `${this.data.name}-${this.data.list[i].name}`);
             el.textContent = this.data.list[i].label;
+
+            el.addEventListener('keydown', this.click);
         });
     }.bind(this);
 
