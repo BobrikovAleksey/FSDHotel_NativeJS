@@ -13,6 +13,7 @@ class RadioGroup extends BaseComponent {
     `;
 
     listTemplate = `
+        <!--suppress CheckTagEmptyBody -->
         <div class="radio-group__item">
             <input type="radio">
             <label class="radio-group__title"></label>
@@ -28,9 +29,12 @@ class RadioGroup extends BaseComponent {
         this.data = { label, list, name }
     };
 
-    click = function (event) {
-        this.$state.actions.setCurrentPage(parseInt(event.target.textContent));
-        this.update();
+    change = function (event) {
+        const button = event.target;
+
+        this.data.list.forEach((el) => {
+             el.checked = button.hasAttribute('value') && el.name === button.getAttribute('value');
+        });
     }.bind(this);
 
     listUpdate = function () {
@@ -41,18 +45,20 @@ class RadioGroup extends BaseComponent {
         }
         list.insertAdjacentHTML('afterbegin', this._getListTemplate(this.data.list.length));
 
-        list.querySelectorAll('input[type="radio"]').forEach((el, i) => {
+        const buttons = list.querySelectorAll('input[type="radio"]');
+        buttons.forEach((el, i) => {
             el.setAttribute('id', `${this.data.name}-${this.data.list[i].name}`);
             el.setAttribute('name', this.data.name);
             el.setAttribute('value', this.data.list[i].name);
             this.data.list[i].checked && el.setAttribute('checked', '');
+
+            el.addEventListener('change', this.change);
         });
 
         list.querySelectorAll('.radio-group__title').forEach((el, i) => {
             el.setAttribute('for', `${this.data.name}-${this.data.list[i].name}`);
             el.textContent = this.data.list[i].label;
         });
-
     }.bind(this);
 
     render(app, node) {
