@@ -1,6 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 class BaseComponent {
     template = '';
+    listTemplate = '';
 
     constructor(data = {}) {
         this.cache = { ...data };
@@ -18,6 +19,10 @@ class BaseComponent {
 
     _getTemplate = function () {
         return this.template;
+    }.bind(this);
+
+    _getListTemplate = function (count = 1) {
+        return this.listTemplate.repeat(count > 0 ? count : 1);
     }.bind(this);
 
     /**

@@ -1,65 +1,61 @@
-@import ../vars, ../mixins
+@import ../vars&mixins/index
 
-$width: 320rem / $FontSize
-$box: 20rem / $FontSize
+$BoxSize: 20/14
 
 .radio-group
-  width: $width
-  +flexCol
+  +Width($inputWidth-lg / 14)
+  +flexDirection(column)
   &__label
-    margin-bottom: 7rem / $FontSize
+    +marginBottom(7/14)
   &__list
     display: flex
-  &__item
-    display: flex
-    padding: (6rem / $FontSize) (12rem / $FontSize) (6rem / $FontSize) 0
-    position: relative
-    margin-left: 8rem / $FontSize
-    &:first-of-type
-      margin-left: 0
-    & input[type="radio"]
-      display: none
-  &__box
-    pointer-events: none
-    width: $box
-    height: $box
-    background: $background
-    border: 1px solid $DarkShade25
-    border-radius: 50%
-    +flexCC
-    padding: 4px
-    +absoluteTL(9rem / $FontSize, 0)
+
+.radio-group__item
+  display: flex
+  +padding(6/14, 12/14, 6/14, 0)
+  position: relative
+  +marginLeft(9/14)
+  &:first-of-type
+    margin-left: 0
+
+.radio-group__item input[type="radio"]
+  display: none
+  &:checked ~ .radio-group__box
+    border-color: $Purple
     &:before
-      content: ""
-      width: 100%
-      height: 100%
-      background: linear-gradient(180deg, $Purple 0%, $PurpleLight 100%)
-      border-radius: 50%
-      display: none
-  &__title
-    cursor: pointer
-    display: inline-block
-    margin: 0
-    & p
-      pointer-events: none
-      +textCSWH($DarkShade50, 14rem / $FontSize, 400, 24rem / $FontSize)
-      text-transform: none
-      display: inherit
-      margin-left: $box * 1.5
-  &__item input[type="radio"]:checked
-    & ~ .radio-group__box
-      border-color: $Purple
-      &:before
-        display: block
-    & ~ .radio-group__title
-      pointer-events: none
-      & p
-        color: $DarkShade75
-  &__title
+      display: block
+  &:checked ~ .radio-group__title
+    color: $DarkShade75
+
+.radio-group__title
+  cursor: pointer
+  +textColorSizeHeightWeightTransform($DarkShade50, 1, 24/14, none)
+  display: block
+  +paddingLeft(30/14)
+  margin: 0
+
+.radio-group__box
+  pointer-events: none
+  +WidthHeight($BoxSize)
+  background: $background
+  +border($borderSize-sm / 14, $DarkShade25)
+  border-radius: 50%
+  +flexPlacement(center)
+  +padding(4/14)
+  +absoluteTopLeft(9/14, 0)
+  &:before
+    content: ""
+    width: 100%
+    height: 100%
+    background: $PurpleGradient
+    border-radius: 50%
+    display: none
+
+.radio-group__item input[type="radio"]:not(:checked) ~ .radio-group__title
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
     &:hover ~ .radio-group__box
       background: lighten($Purple, 15%)
-    &:active
-      & ~ .radio-group__box
-        background: $background
-      & ~ .radio-group__box:before
-        display: block
+    &:active ~ .radio-group__box
+      background: $background
+    &:active ~ .radio-group__box:before
+      display: block

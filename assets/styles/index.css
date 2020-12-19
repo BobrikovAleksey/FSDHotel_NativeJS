@@ -6,6 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
@@ -1442,6 +1443,210 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 }
 .checkbox-list__item input[type=checkbox]:checked ~ .checkbox-list__box:before, .checkbox-list__item input[type=checkbox]:checked ~ .checkbox-list__box:after {
   visibility: visible;
+}
+
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/MaterialIcons-Regular.eot");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                     Border                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Display                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Padding                     * */
+/************************************************** */
+/************************************************** */
+/*                     Margin                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Absolute                    * */
+/************************************************** */
+/************************************************** */
+/*                     Fixed                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Text                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+.radio-group {
+  width: 22.8571428571rem;
+  display: flex;
+  flex-direction: column;
+}
+.radio-group__label {
+  margin-bottom: 0.5rem;
+}
+.radio-group__list {
+  display: flex;
+}
+
+.radio-group__item {
+  display: flex;
+  padding: 0.4285714286rem 0.8571428571rem 0.4285714286rem 0rem;
+  position: relative;
+  margin-left: 0.6428571429rem;
+}
+.radio-group__item:first-of-type {
+  margin-left: 0;
+}
+
+.radio-group__item input[type=radio] {
+  display: none;
+}
+.radio-group__item input[type=radio]:checked ~ .radio-group__box {
+  border-color: #BC9CFF;
+}
+.radio-group__item input[type=radio]:checked ~ .radio-group__box:before {
+  display: block;
+}
+.radio-group__item input[type=radio]:checked ~ .radio-group__title {
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.radio-group__title {
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.7142857143rem;
+  color: rgba(31, 32, 65, 0.5);
+  font-weight: none;
+  text-transform: none;
+  display: block;
+  padding-left: 2.1428571429rem;
+  margin: 0;
+}
+
+.radio-group__box {
+  pointer-events: none;
+  width: 1.4285714286rem;
+  height: 1.4285714286rem;
+  background: white;
+  border: 0.0714285714rem solid rgba(31, 32, 65, 0.25);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2857142857rem 0.2857142857rem 0.2857142857rem 0.2857142857rem;
+  position: absolute;
+  top: 0.6428571429rem;
+  left: 0rem;
+}
+.radio-group__box:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 50%;
+  display: none;
+}
+
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  .radio-group__item input[type=radio]:not(:checked) ~ .radio-group__title:hover ~ .radio-group__box {
+    background: #f0e9ff;
+  }
+  .radio-group__item input[type=radio]:not(:checked) ~ .radio-group__title:active ~ .radio-group__box {
+    background: white;
+  }
+  .radio-group__item input[type=radio]:not(:checked) ~ .radio-group__title:active ~ .radio-group__box:before {
+    display: block;
+  }
 }
 
 @font-face {

@@ -17,6 +17,7 @@ import BulletList from './components/ui-kit/bullet-list.js';
 import CheckboxList from './components/ui-kit/checkbox-list.js';
 import LikeButton from './components/ui-kit/like-button.js';
 import Pagination from './components/ui-kit/pagination.js';
+import RadioGroup from './components/ui-kit/radio-group.js';
 
 // import cmSelect from '../components/cm-select.js';
 // import cmSelectExpanded from '../components/cm-select-expanded.js';
@@ -89,6 +90,8 @@ const app = {
         [CheckboxList.getType()]: CheckboxList,
         [LikeButton.getType()]: LikeButton,
         [Pagination.getType()]: Pagination,
+        [RadioGroup.getType()]: RadioGroup,
+
         // 'cm-select': cmSelect,
         // cmSelectExpanded,
         // 'radio-group': radioGroup,

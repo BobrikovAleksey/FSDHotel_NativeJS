@@ -19,6 +19,10 @@ const template = `
         <div class="ui__block">
             <checkbox-list ref="demoCheckboxList"></checkbox-list>
         </div><br>
+    
+        <div class="ui__block">
+            <radio-group ref="demoRadioGroup"></radio-group>
+        </div><br>
 
         <div class="ui__block">
             <label class="label ui__label" style="margin-bottom: 16px;">Like button</label>
@@ -67,10 +71,6 @@ const template = `
 <!--    </div><br>-->
     
 <!--    <div class="ui-block">-->
-<!--        <radio-group ref="demoRadioGroup"></radio-group>-->
-<!--    </div><br>-->
-    
-<!--    <div class="ui-block">-->
 <!--        <label class="ui-block__label">Toggle</label>-->
 <!--        <toggle ref="demoToggle"></toggle>-->
 <!--    </div><br>-->
@@ -98,6 +98,17 @@ const components = [
                 { name: 'guests', label: 'Можно пригласить гостей<br>(до 10 человек)', checked: true },
             ],
             label: 'Checkbox buttons',
+        },
+    }, {
+        name: 'RadioGroup',
+        ref: 'demoRadioGroup',
+        params: {
+            list: [
+                { name: 'male', label: 'Мужчина', checked: true },
+                { name: 'female', label: 'Женщина', checked: false },
+            ],
+            label: 'Radio buttons',
+            name: 'sex',
         },
     }, {
         name: 'LikeButton',
