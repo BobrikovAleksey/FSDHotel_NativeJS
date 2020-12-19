@@ -1019,56 +1019,19 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   background: white;
   display: flex;
 }
-
-.like-button__box {
-  cursor: pointer;
-  overflow: hidden;
-  width: inherit;
-  height: 1.4285714286rem;
-  border: 0.0714285714rem solid rgba(31, 32, 65, 0.25);
-  border-radius: 1.4285714286rem;
-  display: flex;
-  align-items: center;
-}
 @media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  .like-button__box:hover {
-    background: #f0e9ff;
+  .like-button:active > input[type=checkbox] ~ .like-button__box .like-button__icon .material-icons:first-of-type {
+    display: block;
   }
-}
-
-.like-button__icon {
-  pointer-events: none;
-  width: 1.4285714286rem;
-  height: 1.4285714286rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.like-button__icon .material-icons {
-  font-size: 0.7142857143rem;
-  line-height: 0.6428571429rem;
-  color: #BC9CFF;
-  font-weight: 400;
-}
-.like-button__icon .material-icons.border {
-  display: block;
-}
-.like-button__icon .material-icons:not(.border) {
-  display: none;
-}
-
-.like-button__counter {
-  pointer-events: none;
-  width: 1.4285714286rem;
-  height: 1.4285714286rem;
-  text-transform: none;
-  font-size: 0.7142857143rem;
-  line-height: 0.8571428571rem;
-  color: rgba(31, 32, 65, 0.25);
-  font-weight: 400;
-  display: flex;
-  align-items: center;
-  padding: 0.1428571429rem 0.1428571429rem 0.1428571429rem 0.1428571429rem;
+  .like-button:active > input[type=checkbox] ~ .like-button__box .like-button__icon .material-icons:last-of-type {
+    display: none;
+  }
+  .like-button:active > input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons:first-of-type {
+    display: none;
+  }
+  .like-button:active > input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons:last-of-type {
+    display: block;
+  }
 }
 
 .like-button input[type=checkbox] {
@@ -1080,11 +1043,63 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 .like-button input[type=checkbox]:checked ~ .like-button__box .like-button__counter {
   color: #BC9CFF;
 }
-.like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons.border {
+.like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons:first-of-type {
+  display: block;
+}
+.like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons:last-of-type {
   display: none;
 }
-.like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons:not(.border) {
+
+.like-button .like-button__box {
+  cursor: pointer;
+  overflow: hidden;
+  width: inherit;
+  height: 1.4285714286rem;
+  border: 0.0714285714rem solid rgba(31, 32, 65, 0.25);
+  border-radius: 1.4285714286rem;
+  display: flex;
+  align-items: center;
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  .like-button .like-button__box:hover, .like-button .like-button__box:focus, .like-button .like-button__box:active {
+    background: #f0e9ff;
+  }
+}
+
+.like-button .like-button__icon {
+  pointer-events: none;
+  width: 1.4285714286rem;
+  height: 1.4285714286rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.like-button .like-button__icon .material-icons {
+  font-size: 0.7142857143rem;
+  line-height: 0.6428571429rem;
+  color: rgba(31, 32, 65, 0.25);
+  font-weight: 400;
+}
+.like-button .like-button__icon .material-icons:first-of-type {
+  color: #BC9CFF;
+  display: none;
+}
+.like-button .like-button__icon .material-icons:last-of-type {
   display: block;
+}
+
+.like-button .like-button__counter {
+  pointer-events: none;
+  width: 1.4285714286rem;
+  height: 1.4285714286rem;
+  font-size: 0.7142857143rem;
+  line-height: 0.8571428571rem;
+  color: rgba(31, 32, 65, 0.25);
+  font-weight: 400;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  padding: 0.1428571429rem 0.1428571429rem 0.1428571429rem 0.1428571429rem;
 }
 
 @font-face {

@@ -1,14 +1,36 @@
 @import ../vars&mixins/index
 
-$ButtonSize: 40/14
 $BoxSize: 20/14
 
 .like-button
-  +Width($ButtonSize)
+  +Width($BoxSize * 2)
   background: $background
   display: flex
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+    &:active > input[type="checkbox"] ~ .like-button__box .like-button__icon .material-icons
+      &:first-of-type
+        display: block
+      &:last-of-type
+        display: none
+    &:active > input[type="checkbox"]:checked ~ .like-button__box .like-button__icon .material-icons
+      &:first-of-type
+        display: none
+      &:last-of-type
+        display: block
 
-.like-button__box
+.like-button input[type="checkbox"]
+  display: none
+  &:checked
+    & ~ .like-button__box
+      border-color: $Purple
+      & .like-button__counter
+        color: $Purple
+      & .like-button__icon .material-icons:first-of-type
+        display: block
+      & .like-button__icon .material-icons:last-of-type
+        display: none
+
+.like-button .like-button__box
   cursor: pointer
   overflow: hidden
   width: inherit
@@ -17,36 +39,24 @@ $BoxSize: 20/14
   +borderRadius($BoxSize)
   +flexAlignItems(center)
   @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
-    &:hover
+    &:hover, &:focus, &:active
       background: lighten($Purple, 15%)
 
-.like-button__icon
+.like-button .like-button__icon
   pointer-events: none
   +WidthHeight($BoxSize)
   +flexPlacement(center)
   & .material-icons
-    +textColorSizeHeightWeight($Purple, 10/14, 9/14)
-    &.border
-      display: block
-    &:not(.border)
+    +textColorSizeHeightWeight($DarkShade25, 10/14, 9/14)
+    &:first-of-type
+      color: $Purple
       display: none
+    &:last-of-type
+      display: block
 
-.like-button__counter
+.like-button .like-button__counter
   pointer-events: none
   +WidthHeight($BoxSize)
-  text-transform: none
-  +textColorSizeHeightWeight($DarkShade25, 10/14, 12/14)
+  +textColorSizeHeightWeightTransform($DarkShade25, 10/14, 12/14)
   +flexAlignItems(center)
   +padding(2/14)
-
-.like-button input[type="checkbox"]
-  display: none
-  &:checked
-    & ~ .like-button__box
-      border-color: $Purple
-    & ~ .like-button__box .like-button__counter
-      color: $Purple
-    & ~ .like-button__box .like-button__icon .material-icons.border
-      display: none
-    & ~ .like-button__box .like-button__icon .material-icons:not(.border)
-      display: block

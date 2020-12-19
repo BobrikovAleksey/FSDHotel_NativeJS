@@ -32,8 +32,6 @@ class Toggle extends BaseComponent {
 
     change = function (event) {
         this.data.checked = event.target.checked;
-
-        console.log( this.data.checked);
     }.bind(this);
 
     render(app, node) {
@@ -42,7 +40,6 @@ class Toggle extends BaseComponent {
         const input = this.$el.querySelector('input[type="checkbox"]');
         input.setAttribute('id', this.data.name);
         input.setAttribute('name', this.data.name);
-        input.setAttribute('value', this.data.name);
         this.data.checked && input.setAttribute('checked', '');
 
         input.addEventListener('change', this.change);
