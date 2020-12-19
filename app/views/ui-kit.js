@@ -107,7 +107,7 @@ const components = [
                 { name: 'male', label: 'Мужчина', checked: true },
                 { name: 'female', label: 'Женщина', checked: false },
             ],
-            label: 'Radio buttons',
+            title: 'Radio buttons',
             name: 'sex',
         },
     }, {

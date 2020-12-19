@@ -6,16 +6,14 @@
     +flexAlignItems(center)
   &__label
     +marginTop(10/14)
-  & .hide
-    display: none
 
-.pagination
+.pagination .pagination
   &__dots, &__button
     +WidthHeight(40/14)
     +textColorSizeHeightWeight($DarkShade50, 12/14, 15/14)
     +flexPlacement(center)
 
-.pagination__button
+.pagination .pagination__button
   cursor: pointer
   border-radius: 50%
   position: relative
@@ -36,3 +34,6 @@
       +ButtonWhite
       &:before
         +ButtonWhite-Before
+
+.pagination .hide
+  display: none

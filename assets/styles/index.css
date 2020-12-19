@@ -1778,37 +1778,37 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   display: flex;
   flex-direction: column;
 }
-.radio-group__label {
+.radio-group__title {
   margin-bottom: 0.5rem;
 }
 .radio-group__list {
   display: flex;
 }
 
-.radio-group__item {
+.radio-group .radio-group__item {
   display: flex;
   padding: 0.4285714286rem 0.8571428571rem 0.4285714286rem 0rem;
   position: relative;
   margin-left: 0.6428571429rem;
 }
-.radio-group__item:first-of-type {
+.radio-group .radio-group__item:first-of-type {
   margin-left: 0;
 }
 
-.radio-group__item input[type=radio] {
+.radio-group input[type=radio] {
   display: none;
 }
-.radio-group__item input[type=radio]:checked ~ .radio-group__box {
+.radio-group input[type=radio]:checked ~ .radio-group__box {
   border-color: #BC9CFF;
 }
-.radio-group__item input[type=radio]:checked ~ .radio-group__box:before {
+.radio-group input[type=radio]:checked ~ .radio-group__box:before {
   display: block;
 }
-.radio-group__item input[type=radio]:checked ~ .radio-group__title {
+.radio-group input[type=radio]:checked ~ .radio-group__label {
   color: rgba(31, 32, 65, 0.75);
 }
 
-.radio-group__title {
+.radio-group .radio-group__label {
   cursor: pointer;
   font-size: 1rem;
   line-height: 1.7142857143rem;
@@ -1820,7 +1820,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   margin: 0;
 }
 
-.radio-group__box {
+.radio-group .radio-group__box {
   pointer-events: none;
   width: 1.4285714286rem;
   height: 1.4285714286rem;
@@ -1835,7 +1835,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   top: 0.6428571429rem;
   left: 0rem;
 }
-.radio-group__box:before {
+.radio-group .radio-group__box:before {
   content: "";
   width: 100%;
   height: 100%;
@@ -1845,10 +1845,10 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 }
 
 @media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  .radio-group__item input[type=radio]:not(:checked) ~ .radio-group__title:hover ~ .radio-group__box, .radio-group__item input[type=radio]:not(:checked) ~ .radio-group__title:focus ~ .radio-group__box, .radio-group__item input[type=radio]:not(:checked) ~ .radio-group__title:active ~ .radio-group__box {
+  .radio-group input[type=radio]:not(:checked) ~ .radio-group__label:hover ~ .radio-group__box, .radio-group input[type=radio]:not(:checked) ~ .radio-group__label:focus ~ .radio-group__box, .radio-group input[type=radio]:not(:checked) ~ .radio-group__label:active ~ .radio-group__box {
     background: #f0e9ff;
   }
-  .radio-group__item input[type=radio]:not(:checked) ~ .radio-group__title:active ~ .radio-group__box:before {
+  .radio-group input[type=radio]:not(:checked) ~ .radio-group__label:active ~ .radio-group__box:before {
     display: block;
   }
 }
@@ -2196,11 +2196,8 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 .pagination__label {
   margin-top: 0.7142857143rem;
 }
-.pagination .hide {
-  display: none;
-}
 
-.pagination__dots, .pagination__button {
+.pagination .pagination__dots, .pagination .pagination__button {
   width: 2.8571428571rem;
   height: 2.8571428571rem;
   font-size: 0.8571428571rem;
@@ -2212,33 +2209,33 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   align-items: center;
 }
 
-.pagination__button {
+.pagination .pagination__button {
   cursor: pointer;
   border-radius: 50%;
   position: relative;
 }
-.pagination__button_prev, .pagination__button_next {
+.pagination .pagination__button_prev, .pagination .pagination__button_next {
   color: white;
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
-.pagination__button_active {
+.pagination .pagination__button_active {
   cursor: default;
   color: white;
   font-weight: 700;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
 @media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  .pagination__button_prev:hover, .pagination__button_next:hover, .pagination__button_prev:focus, .pagination__button_next:focus {
+  .pagination .pagination__button_prev:hover, .pagination .pagination__button_next:hover, .pagination .pagination__button_prev:focus, .pagination .pagination__button_next:focus {
     filter: saturate(250%);
   }
-  .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next), .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next) {
+  .pagination .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next), .pagination .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next) {
     z-index: 0;
     color: #BC9CFF;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border: none;
     position: relative;
   }
-  .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):before, .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):before {
+  .pagination .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):before, .pagination .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):before {
     z-index: -1;
     content: "";
     pointer-events: none;
@@ -2252,6 +2249,10 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
     top: 0.1428571429rem;
     left: 0.1428571429rem;
   }
+}
+
+.pagination .hide {
+  display: none;
 }
 
 .ui__container {

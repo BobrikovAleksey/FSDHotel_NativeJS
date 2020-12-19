@@ -5,12 +5,12 @@ $BoxSize: 20/14
 .radio-group
   +Width($inputWidth-lg / 14)
   +flexDirection(column)
-  &__label
+  &__title
     +marginBottom(7/14)
   &__list
     display: flex
 
-.radio-group__item
+.radio-group .radio-group__item
   display: flex
   +padding(6/14, 12/14, 6/14, 0)
   position: relative
@@ -18,23 +18,23 @@ $BoxSize: 20/14
   &:first-of-type
     margin-left: 0
 
-.radio-group__item input[type="radio"]
+.radio-group input[type="radio"]
   display: none
   &:checked ~ .radio-group__box
     border-color: $Purple
     &:before
       display: block
-  &:checked ~ .radio-group__title
+  &:checked ~ .radio-group__label
     color: $DarkShade75
 
-.radio-group__title
+.radio-group .radio-group__label
   cursor: pointer
   +textColorSizeHeightWeightTransform($DarkShade50, 1, 24/14, none)
   display: block
   +paddingLeft(30/14)
   margin: 0
 
-.radio-group__box
+.radio-group .radio-group__box
   pointer-events: none
   +WidthHeight($BoxSize)
   background: $background
@@ -51,7 +51,7 @@ $BoxSize: 20/14
     border-radius: 50%
     display: none
 
-.radio-group__item input[type="radio"]:not(:checked) ~ .radio-group__title
+.radio-group input[type="radio"]:not(:checked) ~ .radio-group__label
   @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
     &:hover ~ .radio-group__box, &:focus ~ .radio-group__box, &:active ~ .radio-group__box
       background: lighten($Purple, 15%)

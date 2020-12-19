@@ -54,10 +54,9 @@ class LikeButton extends BaseComponent {
         this.$objects.input.setAttribute('name', this.data.name);
         this.data.checked && this.$objects.input.setAttribute('checked', '');
 
-        this.$objects.input.addEventListener('change', this.change);
-
         label.setAttribute('for', this.data.name);
 
+        this.$objects.input.addEventListener('change', this.change);
         label.addEventListener('keydown', this.click);
 
         this.$objects.counter.textContent = this.data.value;
