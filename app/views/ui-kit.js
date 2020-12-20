@@ -17,6 +17,10 @@ const template = `
         </div><br>
 
         <div class="ui__block">
+            <cm-select-expanded ref="demoSelectExpanded" />
+        </div><br>
+
+        <div class="ui__block">
             <checkbox-list ref="demoCheckboxList"></checkbox-list>
         </div><br>
     
@@ -52,10 +56,6 @@ const template = `
                 <button style="margin-left: 1rem" disabled>Click me</a>
             </div>
 
-            <div class="ui__block">
-                <cm-select-expanded ref="demoCmSelectExpended" />
-            </div>
-
             <div class="ui__row">
                 <button class="button button_lg">Go to<i class="material-icons">arrow_forward</i></button>
             </div>
@@ -81,25 +81,37 @@ const components = [
         name: 'BulletList',
         ref: 'demoBulletList',
         params: {
+            label: 'Bullet list',
             list: [
                 'Нельзя с питомцами',
                 'Без вечеринок и мероприятий',
                 'Время прибытия — после 13:00,<br>а выезд до 12:00',
             ],
-            label: 'Bullet list',
         },
-    }, {
+    },
+    {
         name: 'CheckboxList',
         ref: 'demoCheckboxList',
         params: {
-            list: [
-                { name: 'smoke', label: 'Можно курить', checked: false },
-                { name: 'pets', label: 'Можно с питомцами', checked: true },
-                { name: 'guests', label: 'Можно пригласить гостей<br>(до 10 человек)', checked: true },
-            ],
             label: 'Checkbox buttons',
+            list: [
+                { checked: false, label: 'Можно курить', name: 'smoke' },
+                { checked: true, label: 'Можно с питомцами', name: 'pets' },
+                { checked: true, label: 'Можно пригласить гостей<br>(до 10 человек)', name: 'guests' },
+            ],
         },
-    }, {
+    },
+    {
+        name: 'LikeButton',
+        ref: 'demoLikeButton',
+        params: { checked: false, name: 'like', value: 11 },
+    },
+    {
+        name: 'Pagination',
+        ref: 'demoPagination',
+        params: {},
+    },
+    {
         name: 'RadioGroup',
         ref: 'demoRadioGroup',
         params: {
@@ -107,29 +119,28 @@ const components = [
                 { name: 'male', label: 'Мужчина', checked: true },
                 { name: 'female', label: 'Женщина', checked: false },
             ],
-            title: 'Radio buttons',
             name: 'sex',
+            title: 'Radio buttons',
         },
-    }, {
+    },
+    {
+        name: 'cmSelectExpanded',
+        ref: 'demoSelectExpanded',
+        params: {
+            list: [
+                { label: 'Взрослые', max: 9, min: 0, name: 'smoke', value: 0, units: ['гость', 'гостя', 'гостей'] },
+                { label: 'Дети', max: 9, min: 0, name: 'pets', value: 0 },
+                { label: 'Младенцы', max: 9, min: 0, name: 'guests', value: 0 },
+            ],
+            placeholder: 'Сколько гостей',
+            single: true,
+            title: 'Dropdown',
+        },
+    },
+    {
         name: 'Toggle',
         ref: 'demoToggle',
-        params: {
-            checked: true,
-            name: 'offers',
-            label: 'Получать спецпредложения',
-        },
-    }, {
-        name: 'LikeButton',
-        ref: 'demoLikeButton',
-        params: {
-            name: 'like',
-            value: 11,
-            checked: false,
-        },
-    }, {
-        name: 'Pagination',
-        ref: 'demoPagination',
-        params: {},
+        params: { checked: true, label: 'Получать спецпредложения', name: 'offers' },
     },
 ];
 

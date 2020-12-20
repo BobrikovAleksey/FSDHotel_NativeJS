@@ -1,102 +1,114 @@
-@import ../vars, ../mixins
+@import ../vars&mixins/index
 
-$width: 320rem / $FontSize
-$height: 44rem / $FontSize
-$itemHeight: 37rem / $FontSize
+$ListItemHeight: 37/14
 
 .select
-  width: $width
-  +flexCol
-  &__label
-    margin-bottom: 5px
+  +Width($inputWidth-lg / 14)
+  +flexDirection(column)
+  &__title
+    +marginBottom(5/14)
   &__container
-    +flexCol
+    +flexDirection(column)
     position: relative
-  &__input
-    cursor: pointer
-    width: $width
-    height: $height
-    +textCSWHCalc($DarkShade75, 14rem, 400, 18rem)
-    +textEllipsis
-    text-align: left
-    background: $background
-    border: $borderSize-sm solid $borderColor
-    border-radius: $radius-sm
-    +paddingCalc(4rem, 44rem, 4rem, 14rem)
+  &__label
+    width: 100%
+    +paddingBottom(3/14)
+
+.select input[type="button"]
+  cursor: pointer
+  +WidthHeight($inputWidth-lg / 14, $inputHeight-md / 14)
+  +textColorSizeHeightWeight($DarkShade75, 1, 18/14)
+  +textEllipsis
+  text-align: left
+  background: $background
+  +border($borderSize-sm / 14, $borderColor)
+  +borderRadius($borderRadius-sm / 14)
+  +padding(4/14, 52/14, 5/14, 1)
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
     &:hover, &:focus
       border-color: $borderColor-focus
     &:focus
-      +radiusBottom(0)
-  &__container:active > .select__input
-    border-color: $borderColor-focus
-    +radiusBottom(0)
-  &__icon
-    pointer-events: none
-    width: $height
-    height: $height
-    +textCSWHCalc($DarkShade50, 24rem, 400, 24rem)
-    +flexCC
-    +absoluteTRSingle(0)
-  &__list
-    z-index: 101
-    overflow: hidden
-    visibility: hidden
-    width: 100%
-    background: $background
-    +borderRBL($borderSize-sm, $borderColor-focus)
-    +radiusBottom($radius-sm)
-    +flexCol
-    +paddingTCalc(1rem)
-    +absoluteTL($height, 0)
+      +borderRadiusBottom(0)
+
+.select .select__icon
+  pointer-events: none
+  +WidthHeight($inputHeight-md / 14)
+  +textColorSizeHeightWeight($DarkShade50, 24/14, 24/14)
+  +flexPlacement(center)
+  +absoluteTopRight()
+
+.select .select__dropdown
+  z-index: 101
+  overflow: hidden
+  visibility: hidden
+  width: 100%
+  background: $background
+  +borderRightBottomLeft($borderSize-sm / 14, $borderColor-focus)
+  +borderRadiusBottom($borderRadius-sm / 14)
+  +flexDirection(column)
+  +paddingTop(2/14)
+  +absoluteTopLeft($inputHeight-md / 14, 0)
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
     &:active
       visibility: visible
-  &__input:focus ~ .select__list
+@media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+  .select input[type="button"]:focus ~ .select__dropdown
     visibility: visible
-  &__item
+
+.select .select__item
+  cursor: default
+  width: 100%
+  height: $ListItemHeight
+  +textColorSizeHeightWeightTransform($DarkShade, 12/14, 15/14, 700, uppercase)
+  +textEllipsis
+  +flexAlignItems(center)
+  +padding(3/14, 6/14, 3/14, 1)
+  &_no-action
     cursor: pointer
-    width: 100%
-    height: $itemHeight
-    +textCSWHTCalc($DarkShade, 12rem, 700, 15rem, uppercase)
-    +textEllipsis
-    +flexAiC
-    +paddingCalc(0, 7rem, 0, 14rem)
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
     &:hover, &:active
-      background: $PurpleActive
-    &_no-action
-      cursor: default
-      &:hover, &:active
-        background: $background
-  &__list:active > .select__item:not(:active)
+      background: inherit
+    &_hover:hover, &_hover:active
+      background: $PurpleLighten15
+@media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+  .select__list:active > .select__item:not(:active)
     background: inherit
-  &__title
-    width: 100%
-  &__number
-    display: flex
-    +marginTCalc(2rem)
-    & input[type="number"]
-      pointer-events: none
-      +WidthCalc(32rem)
-      +HeightCalc(30rem)
-      +textCSWHCalc($DarkShade, 12rem, 700, 15rem)
-      text-align: center
-      border: none
-      padding: 0
-  &__spin-button
-    +WHCalcSingle(30rem)
-    +textCSWHCalc($DarkShade50, 18rem, 400, 22rem)
-    border: 1px solid $DarkShade50
-    border-radius: 50%
-    +flexCC
+
+.select .select__number
+  display: flex
+  & input[type="number"]
+    pointer-events: none
+    +WidthHeight(32/14, 30/14)
+    +textColorSizeHeightWeight($DarkShade, 12/14, 15/14, 700)
+    text-align: center
+    background: inherit
+    border: none
+    +padding(0, 0, 1/14)
+
+.select .select__spin-button
+  +WidthHeight(30/14)
+  +textColorSizeHeightWeight($DarkShade50, 18/14, 22/14)
+  +border($borderSize-sm / 14, $DarkShade50)
+  border-radius: 50%
+  +flexPlacement(center)
+  +paddingTop(1/14)
+  +marginTop(1/14)
+  &[disabled]
+    cursor: default
+    color: $DarkShade25
+    border-color: $DarkShade25
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
     &:hover, &:active
-      background: $PurpleActive
-    &[disabled]
-      cursor: default
-      color: $DarkShade25
-      border-color: $DarkShade25
-      &:hover, &:active
-        background: inherit
-  &__control-panel
-    height: $height
-    +flexSbC
-    +paddingTCalc(7rem)
-    +paddingLRCalc(14rem, 7rem)
+      background: $PurpleLighten15
+    &[disabled]:hover, &[disabled]:active
+      background: inherit
+
+.select .select__control-panel
+  +Height(($inputHeight-md - 1)/ 14)
+  +flexPlacement(space-between, center)
+  +paddingTopRightLeft(5/14, 6/14, 7/7)
+
+@media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+  .select .select__container:active > input[type="button"]
+    border-color: $borderColor-focus
+    +borderRadiusBottom(0)
