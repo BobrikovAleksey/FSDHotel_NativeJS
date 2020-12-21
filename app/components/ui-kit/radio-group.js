@@ -1,11 +1,7 @@
-'use strict';
-
 import BaseComponent from './base-component.js';
 
-// noinspection JSUnusedGlobalSymbols
 class RadioGroup extends BaseComponent {
     template = `
-        <!--suppress CheckTagEmptyBody -->
         <div class="radio-group">
             <label class="label radio-group__title hide" data-title></label>
             <ul class="radio-group__list" data-list></ul>
@@ -13,7 +9,6 @@ class RadioGroup extends BaseComponent {
     `;
 
     listTemplate = `
-        <!--suppress CheckTagEmptyBody -->
         <li class="radio-group__item">
             <input type="radio" data-radio>
             <label class="radio-group__label" data-label tabindex="0"></label>

@@ -1,11 +1,7 @@
-'use strict';
-
 import BaseComponent from './base-component.js';
 
-// noinspection JSUnusedGlobalSymbols
 class LikeButton extends BaseComponent {
     template = `
-        <!--suppress CheckTagEmptyBody -->
         <div class="like-button">
             <input type="checkbox" data-input>
             <label class="like-button__box" data-label tabindex="0">

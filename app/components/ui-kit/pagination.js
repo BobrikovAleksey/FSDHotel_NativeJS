@@ -1,11 +1,7 @@
-'use strict';
-
 import BaseComponent from './base-component.js';
 
-// noinspection JSUnusedGlobalSymbols
 class Pagination extends BaseComponent {
     template = `
-        <!--suppress CheckTagEmptyBody -->
         <div class="pagination">
             <ul class="pagination__panel">
                 <li class="pagination__button" tabindex="0" data-first></li>

@@ -1,11 +1,7 @@
-'use strict';
-
 import BaseComponent from './base-component.js';
 
-// noinspection JSUnusedGlobalSymbols
 class Toggle extends BaseComponent {
     template = `
-        <!--suppress CheckTagEmptyBody -->
         <div class="toggle">
             <input type="checkbox" data-input>
             <label class="toggle__label" data-label tabindex="0">

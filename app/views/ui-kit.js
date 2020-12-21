@@ -1,7 +1,4 @@
-'use strict';
-
 const template = `
-    <!--suppress CheckTagEmptyBody -->
     <div class="ui__container">
         <h1>This one is the sub-section or widget title</h1><br>
 
@@ -74,10 +71,6 @@ const template = `
             <bullet-list ref="demoBulletList"></bullet-list>
         </div><br>
     </div>
-
-<!--    <div class="ui-block">-->
-<!--        <cm-select ref="demoCmSelect"></cm-select>-->
-<!--    </div><br>-->
 `;
 
 const components = [
@@ -153,11 +146,11 @@ const components = [
             title: 'Dropdown',
         },
     },
-    {
-        name: 'Toggle',
-        ref: 'demoToggle',
-        params: { checked: true, label: 'Получать спецпредложения', name: 'offers' },
-    },
+    // {
+    //     name: 'Toggle',
+    //     ref: 'demoToggle',
+    //     params: { checked: true, label: 'Получать спецпредложения', name: 'offers' },
+    // },
 ];
 
 export default {

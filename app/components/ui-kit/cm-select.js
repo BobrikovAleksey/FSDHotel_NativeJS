@@ -1,14 +1,10 @@
-'use strict';
-
 import BaseComponent from './base-component.js';
 
 const BUTTON_APPLY = 'apply';
 const BUTTON_CLEAR = 'clear';
 
-// noinspection JSUnusedGlobalSymbols
 class cmSelect extends BaseComponent {
     template = `
-        <!--suppress CheckTagEmptyBody -->
         <div class="select">
             <label class="label select__title" data-title></label>
     
