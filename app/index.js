@@ -1,5 +1,3 @@
-'use strict';
-
 import Router from './router.js';
 import State from './state.js';
 
@@ -19,9 +17,7 @@ import cmSelect from './components/ui-kit/cm-select.js';
 import LikeButton from './components/ui-kit/like-button.js';
 import Pagination from './components/ui-kit/pagination.js';
 import RadioGroup from './components/ui-kit/radio-group.js';
-import Toggle from './components/ui-kit/Toggle.js';
-
-// import cmSelect from '../components/cm-select.js';
+import Toggle from './components/ui-kit/toggle.js';
 
 const $config = {
     baseUrl: '/FSDHotel_Layout_html/#/',
