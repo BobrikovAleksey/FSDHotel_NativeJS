@@ -17,7 +17,11 @@ const template = `
         </div><br>
 
         <div class="ui__block">
-            <cm-select-expanded ref="demoSelectExpanded" />
+            <cm-select ref="demoSelectSingle" />
+        </div><br>
+
+        <div class="ui__block">
+            <cm-select ref="demoSelectMany" />
         </div><br>
 
         <div class="ui__block">
@@ -124,8 +128,8 @@ const components = [
         },
     },
     {
-        name: 'cmSelectExpanded',
-        ref: 'demoSelectExpanded',
+        name: 'cmSelect',
+        ref: 'demoSelectSingle',
         params: {
             list: [
                 { label: 'Взрослые', max: 9, min: 0, name: 'smoke', value: 0, units: ['гость', 'гостя', 'гостей'] },
@@ -133,7 +137,19 @@ const components = [
                 { label: 'Младенцы', max: 9, min: 0, name: 'guests', value: 0 },
             ],
             placeholder: 'Сколько гостей',
-            single: true,
+            title: 'Dropdown',
+        },
+    },
+    {
+        name: 'cmSelect',
+        ref: 'demoSelectMany',
+        params: {
+            list: [
+                { label: 'Спальни', max: 4, min: 1, name: 'bedroom', value: 1, units: ['спальная', 'спальни', 'спален'] },
+                { label: 'Кровати', max: 9, min: 1, name: 'bed', value: 1, units: ['кровать', 'кровати', 'кроватей'] },
+                { label: 'Ванные комнаты', max: 2, min: 0, name: 'bathroom', value: 0, units: ['ванная комната', 'ванных комнаты', 'ванных комнат'] },
+            ],
+            single: false,
             title: 'Dropdown',
         },
     },

@@ -1176,7 +1176,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   border-color: rgba(31, 32, 65, 0.25);
 }
 @media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  .select .select__spin-button:hover, .select .select__spin-button:active {
+  .select .select__spin-button:hover, .select .select__spin-button:active, .select .select__spin-button:focus {
     background: #f0e9ff;
   }
   .select .select__spin-button[disabled]:hover, .select .select__spin-button[disabled]:active {
@@ -1201,6 +1201,10 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
     border-bottom-right-radius: 0rem;
   }
 }
+.select .show {
+  visibility: visible;
+}
+
 @font-face {
   font-family: "Material Icons";
   font-style: normal;

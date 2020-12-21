@@ -98,7 +98,7 @@ $ListItemHeight: 37/14
     color: $DarkShade25
     border-color: $DarkShade25
   @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
-    &:hover, &:active
+    &:hover, &:active, &:focus
       background: $PurpleLighten15
     &[disabled]:hover, &[disabled]:active
       background: inherit
@@ -112,3 +112,6 @@ $ListItemHeight: 37/14
   .select .select__container:active > input[type="button"]
     border-color: $borderColor-focus
     +borderRadiusBottom(0)
+
+.select .show
+  visibility: visible

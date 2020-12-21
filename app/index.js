@@ -15,7 +15,7 @@ import uiKit from './views/ui-kit.js';
 import cmHeader from './components/cm-header.js';
 import BulletList from './components/ui-kit/bullet-list.js';
 import CheckboxList from './components/ui-kit/checkbox-list.js';
-import cmSelectExpanded from './components/ui-kit/cm-select-expanded.js';
+import cmSelect from './components/ui-kit/cm-select.js';
 import LikeButton from './components/ui-kit/like-button.js';
 import Pagination from './components/ui-kit/pagination.js';
 import RadioGroup from './components/ui-kit/radio-group.js';
@@ -87,13 +87,11 @@ const app = {
         [cmHeader.getType()]: cmHeader,
         [BulletList.getType()]: BulletList,
         [CheckboxList.getType()]: CheckboxList,
-        [cmSelectExpanded.getType()]: cmSelectExpanded,
+        [cmSelect.getType()]: cmSelect,
         [LikeButton.getType()]: LikeButton,
         [Pagination.getType()]: Pagination,
         [RadioGroup.getType()]: RadioGroup,
         [Toggle.getType()]: Toggle,
-
-        // 'cm-select': cmSelect,
     },
 
     $refs: {},
