@@ -60,6 +60,13 @@
 =textTransformSize($transform, $size, $unit: rem)
   +textSizeTransform($size, $transform, $unit)
 
+// color - weight
+=textColorWeight($color, $weight)
+  color: $color
+  font-weight: $weight
+=textWeightColor($weight, $color)
+  +textColorWeight($color, $weight)
+
 // size - line height - color
 =textSizeHeightColor($size, $height, $color: $text, $unit: rem)
   font-size: $size + $unit
