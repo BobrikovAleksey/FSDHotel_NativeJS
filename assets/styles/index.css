@@ -10,236 +10,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@font-face {
-  font-family: "Material Icons";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/MaterialIcons-Regular.eot");
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
-}
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
-  pointer-events: none;
-  font-family: Material Icons, serif;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "liga";
-}
-
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                Objects palette                 * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                Objects palette                 * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                     Border                     * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                Objects palette                 * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                    Display                     * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                Objects palette                 * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                    Padding                     * */
-/************************************************** */
-/************************************************** */
-/*                     Margin                     * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                Objects palette                 * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                    Absolute                    * */
-/************************************************** */
-/************************************************** */
-/*                     Fixed                      * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                Objects palette                 * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                      Text                      * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-html {
-  font-size: 14px;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-*:active, *:focus {
-  outline: none;
-}
-
-body {
-  user-select: none;
-  font-family: Montserrat, serif;
-  font-size: 1rem;
-  line-height: 1.7142857143rem;
-  color: rgba(31, 32, 65, 0.75);
-  font-weight: 400;
-}
-
-h1 {
-  font-size: 1.7142857143rem;
-  line-height: 2.0714285714rem;
-  color: #1F2041;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 1.3571428571rem;
-  line-height: 1.6428571429rem;
-  color: #1F2041;
-  font-weight: 700;
-}
-
-h3, .label, .ui__label {
-  font-size: 0.8571428571rem;
-  line-height: 1.0714285714rem;
-  color: #1F2041;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-p {
-  font-size: 1rem;
-  line-height: 1.7142857143rem;
-  color: rgba(31, 32, 65, 0.75);
-  font-weight: 400;
-}
-
-a {
-  height: 1.2857142857rem;
-  text-decoration: none;
-  font-size: 1rem;
-  line-height: 1.4285714286rem;
-  color: rgba(31, 32, 65, 0.75);
-  font-weight: 400;
-}
-a[disabled] {
-  pointer-events: none;
-  cursor: default;
-  color: rgba(31, 32, 65, 0.5);
-}
-
-ul, li {
-  list-style-type: none;
-}
-
-details > summary {
-  list-style: none;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-button, .hasDatepicker .ui-datepicker-current {
-  font-family: Montserrat, serif;
-}
-
-input {
-  font-family: Montserrat, serif;
-  width: 320px;
-  height: 3.1428571429rem;
-  font-size: 1rem;
-  line-height: 1.7142857143rem;
-  color: rgba(31, 32, 65, 0.75);
-  background: white;
-  border: 0.0714285714rem solid rgba(31, 32, 65, 0.25);
-  border-radius: 0.2857142857rem;
-  padding: 0.9285714286rem 1.0714285714rem 0.9285714286rem 1.0714285714rem;
-}
-input::placeholder {
-  color: rgba(31, 32, 65, 0.25);
-}
-@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  input:hover, input:focus {
-    border-color: rgba(31, 32, 65, 0.5);
-  }
-  input[type=number], input[type=number]:hover, input[type=number]:focus {
-    -moz-appearance: textfield;
-  }
-  input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-  }
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
@@ -2821,37 +2592,500 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   display: none;
 }
 
-.ui__container {
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/MaterialIcons-Regular.eot");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
+}
+.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+  pointer-events: none;
+  font-family: Material Icons, serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                     Border                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Display                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Padding                     * */
+/************************************************** */
+/************************************************** */
+/*                     Margin                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Absolute                    * */
+/************************************************** */
+/************************************************** */
+/*                     Fixed                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Text                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+html {
+  font-size: 14px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+*:active, *:focus {
+  outline: none;
+}
+
+body {
+  user-select: none;
+  font-family: Montserrat, serif;
+  font-size: 1rem;
+  line-height: 1.7142857143rem;
+  color: rgba(31, 32, 65, 0.75);
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 1.7142857143rem;
+  line-height: 2.0714285714rem;
+  color: #1F2041;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.3571428571rem;
+  line-height: 1.6428571429rem;
+  color: #1F2041;
+  font-weight: 700;
+}
+
+h3, .label {
+  font-size: 0.8571428571rem;
+  line-height: 1.0714285714rem;
+  color: #1F2041;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.7142857143rem;
+  color: rgba(31, 32, 65, 0.75);
+  font-weight: 400;
+}
+
+a {
+  height: 1.2857142857rem;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.4285714286rem;
+  color: rgba(31, 32, 65, 0.75);
+  font-weight: 400;
+}
+a[disabled] {
+  pointer-events: none;
+  cursor: default;
+  color: rgba(31, 32, 65, 0.5);
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+details > summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+button, .hasDatepicker .ui-datepicker-current {
+  font-family: Montserrat, serif;
+}
+
+input {
+  font-family: Montserrat, serif;
+  width: 320px;
+  height: 3.1428571429rem;
+  font-size: 1rem;
+  line-height: 1.7142857143rem;
+  color: rgba(31, 32, 65, 0.75);
+  background: white;
+  border: 0.0714285714rem solid rgba(31, 32, 65, 0.25);
+  border-radius: 0.2857142857rem;
+  padding: 0.8571428571rem 1.0714285714rem 0.7142857143rem 1.0714285714rem;
+}
+input::placeholder {
+  color: rgba(31, 32, 65, 0.25);
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  input:hover, input:focus {
+    border-color: rgba(31, 32, 65, 0.5);
+  }
+  input[type=number], input[type=number]:hover, input[type=number]:focus {
+    -moz-appearance: textfield;
+  }
+  input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/MaterialIcons-Regular.eot");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
+}
+.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+  pointer-events: none;
+  font-family: Material Icons, serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                     Border                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Display                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Padding                     * */
+/************************************************** */
+/************************************************** */
+/*                     Margin                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Absolute                    * */
+/************************************************** */
+/************************************************** */
+/*                     Fixed                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Text                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+.ui-kit {
   max-width: 1440px;
   min-width: 340px;
-  padding: 3rem 140px;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
+  padding: 3rem 140px;
 }
 @media (max-width: 1440px) {
-  .ui__container {
+  .ui-kit {
     padding: 2rem calc(140px - (1440px - 100vw) * 0.1785714286);
   }
 }
 @media (max-width: 768px) {
-  .ui__container {
+  .ui-kit {
     padding: 1rem calc(20px - (768px - 100vw) * 0.023364486);
   }
 }
 @media (max-width: 340px) {
-  .ui__container {
+  .ui-kit {
     padding: 1rem 0.7142857143rem 1rem 0.7142857143rem;
   }
 }
+.ui-kit .ui-kit__tabs {
+  height: 3.1428571429rem;
+  display: flex;
+  align-items: center;
+}
+.ui-kit .ui-kit__tab {
+  margin-left: 1.5714285714rem;
+}
+.ui-kit .ui-kit__tab:first-of-type {
+  margin-left: 0;
+}
+.ui-kit .ui-kit__panel {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+}
 
-.ui__block {
+.ui-kit .ui-kit__colors, .ui-kit .ui-kit__texts {
+  width: 48%;
+}
+@media (max-width: 768px) {
+  .ui-kit .ui-kit__colors, .ui-kit .ui-kit__texts {
+    width: auto;
+    min-width: 22.8571428571rem;
+  }
+}
+.ui-kit .ui-kit__colors, .ui-kit .ui-kit__texts {
   display: flex;
   flex-direction: column;
 }
-.ui__label {
-  margin-bottom: 0.3571428571rem;
+.ui-kit .ui-kit__color-block, .ui-kit .ui-kit__text-block {
+  padding: 0.7142857143rem 0.7142857143rem 0.7142857143rem 0.7142857143rem;
 }
-.ui__row {
+.ui-kit .ui-kit__color-block {
+  display: flex;
+  align-items: center;
+}
+.ui-kit .ui-kit__color-box {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.4285714286rem;
+  display: block;
+}
+.ui-kit .ui-kit__color-box_dark-shade {
+  background: #1F2041;
+}
+.ui-kit .ui-kit__color-box_dark-shade-75 {
+  background: rgba(31, 32, 65, 0.75);
+}
+.ui-kit .ui-kit__color-box_dark-shade-50 {
+  background: rgba(31, 32, 65, 0.5);
+}
+.ui-kit .ui-kit__color-box_dark-shade-25 {
+  background: rgba(31, 32, 65, 0.25);
+}
+.ui-kit .ui-kit__color-box_dark-shade-5 {
+  background: rgba(31, 32, 65, 0.05);
+}
+.ui-kit .ui-kit__color-box_purple {
+  background: #BC9CFF;
+}
+.ui-kit .ui-kit__color-box_green {
+  background: #6FCF97;
+}
+.ui-kit .ui-kit__color-title {
+  margin-top: -0.0714285714rem;
+  margin-left: 2.8571428571rem;
+}
+.ui-kit .ui-kit__color-title_normal {
+  font-weight: 400;
+  margin-top: 0.3571428571rem;
+}
+.ui-kit .ui-kit__text-block {
+  display: flex;
+}
+.ui-kit .ui-kit__text-block h2 {
+  margin-top: 2.3571428571rem;
+}
+.ui-kit .ui-kit__text-block h3 {
+  margin-top: 2.2142857143rem;
+}
+.ui-kit .ui-kit__text-block span {
+  margin-top: 1.9285714286rem;
+}
+.ui-kit .ui-kit__text-title {
+  min-width: 2.8571428571rem;
+  color: rgba(31, 32, 65, 0.25);
+  font-weight: 400;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-right: 2.1428571429rem;
+}
+
+.ui-kit .ui-kit__block {
+  display: flex;
+  flex-direction: column;
+}
+.ui-kit .ui-kit__label {
+  margin-bottom: 0.3571428571rem;
+  position: relative;
+}
+.ui-kit .ui-kit__label .ui-kit__label_right {
+  color: rgba(31, 32, 65, 0.5);
+  font-weight: 400;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+}
+.ui-kit__row {
   margin-bottom: 1rem;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=index.css.map */

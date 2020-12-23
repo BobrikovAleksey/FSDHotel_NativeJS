@@ -1,26 +1,12 @@
-@import main, components/buttons
+@import components/buttons
 @import components/header
 @import components/datepicker, components/selects
 @import components/like-button, components/toggle
 @import components/bullet-list, components/checkbox-list, components/radio-group, components/pagination
 
-.ui__container
-  max-width: $SiteMaxWidthPx
-  min-width: $SiteMinWidthPx
-  padding: 3rem $HorizontalMaxPaddingPx
-  margin: 0 auto
-  @media (max-width: $SiteMaxWidthPx)
-    padding: 2rem calc(#{$HorizontalMaxPaddingPx} - (#{$SiteMaxWidthPx} - 100vw) * #{($HorizontalMaxPadding - $HorizontalMinPadding) / ($SiteMaxWidth - $SiteWidthBreakpoint)})
-  @media (max-width: $SiteWidthBreakpointPx)
-    padding: 1rem calc(#{$HorizontalMinPaddingPx} - (#{$SiteWidthBreakpointPx} - 100vw) * #{($HorizontalMinPadding / 2) / ($SiteWidthBreakpoint - $SiteMinWidth)})
-  @media (max-width: $SiteMinWidthPx)
-    +padding(1, $HorizontalMinPadding / 28)
+@import main, ui-kit
 
-.ui
-  &__block
-    +flexDirection(column)
-  &__label
-    @extend .label
-    +marginBottom(5/14)
-  &__row
-    +marginBottom(1)
+body
+  min-height: 100vh
+  display: flex
+  +flexDirection(column)

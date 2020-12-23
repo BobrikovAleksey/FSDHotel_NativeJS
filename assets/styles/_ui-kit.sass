@@ -1,0 +1,100 @@
+@import vars&mixins/index
+
+.ui-kit
+  max-width: $SiteMaxWidthPx
+  min-width: $SiteMinWidthPx
+  +flexDirection(column)
+  margin: 0 auto
+  padding: 3rem $HorizontalMaxPaddingPx
+  @media (max-width: $SiteMaxWidthPx)
+    padding: 2rem calc(#{$HorizontalMaxPaddingPx} - (#{$SiteMaxWidthPx} - 100vw) * #{($HorizontalMaxPadding - $HorizontalMinPadding) / ($SiteMaxWidth - $SiteWidthBreakpoint)})
+  @media (max-width: $SiteWidthBreakpointPx)
+    padding: 1rem calc(#{$HorizontalMinPaddingPx} - (#{$SiteWidthBreakpointPx} - 100vw) * #{($HorizontalMinPadding / 2) / ($SiteWidthBreakpoint - $SiteMinWidth)})
+  @media (max-width: $SiteMinWidthPx)
+    +padding(1, $HorizontalMinPadding / 28)
+
+  & .ui-kit__tabs
+    +Height(44/14)
+    +flexAlignItems(center)
+
+  & .ui-kit__tab
+    +marginLeft(22/14)
+    &:first-of-type
+      margin-left: 0
+
+  & .ui-kit__panel
+    +flexJustifyContent(space-between)
+    flex-wrap: wrap
+    +paddingTop(1)
+
+// first panel
+.ui-kit
+  & .ui-kit__colors, & .ui-kit__texts
+    width: 48%
+    @media (max-width: $SiteWidthBreakpointPx)
+      width: auto
+      +WidthMin(($SiteMinWidth - $HorizontalMinPadding) / 14)
+
+  & .ui-kit__colors, & .ui-kit__texts
+    +flexDirection(column)
+
+  & .ui-kit__color-block, & .ui-kit__text-block
+    +padding(10/14)
+
+  & .ui-kit__color-block
+    +flexAlignItems(center)
+
+  & .ui-kit__color-box
+    +WidthHeight(70/14)
+    +borderRadius(6/14)
+    display: block
+    &_dark-shade
+      background: $DarkShade
+    &_dark-shade-75
+      background: $DarkShade75
+    &_dark-shade-50
+      background: $DarkShade50
+    &_dark-shade-25
+      background: $DarkShade25
+    &_dark-shade-5
+      background: $DarkShade5
+    &_purple
+      background: $Purple
+    &_green
+      background: $Green
+
+  & .ui-kit__color-title
+    +marginTopLeft(-1/14, 40/14)
+    &_normal
+      font-weight: 400
+      +marginTop(5/14)
+
+  & .ui-kit__text-block
+    display: flex
+    & h2
+      +marginTop(33/14)
+    & h3
+      +marginTop(31/14)
+    & span
+      +marginTop(27/14)
+
+  & .ui-kit__text-title
+    +WidthMin(40/14)
+    +textColorWeight($textLighten3, 400)
+    +flexPlacement(flex-end, flex-start)
+    +marginRight(30/14)
+
+// second panel
+.ui-kit
+  & .ui-kit__block
+    +flexDirection(column)
+
+  & .ui-kit__label
+    +marginBottom(5/14)
+    position: relative
+    & .ui-kit__label_right
+      +textColorWeight($textLighten2, 400)
+      +absoluteTopRight()
+
+  &__row
+    +marginBottom(1)
