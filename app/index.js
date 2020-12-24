@@ -2,11 +2,13 @@ import Router from './router.js';
 import State from './state.js';
 
 // views
-import about from './views/about.js';
-import agreements from './views/agreements.js';
-import news from './views/news.js';
-import services from './views/services.js';
-import vacancies from './views/vacancies.js';
+import About from './views/about.js';
+import Agreements from './views/agreements.js';
+import LandingPage from './views/landing-page.js';
+import News from './views/news.js';
+import Services from './views/services.js';
+import Vacancies from './views/vacancies.js';
+
 import uiKit from './views/ui-kit.js';
 
 // components
@@ -29,34 +31,22 @@ const $state = new State({ mode: 'hash', root: '/' });
 
 $router
     .add(/about/, () => {
-        app.renderView(about, {
-            view: 0,
-        });
-    })
-    .add(/services\/(.*)/, (service) => {
-        app.renderView(services, {
-            view: 1,
-            service,
-        });
-    })
-    .add(/vacancies/, () => {
-        app.renderView(vacancies, {
-            view: 2,
-        });
-    })
-    .add(/news/, () => {
-        app.renderView(news, {
-            view: 3,
-        });
+        app.getView('About');
     })
     .add(/agreements\/(.*)/, (argument) => {
-        app.renderView(agreements, {
-            view: 4,
-            argument,
-        });
+        app.getView('Agreements', { argument });
+    })
+    .add(/news/, () => {
+        app.getView('News');
+    })
+    .add(/services\/(.*)/, (service) => {
+        app.getView('Services', { service });
+    })
+    .add(/vacancies/, () => {
+        app.getView('Vacancies');
     })
     .add('', () => {
-        app.renderView(uiKit);
+        app.getView('LandingPage');
     });
 
 const $storage = {
@@ -79,6 +69,15 @@ const $getters = {
 };
 
 const app = {
+    views: {
+        About,
+        Agreements,
+        LandingPage,
+        News,
+        Services,
+        Vacancies,
+    },
+
     components: {
         [cmHeader.getType()]: cmHeader,
         [BulletList.getType()]: BulletList,
@@ -90,6 +89,10 @@ const app = {
         [Toggle.getType()]: Toggle,
     },
 
+    $views: {
+        Root: null,
+        Current: null,
+    },
     $refs: {},
     $config,
     $router,
@@ -98,23 +101,29 @@ const app = {
     $actions,
     $getters,
 
-    /**
-     * Обновляет главный контент страницы
-     * @param view object
-     * @param params object
-     */
-    renderView(view, params = {}) {
-        this.$actions.setView(params.view ?? -1);
+    getView(viewName, params = {}) {
+        if (!this.$views.Root) {
+            this.$views.Root = document.querySelector('main');
+        }
 
-        const content = document.querySelector('main');
+        if (this.$views.Current) {
+            this.$views.Current.hide();
+        }
 
-        content.innerHTML = '';
-        content.insertAdjacentHTML('afterbegin', view['template']);
+        if (this.$views.hasOwnProperty(viewName)) {
+            this.$views[viewName].show();
+            this.$views.Current = this.$views[viewName];
+            return;
+        }
 
-        view['components'].forEach((el) => {
-            this.renderComponent(this.components[el['name']].getType(), el['ref'], el['params']);
-        });
+        const view = this.views[viewName];
+        const viewObject = new view(params);
+
+        viewObject.create(this, this.$views.Root);
+        this.$views.Current = this.$views[viewName];
     },
+
+
 
     /**
      * Добавляет компонент в DOM

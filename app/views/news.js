@@ -1,14 +1,30 @@
-'use strict';
+import BaseView from './base-view.js';
 
-const template = `
-    <div class="news__container" style="display: flex; justify-content: center">
-        <h1>Новости</h1>
-    </div>
-`;
+class News extends BaseView {
+    template = `
+        <div class="view">
+            <div class="view__container">
+                <h1>Новости</h1>
+            </div>
+        </div>
+    `;
 
-const components = [];
+    state = {};
 
-export default {
-    template,
-    components,
-};
+    constructor(data = {}) {
+        super(data);
+    };
+
+    create(app) {
+        super.create(app);
+
+        this.$app.$views.News = this;
+    };
+
+    /** Обновляет страницу */
+    update = function () {
+
+    }.bind(this);
+}
+
+export default News;

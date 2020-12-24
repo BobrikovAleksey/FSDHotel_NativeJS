@@ -1,10 +1,10 @@
 import BaseView from './base-view.js';
 
-class Vacancies extends BaseView {
+class LandingPage extends BaseView {
     template = `
-        <div class="view">
+        <div class="view landing-page">
             <div class="view__container">
-                <h1>Вакансии</h1>
+                
             </div>
         </div>
     `;
@@ -18,7 +18,7 @@ class Vacancies extends BaseView {
     create(app) {
         super.create(app);
 
-        this.$app.$views.Vacancies = this;
+        this.$app.$views.LandingPage = this;
     };
 
     /** Обновляет страницу */
@@ -27,4 +27,4 @@ class Vacancies extends BaseView {
     }.bind(this);
 }
 
-export default Vacancies;
+export default LandingPage;

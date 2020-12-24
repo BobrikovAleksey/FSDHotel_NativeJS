@@ -67,3 +67,19 @@ input
         -moz-appearance: textfield
       &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
         -webkit-appearance: none
+
+.view
+  background: $background
+  &__container
+    min-width: $SiteMinWidthPx
+    max-width: $SiteMaxWidthPx
+    height: 100%
+    +flexPlacement(space-between, center)
+    padding: 0 $HorizontalMaxPaddingPx
+    margin: 0 auto
+    @media (max-width: #{$SiteMaxWidth - 0.51}px)
+      padding: 0 calc(#{$HorizontalMaxPaddingPx} - (#{$SiteMaxWidthPx} - 100vw) * #{($HorizontalMaxPadding - $HorizontalMinPadding) / ($SiteMaxWidth - $SiteWidthBreakpoint)})
+    @media (max-width: #{$SiteWidthBreakpoint - 0.51}px)
+      padding: 1rem calc(#{$HorizontalMinPaddingPx} - (#{$SiteWidthBreakpointPx} - 100vw) * #{($HorizontalMinPadding / 2) / ($SiteWidthBreakpoint - $SiteMinWidth)})
+    @media (max-width: #{$SiteMinWidth - 0.51}px)
+      +padding(0, $HorizontalMinPadding / 28)
