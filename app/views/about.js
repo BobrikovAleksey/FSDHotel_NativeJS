@@ -9,7 +9,7 @@ class About extends BaseView {
         </div>
     `;
 
-    state = {};
+    $name = 'About';
 
     constructor(data = {}) {
         super(data);
@@ -17,8 +17,6 @@ class About extends BaseView {
 
     create(app) {
         super.create(app);
-
-        this.$app.$views.About = this;
     };
 
     /** Обновляет страницу */

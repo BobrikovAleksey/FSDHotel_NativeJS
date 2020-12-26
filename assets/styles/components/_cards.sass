@@ -1,0 +1,32 @@
+@import ../vars&mixins/index
+
+.card
+  width: $Card-WidthPx
+  background: $Card-Background
+  border: $Card-Border
+  border-radius: $Card-Radius
+  box-shadow: $Card-Shadow
+  padding: $Card-PaddingMaxTopPx $Card-PaddingMaxPx $Card-PaddingMaxPx
+  @media (max-width: #{$Site-WidthBreakpoint768 - 0.51}px)
+    width: calc(#{$Object-WidthPx} + (#{$Card-PaddingMaxPx} - (#{$Site-WidthBreakpoint768Px} - 100vw) * #{($Card-PaddingMax - $Card-PaddingMin) / ($Site-WidthBreakpoint768 - $Site-MinWidth)}) * 2)
+    padding: calc(#{$Card-PaddingMaxTopPx} - (#{$Site-WidthBreakpoint768Px} - 100vw) * #{($Card-PaddingMaxTop - $Card-PaddingMinTop) / ($Site-WidthBreakpoint768 - $Site-MinWidth)}) calc(#{$Card-PaddingMaxPx} - (#{$Site-WidthBreakpoint768Px} - 100vw) * #{($Card-PaddingMax - $Card-PaddingMin) / ($Site-WidthBreakpoint768 - $Site-MinWidth)})
+  @media (max-width: #{$Site-MinWidth - 0.51}px)
+    width: #{$Object-Width + $Card-PaddingMin * 2}px
+    padding: $Card-PaddingMinTopPx $Card-PaddingMinPx
+
+.card
+  &__title_mt1
+    margin-top: 1px
+  &__block
+    width: 100%
+    margin-top: 18px
+    &_mt10
+      margin-top: 9px
+
+button.card__button
+  width: 100%
+  margin-top: 30px
+  &_pr24
+    padding-right: 24px
+  &_mt20
+    margin-top: 20px

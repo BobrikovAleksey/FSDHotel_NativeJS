@@ -9,25 +9,26 @@ import News from './views/news.js';
 import Services from './views/services.js';
 import Vacancies from './views/vacancies.js';
 
-import uiKit from './views/ui-kit.js';
+// import uiKit from './views/ui-kit.js';
 
 // components
+import Select from './components/ui-kit/select.js';
+
 import cmHeader from './components/cm-header.js';
 import BulletList from './components/ui-kit/bullet-list.js';
 import CheckboxList from './components/ui-kit/checkbox-list.js';
-import cmSelect from './components/ui-kit/cm-select.js';
 import LikeButton from './components/ui-kit/like-button.js';
 import Pagination from './components/ui-kit/pagination.js';
 import RadioGroup from './components/ui-kit/radio-group.js';
 import Toggle from './components/ui-kit/toggle.js';
 
+const $router = new Router({ mode: 'hash', root: '/' });
+const $state = new State({ mode: 'hash', root: '/' });
+
 const $config = {
     baseUrl: '/FSDHotel_Layout_html/#/',
     // baseUrl: '/#/',
 };
-
-const $router = new Router({ mode: 'hash', root: '/' });
-const $state = new State({ mode: 'hash', root: '/' });
 
 $router
     .add(/about/, () => {
@@ -50,7 +51,6 @@ $router
     });
 
 const $storage = {
-    view: -1,
     page: 0,
     logIn: false,
 };
@@ -79,19 +79,19 @@ const app = {
     },
 
     components: {
-        [cmHeader.getType()]: cmHeader,
-        [BulletList.getType()]: BulletList,
-        [CheckboxList.getType()]: CheckboxList,
-        [cmSelect.getType()]: cmSelect,
-        [LikeButton.getType()]: LikeButton,
-        [Pagination.getType()]: Pagination,
-        [RadioGroup.getType()]: RadioGroup,
-        [Toggle.getType()]: Toggle,
+        cmHeader,
+        BulletList,
+        CheckboxList,
+        Select,
+        LikeButton,
+        Pagination,
+        RadioGroup,
+        Toggle,
     },
 
     $views: {
-        Root: null,
-        Current: null,
+        $Root: null,
+        $Current: null,
     },
     $refs: {},
     $config,
@@ -102,25 +102,24 @@ const app = {
     $getters,
 
     getView(viewName, params = {}) {
-        if (!this.$views.Root) {
-            this.$views.Root = document.querySelector('main');
+        if (!this.$views.$Root) {
+            this.$views.$Root = document.querySelector('main');
         }
 
-        if (this.$views.Current) {
-            this.$views.Current.hide();
-        }
+        this.$views.$Current && this.$views.$Current.hide();
 
         if (this.$views.hasOwnProperty(viewName)) {
             this.$views[viewName].show();
-            this.$views.Current = this.$views[viewName];
+            this.$views.$Current = this.$views[viewName];
+
             return;
         }
 
         const view = this.views[viewName];
-        const viewObject = new view(params);
+        const newView = new view(params);
 
-        viewObject.create(this, this.$views.Root);
-        this.$views.Current = this.$views[viewName];
+        newView.create(this, this.$views.$Root);
+        this.$views.$Current = this.$views[viewName];
     },
 
 

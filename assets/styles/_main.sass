@@ -1,7 +1,7 @@
 @import vars&mixins/index
 
 html
-  font-size: $HtmlFontSizePx
+  font-size: $Html-FontSizePx
 
 *
   box-sizing: border-box
@@ -11,30 +11,30 @@ html
     outline: none
 
 body
-  user-select: none
   +MontserratSerif
-  +textColorSizeHeightWeight($textLighten1, 1, 24/14)
+  +textDarkShade75-14-24-400
+  user-select: none
 
 h1
-  +textColorSizeHeightWeight($text, 24/14, 29/14, 700)
+  +textDarkShade-24-29-700
 
 h2
-  +textColorSizeHeightWeight($text, 19/14, 23/14, 700)
+  +textDarkShade-19-23-700
 
 h3, .label
-  +textColorSizeHeightWeightTransform($text, 12/14, 15/14, 700, uppercase)
+  +textDarkShade-12-15-700-uppercase
 
 p
-  +textColorSizeHeightWeight($textLighten1, 1, 24/14)
+  +textDarkShade75-14-24-400
 
 a
-  +Height(18/14)
+  +textDarkShade75-14-20
+  height: 18px
   text-decoration: none
-  +textColorSizeHeightWeight($textLighten1, 1, 20/14)
   &[disabled]
     pointer-events: none
     cursor: default
-    color: $textLighten2
+    color: $DarkShade50
 
 ul, li
   list-style-type: none
@@ -50,13 +50,13 @@ button
 
 input
   +MontserratSerif
-  width: $inputWidth-lg-px
-  +Height($inputHeight-md / 14)
-  +textColorSizeHeight($textLighten1, 1, 24/14)
-  background: $background
-  +border($borderSize-sm / 14, $borderColor)
-  +borderRadius($borderRadius-sm / 14)
-  +padding(12/14, 15/14, 10/14)
+  +textDarkShade25-14-24
+  width: $Object-WidthPx
+  height: $Object-HeightPx
+  background: $Background
+  border: $Object-Border
+  border-radius: $Object-BorderRadius
+  padding: 12px 15px 10px
   &::placeholder
     color: $textLighten3
   @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
@@ -65,21 +65,25 @@ input
     &[type=number]
       &, &:hover, &:focus
         -moz-appearance: textfield
-      &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button
         -webkit-appearance: none
 
 .view
   background: $background
   &__container
-    min-width: $SiteMinWidthPx
-    max-width: $SiteMaxWidthPx
-    height: 100%
-    +flexPlacement(space-between, center)
-    padding: 0 $HorizontalMaxPaddingPx
+    min-width: $Site-MinWidthPx
+    max-width: $Site-MaxWidthPx
+    display: flex
+    justify-content: space-between
+    padding: 70px $Site-MaxHorPaddingPx 50px
+    position: relative
     margin: 0 auto
-    @media (max-width: #{$SiteMaxWidth - 0.51}px)
-      padding: 0 calc(#{$HorizontalMaxPaddingPx} - (#{$SiteMaxWidthPx} - 100vw) * #{($HorizontalMaxPadding - $HorizontalMinPadding) / ($SiteMaxWidth - $SiteWidthBreakpoint)})
-    @media (max-width: #{$SiteWidthBreakpoint - 0.51}px)
-      padding: 1rem calc(#{$HorizontalMinPaddingPx} - (#{$SiteWidthBreakpointPx} - 100vw) * #{($HorizontalMinPadding / 2) / ($SiteWidthBreakpoint - $SiteMinWidth)})
-    @media (max-width: #{$SiteMinWidth - 0.51}px)
-      +padding(0, $HorizontalMinPadding / 28)
+    @media (max-width: #{$Site-MaxWidth - 0.51}px)
+      padding: calc(#{70px} - (#{$Site-MaxWidthPx} - 100vw) * #{(70 - 40) / ($Site-MaxWidth - $Site-WidthBreakpoint768)}) calc(#{$Site-MaxHorPaddingPx} - (#{$Site-MaxWidthPx} - 100vw) * #{($Site-MaxHorPadding - $Site-MinHorPadding) / ($Site-MaxWidth - $Site-WidthBreakpoint768)})
+    @media (max-width: #{$Site-WidthBreakpoint768 - 0.51}px)
+      padding: calc(#{40px} - (#{$Site-WidthBreakpoint768Px} - 100vw) * #{(40 - 20) / ($Site-WidthBreakpoint768 - $Site-MinWidth)})  calc(#{$Site-MinHorPaddingPx} - (#{$Site-WidthBreakpoint768Px} - 100vw) * #{($Site-MinHorPadding / 2) / ($Site-WidthBreakpoint768 - $Site-MinWidth)})
+    @media (max-width: #{$Site-WidthBreakpoint540 - 0.51}px)
+      justify-content: center
+    @media (max-width: #{$Site-MinWidth - 0.51}px)
+      padding: 20px #{$Site-MinHorPaddingPx / 2}

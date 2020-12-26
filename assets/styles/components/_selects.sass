@@ -1,117 +1,123 @@
 @import ../vars&mixins/index
 
-$ListItemHeight: 37/14
+$ListItemHeight: 37px
 
 .select
-  +Width($inputWidth-lg / 14)
-  +flexDirection(column)
-  &__title
-    +marginBottom(5/14)
-  &__container
-    +flexDirection(column)
-    position: relative
-  &__label
-    width: 100%
-    +paddingBottom(3/14)
-
-.select input[type="button"]
-  cursor: pointer
-  +WidthHeight($inputWidth-lg / 14, $inputHeight-md / 14)
-  +textColorSizeHeightWeight($DarkShade75, 1, 18/14)
-  +textEllipsis
-  text-align: left
-  background: $background
-  +border($borderSize-sm / 14, $borderColor)
-  +borderRadius($borderRadius-sm / 14)
-  +padding(4/14, 52/14, 5/14, 1)
-  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
-    &:hover, &:focus
-      border-color: $borderColor-focus
-    &:focus
-      +borderRadiusBottom(0)
-
-.select .select__icon
-  pointer-events: none
-  +WidthHeight($inputHeight-md / 14)
-  +textColorSizeHeightWeight($DarkShade50, 24/14, 24/14)
-  +flexPlacement(center)
-  +absoluteTopRight()
-
-.select .select__dropdown
-  z-index: 101
-  overflow: hidden
-  visibility: hidden
-  width: 100%
-  background: $background
-  +borderRightBottomLeft($borderSize-sm / 14, $borderColor-focus)
-  +borderRadiusBottom($borderRadius-sm / 14)
-  +flexDirection(column)
-  +paddingTop(2/14)
-  +absoluteTopLeft($inputHeight-md / 14, 0)
-  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
-    &:active
-      visibility: visible
-@media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
-  .select input[type="button"]:focus ~ .select__dropdown
-    visibility: visible
-
-.select .select__item
-  cursor: default
-  width: 100%
-  height: $ListItemHeight
-  +textColorSizeHeightWeightTransform($DarkShade, 12/14, 15/14, 700, uppercase)
-  +textEllipsis
-  +flexAlignItems(center)
-  +padding(3/14, 6/14, 3/14, 1)
-  &_no-action
-    cursor: pointer
-  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
-    &:hover, &:active
-      background: inherit
-    &_hover:hover, &_hover:active
-      background: $PurpleLighten15
-@media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
-  .select__list:active > .select__item:not(:active)
-    background: inherit
-
-.select .select__number
+  width: $Object-WidthPx
   display: flex
-  & input[type="number"]
-    pointer-events: none
-    +WidthHeight(32/14, 30/14)
-    +textColorSizeHeightWeight($DarkShade, 12/14, 15/14, 700)
+  flex-direction: column
+
+  .select
+    &__label
+      margin-bottom: 5px
+    &__item-label
+      width: 100%
+      margin-top: 1px
+      margin-bottom: 2px
+
+  details
+    background: $background
+    display: flex
+    flex-direction: column
+    position: relative
+    &[open] > summary
+      border-color: $DarkShade50
+      border-bottom-right-radius: 0
+      border-bottom-left-radius: 0
+    &[open] > .select__dropdown
+      visibility: visible
+
+  summary
+    cursor: pointer
+    width: $Object-WidthPx
+    height: $Object-HeightPx
+    +textEllipsis
+    +textDarkShade75-14-24-400
+    border: $Object-Border
+    border-radius: $Object-BorderRadius
+    display: flex
+    align-items: center
+    padding: 0 48px 0 14px
+    &:before
+      content: 'expand_more'
+      +MaterialIcon
+      width: $Object-HeightPx
+      height: $Object-HeightPx
+      position: absolute
+      top: 0
+      right: 0
+    @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+      &:hover, &:active, &:focus
+        border-color: $DarkShade50
+      &:focus
+        box-shadow: $Object-Shadow-focus
+
+
+  .select__dropdown
+    z-index: 101
+    overflow: hidden
+    visibility: hidden
+    width: 100%
+    background: $background
+    border-bottom: $Object-Border-focus
+    border-left: $Object-Border-focus
+    border-right: $Object-Border-focus
+    border-bottom-right-radius: $Object-BorderRadius
+    border-bottom-left-radius: $Object-BorderRadius
+    box-shadow: $Object-Shadow20
+    display: flex
+    flex-direction: column
+    padding-top: 2px
+    position: absolute
+    top: $Object-HeightPx
+
+  .select__item
+    width: 100%
+    height: $ListItemHeight
+    +textEllipsis
+    +textDarkShade-12-15-700-uppercase
+    display: flex
+    align-items: center
+    padding: 3px 6px 3px 14px
+
+  .number-field
+    display: flex
+
+  .number-field__input
+    width: 32px
+    height: 30px
+    +textDarkShade-12-15-700-uppercase
     text-align: center
-    background: inherit
     border: none
-    +padding(0, 0, 1/14)
+    padding: 0 0 2px
 
-.select .select__spin-button
-  +WidthHeight(30/14)
-  +textColorSizeHeightWeight($DarkShade50, 18/14, 22/14)
-  +border($borderSize-sm / 14, $DarkShade50)
-  border-radius: 50%
-  +flexPlacement(center)
-  +paddingTop(1/14)
-  +marginTop(1/14)
-  &[disabled]
-    cursor: default
-    color: $DarkShade25
-    border-color: $DarkShade25
-  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
-    &:hover, &:active, &:focus
-      background: $PurpleLighten15
-    &[disabled]:hover, &[disabled]:active
-      background: inherit
+  .number-field__spin-button
+    cursor: pointer
+    width: 30px
+    height: 30px
+    +textDarkShade50-18-22-400
+    border: $Object-Border-focus
+    border-radius: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+    padding-top: 1px
+    margin-top: 1px
+    &[disabled]
+      cursor: default
+      color: $DarkShade25
+      border-color: $DarkShade25
+    @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+      &:hover, &:active
+        background: $PurpleLighten15
+      &:focus
+        box-shadow: $Object-Shadow-focus
+      &[disabled]:hover, &[disabled]:active
+        background: inherit
 
-.select .select__control-panel
-  +Height(($inputHeight-md - 1)/ 14)
-  +flexPlacement(space-between, center)
-  +paddingTopRightLeft(5/14, 6/14, 7/7)
-
-@media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
-  .select .select__container:active > input[type="button"]
-    border-color: $borderColor-focus
-    +borderRadiusBottom(0)
-
-.select .show
-  visibility: visible
+  .select__button-panel
+    height: ($Object-Height - 1) + px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 5px 6px 0 14px

@@ -9,7 +9,7 @@ class Vacancies extends BaseView {
         </div>
     `;
 
-    state = {};
+    $name = 'Vacancies';
 
     constructor(data = {}) {
         super(data);
