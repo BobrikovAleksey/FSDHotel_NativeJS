@@ -19,24 +19,10 @@
   display: block
   +absoluteTopLeft(2/14)
 
-button
-  cursor: pointer
-  overflow: hidden
-  +Height(22/14)
-  +textColorSizeHeightWeightTransform($Purple, 12/14, 15/14, 700, uppercase)
-  background: inherit
-  border: none
-  &[disabled]
-    cursor: default
-    color: $textLighten2
-  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
-    &:not([disabled])
-      &:hover, &:active
-        filter: saturate(250%)
-      &:not(.button):focus
-        text-shadow: 0 0 1px $PurpleLight
-
 button.button
+  +Button
+
+button.button_purple
   +Height($inputHeight-md / 14)
   color: $background
   background: $PurpleGradient

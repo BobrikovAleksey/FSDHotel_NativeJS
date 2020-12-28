@@ -1,3 +1,4 @@
+import './libs/index.js';
 import Router from './router.js';
 import State from './state.js';
 
@@ -13,6 +14,7 @@ import Vacancies from './views/vacancies.js';
 
 // components
 import Select from './components/ui-kit/select.js';
+import RangeDatepicker from './components/ui-kit/range-datepicker.js';
 
 import cmHeader from './components/cm-header.js';
 import BulletList from './components/ui-kit/bullet-list.js';
@@ -79,10 +81,12 @@ const app = {
     },
 
     components: {
+        RangeDatepicker,
+        Select,
+
         cmHeader,
         BulletList,
         CheckboxList,
-        Select,
         LikeButton,
         Pagination,
         RadioGroup,

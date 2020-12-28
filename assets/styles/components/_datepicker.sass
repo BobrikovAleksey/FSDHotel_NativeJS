@@ -1,94 +1,149 @@
-@import ../vars&mixins/index
+@import ../vars&mixins/index, buttons
 
-$BoxSize: 40/14
+$BoxSize: 40px
 
 .hasDatepicker
   background: $background
-  +border($borderSize-sm / 14, $textLighten3)
-  +borderRadius($borderRadius-sm / 14)
-  box-shadow: 0 10px 20px $textLighten5
+  border: $Object-Border
+  border-radius: $Object-BorderRadius
+  box-shadow: $Object-Shadow20
   display: inline-block
-  +padding($BoxSize / 2 - 9/14, $BoxSize / 2 - 1/14)
+  padding: #{$BoxSize / 2 - 9px} #{$BoxSize / 2 - 1px} #{$BoxSize / 2 - 9px}
 
-  margin: 100px
-
-  & .ui-datepicker-header
-    +Height($BoxSize)
-    +flexPlacement(center)
-    position: relative
-
-  & .ui-datepicker-title
-    +textColorSizeHeightWeight($text, 19/14, 24/14, 700)
-
-  & .ui-datepicker-prev, & .ui-datepicker-next
-    cursor: pointer
-    +WidthHeight($BoxSize)
-    +borderRadius($BoxSize / 2)
-    +flexPlacement(center)
-    & .ui-icon
-      @extend .material-icons
-      color: $Purple
-    @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
-      &:hover
-        background: $PurpleGradient
-      &:hover > .ui-icon
-        color: $background
-
-  & .ui-datepicker-prev
-    +absoluteTopLeft(0, -7/14)
-
-  & .ui-datepicker-next
-    +absoluteTopRight(0, -7/14)
+  & .ui-datepicker
+    &-header
+      +flex-center-center
+      height: $BoxSize
+      position: relative
+    &-title
+      +textDarkShade-19-23-700
+    &-prev
+      +absolute-top-left(0, -7px)
+    &-next
+      +absolute-top-right(0, -7px)
+    &-prev, &-next
+      +flex-center-center
+      cursor: pointer
+      width: $BoxSize
+      height: $BoxSize
+      border-radius: 50%
+      & .ui-icon
+        +MaterialIcon
+        color: $Purple
+      &.ui-state-disabled
+        cursor: default
+        opacity: 0.5
+      @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+        &:not(.ui-state-disabled)
+          &:hover, &:active
+            background: $PurpleGradient
+          &:hover:not(:active)
+            filter: saturate(250%)
+          &:hover > .ui-icon, &:active > .ui-icon
+            color: $background
 
   & .ui-datepicker-calendar
     border-spacing: 0
-    +marginTop(21/14)
+    margin-top: 23px
     & tr
       display: flex
+    & th, & td
+      +textDarkShade50-12-15-400
+      +flex-center-center
+      width: $BoxSize
+      height: $BoxSize
+      border-radius: 50%
+    & th
+      color: $Purple
+      font-weight: 700
 
-  & .ui-datepicker-calendar th, & .ui-datepicker-calendar td, & .ui-state-default:not(button)
-    +WidthHeight($BoxSize)
-    +textColorSizeHeightWeight($textLighten2, 12/14, 15/14)
-    +flexPlacement(center)
+    & a, & span
+      pointer-events: none
+      color: inherit
+      font-size: 12px
+      line-height: 15px
 
-  & .ui-datepicker-unselectable .ui-state-default
-    color: $textLighten3
+    & .ui-datepicker-unselectable
+      color: $DarkShade25
 
-  & .ui-datepicker-calendar th
-    +textColorWeight($Purple, 700)
+    & .ui-datepicker-today
+      color: $background
+      font-weight: 700
+      background: $GreenGradient
 
-  & .ui-state-active
-    background: $PurpleGradient25
+  & .ui-datepicker
+    &-button-panel
+      +flex-between-center
+      height: $Object-HeightPx
+      padding-top: 12px
 
-  & .ui-state-highlight:not(.ui-state-active)
-    +textColorWeight($background, 700)
-    background: $GreenGradient
-    +borderRadius($BoxSize / 2)
+    & td:not(.ui-datepicker-unselectable), & .selected
+      z-index: 0
+      position: relative
+    & .selected
+      &:before
+        +absolute-top-left(0)
+        pointer-events: none
+        z-index: -1
+        content: ""
+        width: $BoxSize
+        height: $BoxSize
+        background: $PurpleGradient25
+        display: block
+      &-start, &-end
+        pointer-events: none
+        color: $background
+        font-weight: 700
+        background: $PurpleGradient
+      &-start:before
+        border-top-left-radius: 50%
+        border-bottom-left-radius: 50%
+      &-end:before
+        border-top-right-radius: 50%
+        border-bottom-right-radius: 50%
 
-  & .selected-start .ui-state-active, & .selected-end .ui-state-active
-    z-index: 0
-    +textColorWeight($background, 700)
-    background: $PurpleGradient
-    +borderRadius($BoxSize / 2)
-    position: relative
-    &:before
-      z-index: -1
-      content: ""
-      +WidthHeight($BoxSize)
-      background: $PurpleGradient25
-      display: block
-      +absoluteTopLeft()
+    & td:not(.ui-datepicker-unselectable)
+      @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+        &:hover, &:active, &:focus
+          cursor: pointer
+          color: $Purple
+          font-weight: 700
+          background: $PurpleGradient
+          &:after
+            +absolute-top-left(2px)
+            pointer-events: none
+            z-index: -1
+            content: ""
+            width: calc(100% - 4px)
+            height: calc(100% - 4px)
+            background: $background
+            border-radius: 50%
+            display: block
 
-  & .selected-start .ui-state-active:before
-    +borderRadiusLeft($BoxSize / 2)
+$FieldWidth: 150px
 
-  & .selected-end .ui-state-active:before
-    +borderRadiusRight($BoxSize / 2)
+.range-datepicker
+  position: relative
+  & .range-datepicker__label
+    width: $Object-WidthPx
+    display: flex
+    justify-content: space-between
+    margin-bottom: 5px
+    & span
+      width: $FieldWidth
 
-  & .ui-datepicker-button-panel
-    +Height(44/14)
-    +flexPlacement(space-between, center)
-    +paddingTop(12/14)
+  & .range-datepicker
+    &__button-panel
+      +flex-between-center
+      width: $Object-WidthPx
+    &__button
+      +InputButtonIconExpendMore
+      width: $FieldWidth
 
-  & .ui-datepicker-current
-    @extend button
+  & .range-datepicker__dropdown
+    z-index: 101
+    visibility: hidden
+    position: absolute
+    top: #{$Object-Height + 25}px
+    &_show
+      visibility: visible

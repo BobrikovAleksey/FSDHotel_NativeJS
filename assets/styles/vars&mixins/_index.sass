@@ -1,85 +1,11 @@
-@import fonts, vars, border, display, indents, position, text
+@import fonts, vars, mixins, border, display, indents, position, text
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap')
 
-=MontserratSerif()
-  font-family: Montserrat, serif
-
-=MaterialIcon()
-  pointer-events: none
-  color: $DarkShade50
-  font-family: Material Icons, serif
-  font-size: 24px
-  font-weight: 400
-  font-style: normal
-  line-height: 24px
-  text-transform: none
-  letter-spacing: normal
-  word-wrap: normal
-  white-space: nowrap
-  direction: ltr
-  display: flex
-  justify-content: center
-  align-items: center
-  -webkit-font-smoothing: antialiased /* Support for all WebKit browsers */
-  text-rendering: optimizeLegibility /* Support for Safari and Chrome */
-  -moz-osx-font-smoothing: grayscale /* Support for Firefox */
-  font-feature-settings: 'liga' /* Support for IE */
-
-=textEllipsis()
-  overflow: hidden
-  white-space: nowrap
-  text-overflow: ellipsis
-
-=textDarkShade-700()
-  color: $DarkShade
-  font-weight: 700
-
-=textDarkShade-24-29-700()
-  +textDarkShade-700
-  font-size: 24px
-  line-height: 29px
-
-=textDarkShade-19-23-700()
-  +textDarkShade-700
-  font-size: 19px
-  line-height: 23px
-
-=textDarkShade-12-15-700-uppercase()
-  +textDarkShade-700
-  font-size: 12px
-  line-height: 15px
-  text-transform: uppercase
-
-=textDarkShade-12-15-700-uppercase()
-  +textDarkShade-700
-  font-size: 12px
-  line-height: 15px
-  text-transform: uppercase
-
-=textDarkShade75-14()
-  color: $DarkShade75
-  font-size: 14px
 
 =textDarkShade75-14-20()
   +textDarkShade75-14
   line-height: 20px
-
-=textDarkShade75-14-24-400()
-  +textDarkShade75-14
-  line-height: 24px
-  font-weight: 400
-
-=textDarkShade50-18-22-400()
-  color: $DarkShade50
-  font-size: 18px
-  line-height: 22px
-  font-weight: 400
-
-=textDarkShade25-14-24()
-  color: $DarkShade25
-  font-size: 14px
-  line-height: 24px
 
 
 

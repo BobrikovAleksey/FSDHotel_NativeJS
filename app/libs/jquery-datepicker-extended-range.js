@@ -120,7 +120,7 @@ $.datepicker._setDate = function(inst, date, noChange){
 
     switch(range){
         case 'period':
-            if(!(typeof(date) == 'object' && date.length != undefined)){ date = [date, date]; }
+            if(date == null || !(typeof(date) == 'object' && date.length != undefined)){ date = [date, date]; }
 
             datepickerExtension.step = 0;
 
@@ -136,7 +136,7 @@ $.datepicker._setDate = function(inst, date, noChange){
 
             break;
         case 'multiple':
-            if(!(typeof(date) == 'object' && date.length != undefined)){ date = [date]; }
+            if(date == null || !(typeof(date) == 'object' && date.length != undefined)){ date = [date]; }
 
             datepickerExtension.dates = [];
             datepickerExtension.datesText = [];

@@ -13,6 +13,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
@@ -20,7 +21,7 @@
   src: url("../fonts/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+.material-icons {
   pointer-events: none;
   font-family: Material Icons, serif;
   font-weight: normal;
@@ -62,6 +63,48 @@
 /************************************************** */
 /************************************************** */
 /*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -204,32 +247,34 @@
 /************************************************** */
 /*                      Text                      * */
 /************************************************** */
-button, .hasDatepicker .ui-datepicker-current {
+button.button {
+  color: #1F2041;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
   cursor: pointer;
   overflow: hidden;
-  height: 1.5714285714rem;
-  font-size: 0.8571428571rem;
-  line-height: 1.0714285714rem;
+  height: 22px;
   color: #BC9CFF;
-  font-weight: 700;
-  text-transform: uppercase;
   background: inherit;
+  outline: none;
   border: none;
 }
-button[disabled], .hasDatepicker [disabled].ui-datepicker-current {
+button.button[disabled] {
   cursor: default;
   color: rgba(31, 32, 65, 0.5);
 }
 @media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  button:not([disabled]):hover, .hasDatepicker .ui-datepicker-current:not([disabled]):hover, button:not([disabled]):active, .hasDatepicker .ui-datepicker-current:not([disabled]):active {
+  button.button:not([disabled]):hover, button.button:not([disabled]):active {
     filter: saturate(250%);
   }
-  button:not([disabled]):not(.button):focus, .hasDatepicker .ui-datepicker-current:not([disabled]):not(.button):focus {
+  button.button:not([disabled]):focus {
     text-shadow: 0 0 1px #8BA4F9;
   }
 }
 
-button.button, .hasDatepicker .button.ui-datepicker-current {
+button.button_purple {
   height: 3.1428571429rem;
   color: white;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -238,23 +283,23 @@ button.button, .hasDatepicker .button.ui-datepicker-current {
   padding-right: 1.4285714286rem;
   position: relative;
 }
-button.button[disabled], .hasDatepicker .button[disabled].ui-datepicker-current {
+button.button_purple[disabled] {
   filter: opacity(50%);
 }
 @media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  button.button:not([disabled]):focus, .hasDatepicker .button.ui-datepicker-current:not([disabled]):focus {
+  button.button_purple:not([disabled]):focus {
     box-shadow: 0 0 5px #8BA4F9;
   }
 }
 
-button.button_white, .hasDatepicker .button_white.ui-datepicker-current {
+button.button_white {
   z-index: 0;
   color: #BC9CFF;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border: none;
   position: relative;
 }
-button.button_white:before, .hasDatepicker .button_white.ui-datepicker-current:before {
+button.button_white:before {
   z-index: -1;
   content: "";
   pointer-events: none;
@@ -269,26 +314,26 @@ button.button_white:before, .hasDatepicker .button_white.ui-datepicker-current:b
   left: 0.1428571429rem;
 }
 
-button.button_lg, .hasDatepicker .button_lg.ui-datepicker-current {
+button.button_lg {
   width: 22.8571428571rem;
 }
 
-button .material-icons, .hasDatepicker .ui-datepicker-current .material-icons, button .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-current .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-prev button .ui-icon, .hasDatepicker .ui-datepicker-prev .ui-datepicker-current .ui-icon, button .hasDatepicker .ui-datepicker-next .ui-icon, .hasDatepicker .ui-datepicker-current .hasDatepicker .ui-datepicker-next .ui-icon, .hasDatepicker .ui-datepicker-next button .ui-icon, .hasDatepicker .ui-datepicker-next .ui-datepicker-current .ui-icon {
+button .material-icons {
   pointer-events: none;
 }
-button .material-icons:not(.left), .hasDatepicker .ui-datepicker-current .material-icons:not(.left), button .hasDatepicker .ui-datepicker-prev .ui-icon:not(.left), .hasDatepicker .ui-datepicker-current .hasDatepicker .ui-datepicker-prev .ui-icon:not(.left), .hasDatepicker .ui-datepicker-prev button .ui-icon:not(.left), .hasDatepicker .ui-datepicker-prev .ui-datepicker-current .ui-icon:not(.left), button .hasDatepicker .ui-datepicker-next .ui-icon:not(.left), .hasDatepicker .ui-datepicker-current .hasDatepicker .ui-datepicker-next .ui-icon:not(.left), .hasDatepicker .ui-datepicker-next button .ui-icon:not(.left), .hasDatepicker .ui-datepicker-next .ui-datepicker-current .ui-icon:not(.left), button .material-icons.left, .hasDatepicker .ui-datepicker-current .material-icons.left, button .hasDatepicker .ui-datepicker-prev .left.ui-icon, .hasDatepicker .ui-datepicker-current .hasDatepicker .ui-datepicker-prev .left.ui-icon, .hasDatepicker .ui-datepicker-prev button .left.ui-icon, .hasDatepicker .ui-datepicker-prev .ui-datepicker-current .left.ui-icon, button .hasDatepicker .ui-datepicker-next .left.ui-icon, .hasDatepicker .ui-datepicker-current .hasDatepicker .ui-datepicker-next .left.ui-icon, .hasDatepicker .ui-datepicker-next button .left.ui-icon, .hasDatepicker .ui-datepicker-next .ui-datepicker-current .left.ui-icon {
+button .material-icons:not(.left), button .material-icons.left {
   width: 3.1428571429rem;
   height: 3.1428571429rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-button .material-icons:not(.left):not(.left), .hasDatepicker .ui-datepicker-current .material-icons:not(.left):not(.left), button .hasDatepicker .ui-datepicker-prev .ui-icon:not(.left):not(.left), .hasDatepicker .ui-datepicker-current .hasDatepicker .ui-datepicker-prev .ui-icon:not(.left):not(.left), .hasDatepicker .ui-datepicker-prev button .ui-icon:not(.left):not(.left), .hasDatepicker .ui-datepicker-prev .ui-datepicker-current .ui-icon:not(.left):not(.left), button .hasDatepicker .ui-datepicker-next .ui-icon:not(.left):not(.left), .hasDatepicker .ui-datepicker-current .hasDatepicker .ui-datepicker-next .ui-icon:not(.left):not(.left), .hasDatepicker .ui-datepicker-next button .ui-icon:not(.left):not(.left), .hasDatepicker .ui-datepicker-next .ui-datepicker-current .ui-icon:not(.left):not(.left), button .material-icons.left:not(.left) {
+button .material-icons:not(.left):not(.left), button .material-icons.left:not(.left) {
   position: absolute;
   top: 0rem;
   right: 0rem;
 }
-button .material-icons:not(.left).left, button .material-icons.left.left, .hasDatepicker .ui-datepicker-current .material-icons.left.left, button .hasDatepicker .ui-datepicker-prev .left.left.ui-icon, .hasDatepicker .ui-datepicker-current .hasDatepicker .ui-datepicker-prev .left.left.ui-icon, .hasDatepicker .ui-datepicker-prev button .left.left.ui-icon, .hasDatepicker .ui-datepicker-prev .ui-datepicker-current .left.left.ui-icon, button .hasDatepicker .ui-datepicker-next .left.left.ui-icon, .hasDatepicker .ui-datepicker-current .hasDatepicker .ui-datepicker-next .left.left.ui-icon, .hasDatepicker .ui-datepicker-next button .left.left.ui-icon, .hasDatepicker .ui-datepicker-next .ui-datepicker-current .left.left.ui-icon {
+button .material-icons:not(.left).left, button .material-icons.left.left {
   position: absolute;
   top: 0rem;
   left: 0rem;
@@ -301,7 +346,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   src: url("../fonts/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+.material-icons {
   pointer-events: none;
   font-family: Material Icons, serif;
   font-weight: normal;
@@ -343,6 +388,48 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 /************************************************** */
 /************************************************** */
 /*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -485,126 +572,6 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 /************************************************** */
 /*                      Text                      * */
 /************************************************** */
-.hasDatepicker {
-  background: white;
-  border: 0.0714285714rem solid rgba(31, 32, 65, 0.25);
-  border-radius: 0.2857142857rem;
-  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-  display: inline-block;
-  padding: 0.7857142857rem 1.3571428571rem 0.7857142857rem 1.3571428571rem;
-  margin: 100px;
-}
-.hasDatepicker .ui-datepicker-header {
-  height: 2.8571428571rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.hasDatepicker .ui-datepicker-title {
-  font-size: 1.3571428571rem;
-  line-height: 1.7142857143rem;
-  color: #1F2041;
-  font-weight: 700;
-}
-.hasDatepicker .ui-datepicker-prev, .hasDatepicker .ui-datepicker-next {
-  cursor: pointer;
-  width: 2.8571428571rem;
-  height: 2.8571428571rem;
-  border-radius: 1.4285714286rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
-  color: #BC9CFF;
-}
-@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  .hasDatepicker .ui-datepicker-prev:hover, .hasDatepicker .ui-datepicker-next:hover {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  }
-  .hasDatepicker .ui-datepicker-prev:hover > .ui-icon, .hasDatepicker .ui-datepicker-next:hover > .ui-icon {
-    color: white;
-  }
-}
-.hasDatepicker .ui-datepicker-prev {
-  position: absolute;
-  top: 0rem;
-  left: -0.5rem;
-}
-.hasDatepicker .ui-datepicker-next {
-  position: absolute;
-  top: 0rem;
-  right: -0.5rem;
-}
-.hasDatepicker .ui-datepicker-calendar {
-  border-spacing: 0;
-  margin-top: 1.5rem;
-}
-.hasDatepicker .ui-datepicker-calendar tr {
-  display: flex;
-}
-.hasDatepicker .ui-datepicker-calendar th, .hasDatepicker .ui-datepicker-calendar td, .hasDatepicker .ui-state-default:not(button) {
-  width: 2.8571428571rem;
-  height: 2.8571428571rem;
-  font-size: 0.8571428571rem;
-  line-height: 1.0714285714rem;
-  color: rgba(31, 32, 65, 0.5);
-  font-weight: 400;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hasDatepicker .ui-datepicker-unselectable .ui-state-default {
-  color: rgba(31, 32, 65, 0.25);
-}
-.hasDatepicker .ui-datepicker-calendar th {
-  color: #BC9CFF;
-  font-weight: 700;
-}
-.hasDatepicker .ui-state-active {
-  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
-}
-.hasDatepicker .ui-state-highlight:not(.ui-state-active) {
-  color: white;
-  font-weight: 700;
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-  border-radius: 1.4285714286rem;
-}
-.hasDatepicker .selected-start .ui-state-active, .hasDatepicker .selected-end .ui-state-active {
-  z-index: 0;
-  color: white;
-  font-weight: 700;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border-radius: 1.4285714286rem;
-  position: relative;
-}
-.hasDatepicker .selected-start .ui-state-active:before, .hasDatepicker .selected-end .ui-state-active:before {
-  z-index: -1;
-  content: "";
-  width: 2.8571428571rem;
-  height: 2.8571428571rem;
-  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
-  display: block;
-  position: absolute;
-  top: 0rem;
-  left: 0rem;
-}
-.hasDatepicker .selected-start .ui-state-active:before {
-  border-top-left-radius: 1.4285714286rem;
-  border-bottom-left-radius: 1.4285714286rem;
-}
-.hasDatepicker .selected-end .ui-state-active:before {
-  border-top-right-radius: 1.4285714286rem;
-  border-bottom-right-radius: 1.4285714286rem;
-}
-.hasDatepicker .ui-datepicker-button-panel {
-  height: 3.1428571429rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 0.8571428571rem;
-}
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
@@ -612,7 +579,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   src: url("../fonts/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+.material-icons {
   pointer-events: none;
   font-family: Material Icons, serif;
   font-weight: normal;
@@ -654,6 +621,625 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 /************************************************** */
 /************************************************** */
 /*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                     Border                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    Display                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    Padding                     * */
+/************************************************** */
+/************************************************** */
+/*                     Margin                     * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    Absolute                    * */
+/************************************************** */
+/************************************************** */
+/*                     Fixed                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Text                      * */
+/************************************************** */
+button.button {
+  color: #1F2041;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  height: 22px;
+  color: #BC9CFF;
+  background: inherit;
+  outline: none;
+  border: none;
+}
+button.button[disabled] {
+  cursor: default;
+  color: rgba(31, 32, 65, 0.5);
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  button.button:not([disabled]):hover, button.button:not([disabled]):active {
+    filter: saturate(250%);
+  }
+  button.button:not([disabled]):focus {
+    text-shadow: 0 0 1px #8BA4F9;
+  }
+}
+
+button.button_purple {
+  height: 3.1428571429rem;
+  color: white;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 1.5714285714rem;
+  padding-left: 1.4285714286rem;
+  padding-right: 1.4285714286rem;
+  position: relative;
+}
+button.button_purple[disabled] {
+  filter: opacity(50%);
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  button.button_purple:not([disabled]):focus {
+    box-shadow: 0 0 5px #8BA4F9;
+  }
+}
+
+button.button_white {
+  z-index: 0;
+  color: #BC9CFF;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border: none;
+  position: relative;
+}
+button.button_white:before {
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  box-sizing: border-box;
+  width: calc(100% - 0.2857142857rem);
+  height: calc(100% - 0.2857142857rem);
+  background: white;
+  border-radius: 1.5rem;
+  display: block;
+  position: absolute;
+  top: 0.1428571429rem;
+  left: 0.1428571429rem;
+}
+
+button.button_lg {
+  width: 22.8571428571rem;
+}
+
+button .material-icons {
+  pointer-events: none;
+}
+button .material-icons:not(.left), button .material-icons.left {
+  width: 3.1428571429rem;
+  height: 3.1428571429rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button .material-icons:not(.left):not(.left), button .material-icons.left:not(.left) {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+}
+button .material-icons:not(.left).left, button .material-icons.left.left {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+}
+
+.hasDatepicker {
+  background: white;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  display: inline-block;
+  padding: 11px 19px 11px;
+}
+.hasDatepicker .ui-datepicker-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  position: relative;
+}
+.hasDatepicker .ui-datepicker-title {
+  color: #1F2041;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 23px;
+}
+.hasDatepicker .ui-datepicker-prev {
+  position: absolute;
+  top: 0;
+  left: -7px;
+}
+.hasDatepicker .ui-datepicker-next {
+  position: absolute;
+  top: 0;
+  right: -7px;
+}
+.hasDatepicker .ui-datepicker-prev, .hasDatepicker .ui-datepicker-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+  font-family: Material Icons, serif;
+  pointer-events: none;
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 400;
+  white-space: nowrap;
+  direction: ltr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+  color: #BC9CFF;
+}
+.hasDatepicker .ui-datepicker-prev.ui-state-disabled, .hasDatepicker .ui-datepicker-next.ui-state-disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  .hasDatepicker .ui-datepicker-prev:not(.ui-state-disabled):hover, .hasDatepicker .ui-datepicker-prev:not(.ui-state-disabled):active, .hasDatepicker .ui-datepicker-next:not(.ui-state-disabled):hover, .hasDatepicker .ui-datepicker-next:not(.ui-state-disabled):active {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  }
+  .hasDatepicker .ui-datepicker-prev:not(.ui-state-disabled):hover:not(:active), .hasDatepicker .ui-datepicker-next:not(.ui-state-disabled):hover:not(:active) {
+    filter: saturate(250%);
+  }
+  .hasDatepicker .ui-datepicker-prev:not(.ui-state-disabled):hover > .ui-icon, .hasDatepicker .ui-datepicker-prev:not(.ui-state-disabled):active > .ui-icon, .hasDatepicker .ui-datepicker-next:not(.ui-state-disabled):hover > .ui-icon, .hasDatepicker .ui-datepicker-next:not(.ui-state-disabled):active > .ui-icon {
+    color: white;
+  }
+}
+.hasDatepicker .ui-datepicker-calendar {
+  border-spacing: 0;
+  margin-top: 23px;
+}
+.hasDatepicker .ui-datepicker-calendar tr {
+  display: flex;
+}
+.hasDatepicker .ui-datepicker-calendar th, .hasDatepicker .ui-datepicker-calendar td {
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.hasDatepicker .ui-datepicker-calendar th {
+  color: #BC9CFF;
+  font-weight: 700;
+}
+.hasDatepicker .ui-datepicker-calendar a, .hasDatepicker .ui-datepicker-calendar span {
+  pointer-events: none;
+  color: inherit;
+  font-size: 12px;
+  line-height: 15px;
+}
+.hasDatepicker .ui-datepicker-calendar .ui-datepicker-unselectable {
+  color: rgba(31, 32, 65, 0.25);
+}
+.hasDatepicker .ui-datepicker-calendar .ui-datepicker-today {
+  color: white;
+  font-weight: 700;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+.hasDatepicker .ui-datepicker-button-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  padding-top: 12px;
+}
+.hasDatepicker .ui-datepicker td:not(.ui-datepicker-unselectable), .hasDatepicker .ui-datepicker .selected {
+  z-index: 0;
+  position: relative;
+}
+.hasDatepicker .ui-datepicker .selected:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+  display: block;
+}
+.hasDatepicker .ui-datepicker .selected-start, .hasDatepicker .ui-datepicker .selected-end {
+  pointer-events: none;
+  color: white;
+  font-weight: 700;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+.hasDatepicker .ui-datepicker .selected-start:before {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.hasDatepicker .ui-datepicker .selected-end:before {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  .hasDatepicker .ui-datepicker td:not(.ui-datepicker-unselectable):hover, .hasDatepicker .ui-datepicker td:not(.ui-datepicker-unselectable):active, .hasDatepicker .ui-datepicker td:not(.ui-datepicker-unselectable):focus {
+    cursor: pointer;
+    color: #BC9CFF;
+    font-weight: 700;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  }
+  .hasDatepicker .ui-datepicker td:not(.ui-datepicker-unselectable):hover:after, .hasDatepicker .ui-datepicker td:not(.ui-datepicker-unselectable):active:after, .hasDatepicker .ui-datepicker td:not(.ui-datepicker-unselectable):focus:after {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    pointer-events: none;
+    z-index: -1;
+    content: "";
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background: white;
+    border-radius: 50%;
+    display: block;
+  }
+}
+
+.range-datepicker {
+  position: relative;
+}
+.range-datepicker .range-datepicker__label {
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.range-datepicker .range-datepicker__label span {
+  width: 150px;
+}
+.range-datepicker .range-datepicker__button-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 320px;
+}
+.range-datepicker .range-datepicker__button {
+  font-family: Montserrat, serif;
+  color: rgba(31, 32, 65, 0.75);
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  width: 320px;
+  height: 44px;
+  background: white;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  padding: 8px 14px 12px 14px;
+  position: relative;
+  padding-right: 48px;
+  width: 150px;
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  .range-datepicker .range-datepicker__button:hover, .range-datepicker .range-datepicker__button:active, .range-datepicker .range-datepicker__button:focus {
+    color: rgba(31, 32, 65, 0.75);
+    border-color: rgba(31, 32, 65, 0.5);
+  }
+  .range-datepicker .range-datepicker__button:focus {
+    box-shadow: 0 0 3px #8BA4F9;
+  }
+}
+.range-datepicker .range-datepicker__button:before {
+  font-family: Material Icons, serif;
+  pointer-events: none;
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 400;
+  white-space: nowrap;
+  direction: ltr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+  position: absolute;
+  top: 0;
+  right: -1px;
+  content: "expand_more";
+  width: 44px;
+  height: 44px;
+  color: rgba(31, 32, 65, 0.5);
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  .range-datepicker .range-datepicker__button:hover:before, .range-datepicker .range-datepicker__button:active:before, .range-datepicker .range-datepicker__button:focus:before {
+    color: rgba(31, 32, 65, 0.75);
+  }
+}
+.range-datepicker .range-datepicker__dropdown {
+  z-index: 101;
+  visibility: hidden;
+  position: absolute;
+  top: 69px;
+}
+.range-datepicker .range-datepicker__dropdown_show {
+  visibility: visible;
+}
+
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/MaterialIcons-Regular.eot");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
+}
+.material-icons {
+  pointer-events: none;
+  font-family: Material Icons, serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -842,16 +1428,12 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 }
 .select summary:before {
   content: "expand_more";
+  font-family: Material Icons, serif;
   pointer-events: none;
   color: rgba(31, 32, 65, 0.5);
-  font-family: Material Icons, serif;
   font-size: 24px;
-  font-weight: 400;
-  font-style: normal;
   line-height: 24px;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
+  font-weight: 400;
   white-space: nowrap;
   direction: ltr;
   display: flex;
@@ -872,7 +1454,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
     border-color: rgba(31, 32, 65, 0.5);
   }
   .select summary:focus {
-    box-shadow: 0 0 5px #8BA4F9;
+    box-shadow: 0 0 3px #8BA4F9;
   }
 }
 .select .select__dropdown {
@@ -949,7 +1531,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
     background: #f0e9ff;
   }
   .select .number-field__spin-button:focus {
-    box-shadow: 0 0 5px #8BA4F9;
+    box-shadow: 0 0 3px #8BA4F9;
   }
   .select .number-field__spin-button[disabled]:hover, .select .number-field__spin-button[disabled]:active {
     background: inherit;
@@ -970,7 +1552,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   src: url("../fonts/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+.material-icons {
   pointer-events: none;
   font-family: Material Icons, serif;
   font-weight: normal;
@@ -1012,6 +1594,48 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 /************************************************** */
 /************************************************** */
 /*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -1160,16 +1784,16 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   display: flex;
 }
 @media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  .like-button:active > input[type=checkbox] ~ .like-button__box .like-button__icon .material-icons:first-of-type, .like-button:active > input[type=checkbox] ~ .like-button__box .like-button__icon .hasDatepicker .ui-datepicker-prev .ui-icon:first-of-type, .hasDatepicker .ui-datepicker-prev .like-button:active > input[type=checkbox] ~ .like-button__box .like-button__icon .ui-icon:first-of-type, .like-button:active > input[type=checkbox] ~ .like-button__box .like-button__icon .hasDatepicker .ui-datepicker-next .ui-icon:first-of-type, .hasDatepicker .ui-datepicker-next .like-button:active > input[type=checkbox] ~ .like-button__box .like-button__icon .ui-icon:first-of-type {
+  .like-button:active > input[type=checkbox] ~ .like-button__box .like-button__icon .material-icons:first-of-type {
     display: block;
   }
-  .like-button:active > input[type=checkbox] ~ .like-button__box .like-button__icon .material-icons:last-of-type, .like-button:active > input[type=checkbox] ~ .like-button__box .like-button__icon .hasDatepicker .ui-datepicker-prev .ui-icon:last-of-type, .hasDatepicker .ui-datepicker-prev .like-button:active > input[type=checkbox] ~ .like-button__box .like-button__icon .ui-icon:last-of-type, .like-button:active > input[type=checkbox] ~ .like-button__box .like-button__icon .hasDatepicker .ui-datepicker-next .ui-icon:last-of-type, .hasDatepicker .ui-datepicker-next .like-button:active > input[type=checkbox] ~ .like-button__box .like-button__icon .ui-icon:last-of-type {
+  .like-button:active > input[type=checkbox] ~ .like-button__box .like-button__icon .material-icons:last-of-type {
     display: none;
   }
-  .like-button:active > input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons:first-of-type, .like-button:active > input[type=checkbox]:checked ~ .like-button__box .like-button__icon .hasDatepicker .ui-datepicker-prev .ui-icon:first-of-type, .hasDatepicker .ui-datepicker-prev .like-button:active > input[type=checkbox]:checked ~ .like-button__box .like-button__icon .ui-icon:first-of-type, .like-button:active > input[type=checkbox]:checked ~ .like-button__box .like-button__icon .hasDatepicker .ui-datepicker-next .ui-icon:first-of-type, .hasDatepicker .ui-datepicker-next .like-button:active > input[type=checkbox]:checked ~ .like-button__box .like-button__icon .ui-icon:first-of-type {
+  .like-button:active > input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons:first-of-type {
     display: none;
   }
-  .like-button:active > input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons:last-of-type, .like-button:active > input[type=checkbox]:checked ~ .like-button__box .like-button__icon .hasDatepicker .ui-datepicker-prev .ui-icon:last-of-type, .hasDatepicker .ui-datepicker-prev .like-button:active > input[type=checkbox]:checked ~ .like-button__box .like-button__icon .ui-icon:last-of-type, .like-button:active > input[type=checkbox]:checked ~ .like-button__box .like-button__icon .hasDatepicker .ui-datepicker-next .ui-icon:last-of-type, .hasDatepicker .ui-datepicker-next .like-button:active > input[type=checkbox]:checked ~ .like-button__box .like-button__icon .ui-icon:last-of-type {
+  .like-button:active > input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons:last-of-type {
     display: block;
   }
 }
@@ -1183,10 +1807,10 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 .like-button input[type=checkbox]:checked ~ .like-button__box .like-button__counter {
   color: #BC9CFF;
 }
-.like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons:first-of-type, .like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .hasDatepicker .ui-datepicker-prev .ui-icon:first-of-type, .hasDatepicker .ui-datepicker-prev .like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .ui-icon:first-of-type, .like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .hasDatepicker .ui-datepicker-next .ui-icon:first-of-type, .hasDatepicker .ui-datepicker-next .like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .ui-icon:first-of-type {
+.like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons:first-of-type {
   display: block;
 }
-.like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons:last-of-type, .like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .hasDatepicker .ui-datepicker-prev .ui-icon:last-of-type, .hasDatepicker .ui-datepicker-prev .like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .ui-icon:last-of-type, .like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .hasDatepicker .ui-datepicker-next .ui-icon:last-of-type, .hasDatepicker .ui-datepicker-next .like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .ui-icon:last-of-type {
+.like-button input[type=checkbox]:checked ~ .like-button__box .like-button__icon .material-icons:last-of-type {
   display: none;
 }
 
@@ -1214,17 +1838,17 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   justify-content: center;
   align-items: center;
 }
-.like-button .like-button__icon .material-icons, .like-button .like-button__icon .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-prev .like-button .like-button__icon .ui-icon, .like-button .like-button__icon .hasDatepicker .ui-datepicker-next .ui-icon, .hasDatepicker .ui-datepicker-next .like-button .like-button__icon .ui-icon {
+.like-button .like-button__icon .material-icons {
   font-size: 0.7142857143rem;
   line-height: 0.6428571429rem;
   color: rgba(31, 32, 65, 0.25);
   font-weight: 400;
 }
-.like-button .like-button__icon .material-icons:first-of-type, .like-button .like-button__icon .hasDatepicker .ui-datepicker-prev .ui-icon:first-of-type, .hasDatepicker .ui-datepicker-prev .like-button .like-button__icon .ui-icon:first-of-type, .like-button .like-button__icon .hasDatepicker .ui-datepicker-next .ui-icon:first-of-type, .hasDatepicker .ui-datepicker-next .like-button .like-button__icon .ui-icon:first-of-type {
+.like-button .like-button__icon .material-icons:first-of-type {
   color: #BC9CFF;
   display: none;
 }
-.like-button .like-button__icon .material-icons:last-of-type, .like-button .like-button__icon .hasDatepicker .ui-datepicker-prev .ui-icon:last-of-type, .hasDatepicker .ui-datepicker-prev .like-button .like-button__icon .ui-icon:last-of-type, .like-button .like-button__icon .hasDatepicker .ui-datepicker-next .ui-icon:last-of-type, .hasDatepicker .ui-datepicker-next .like-button .like-button__icon .ui-icon:last-of-type {
+.like-button .like-button__icon .material-icons:last-of-type {
   display: block;
 }
 
@@ -1249,7 +1873,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   src: url("../fonts/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+.material-icons {
   pointer-events: none;
   font-family: Material Icons, serif;
   font-weight: normal;
@@ -1291,6 +1915,48 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 /************************************************** */
 /************************************************** */
 /*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -1510,7 +2176,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   src: url("../fonts/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+.material-icons {
   pointer-events: none;
   font-family: Material Icons, serif;
   font-weight: normal;
@@ -1552,6 +2218,48 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 /************************************************** */
 /************************************************** */
 /*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -1734,7 +2442,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   src: url("../fonts/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+.material-icons {
   pointer-events: none;
   font-family: Material Icons, serif;
   font-weight: normal;
@@ -1776,6 +2484,48 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 /************************************************** */
 /************************************************** */
 /*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -2009,7 +2759,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   src: url("../fonts/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+.material-icons {
   pointer-events: none;
   font-family: Material Icons, serif;
   font-weight: normal;
@@ -2051,6 +2801,48 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 /************************************************** */
 /************************************************** */
 /*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -2280,7 +3072,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   src: url("../fonts/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+.material-icons {
   pointer-events: none;
   font-family: Material Icons, serif;
   font-weight: normal;
@@ -2322,6 +3114,48 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 /************************************************** */
 /************************************************** */
 /*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -2471,7 +3305,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   src: url("../fonts/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+.material-icons {
   pointer-events: none;
   font-family: Material Icons, serif;
   font-weight: normal;
@@ -2513,6 +3347,48 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 /************************************************** */
 /************************************************** */
 /*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -2655,32 +3531,34 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 /************************************************** */
 /*                      Text                      * */
 /************************************************** */
-button, .hasDatepicker .ui-datepicker-current {
+button.button {
+  color: #1F2041;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
   cursor: pointer;
   overflow: hidden;
-  height: 1.5714285714rem;
-  font-size: 0.8571428571rem;
-  line-height: 1.0714285714rem;
+  height: 22px;
   color: #BC9CFF;
-  font-weight: 700;
-  text-transform: uppercase;
   background: inherit;
+  outline: none;
   border: none;
 }
-button[disabled], .hasDatepicker [disabled].ui-datepicker-current {
+button.button[disabled] {
   cursor: default;
   color: rgba(31, 32, 65, 0.5);
 }
 @media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  button:not([disabled]):hover, .hasDatepicker .ui-datepicker-current:not([disabled]):hover, button:not([disabled]):active, .hasDatepicker .ui-datepicker-current:not([disabled]):active {
+  button.button:not([disabled]):hover, button.button:not([disabled]):active {
     filter: saturate(250%);
   }
-  button:not([disabled]):not(.button):focus, .hasDatepicker .ui-datepicker-current:not([disabled]):not(.button):focus {
+  button.button:not([disabled]):focus {
     text-shadow: 0 0 1px #8BA4F9;
   }
 }
 
-button.button, .hasDatepicker .button.ui-datepicker-current {
+button.button_purple {
   height: 3.1428571429rem;
   color: white;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -2689,23 +3567,23 @@ button.button, .hasDatepicker .button.ui-datepicker-current {
   padding-right: 1.4285714286rem;
   position: relative;
 }
-button.button[disabled], .hasDatepicker .button[disabled].ui-datepicker-current {
+button.button_purple[disabled] {
   filter: opacity(50%);
 }
 @media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  button.button:not([disabled]):focus, .hasDatepicker .button.ui-datepicker-current:not([disabled]):focus {
+  button.button_purple:not([disabled]):focus {
     box-shadow: 0 0 5px #8BA4F9;
   }
 }
 
-button.button_white, .hasDatepicker .button_white.ui-datepicker-current {
+button.button_white {
   z-index: 0;
   color: #BC9CFF;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border: none;
   position: relative;
 }
-button.button_white:before, .hasDatepicker .button_white.ui-datepicker-current:before {
+button.button_white:before {
   z-index: -1;
   content: "";
   pointer-events: none;
@@ -2720,26 +3598,26 @@ button.button_white:before, .hasDatepicker .button_white.ui-datepicker-current:b
   left: 0.1428571429rem;
 }
 
-button.button_lg, .hasDatepicker .button_lg.ui-datepicker-current {
+button.button_lg {
   width: 22.8571428571rem;
 }
 
-button .material-icons, .hasDatepicker .ui-datepicker-current .material-icons, button .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-prev button .ui-icon, .hasDatepicker .ui-datepicker-current .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-prev .ui-datepicker-current .ui-icon, button .hasDatepicker .ui-datepicker-next .ui-icon, .hasDatepicker .ui-datepicker-next button .ui-icon, .hasDatepicker .ui-datepicker-current .ui-datepicker-next .ui-icon, .hasDatepicker .ui-datepicker-next .ui-datepicker-current .ui-icon {
+button .material-icons {
   pointer-events: none;
 }
-button .material-icons:not(.left), .hasDatepicker .ui-datepicker-current .material-icons:not(.left), button .hasDatepicker .ui-datepicker-prev .ui-icon:not(.left), .hasDatepicker .ui-datepicker-prev button .ui-icon:not(.left), .hasDatepicker .ui-datepicker-current .ui-datepicker-prev .ui-icon:not(.left), .hasDatepicker .ui-datepicker-prev .ui-datepicker-current .ui-icon:not(.left), button .hasDatepicker .ui-datepicker-next .ui-icon:not(.left), .hasDatepicker .ui-datepicker-next button .ui-icon:not(.left), .hasDatepicker .ui-datepicker-current .ui-datepicker-next .ui-icon:not(.left), .hasDatepicker .ui-datepicker-next .ui-datepicker-current .ui-icon:not(.left), button .material-icons.left, .hasDatepicker .ui-datepicker-current .material-icons.left, button .hasDatepicker .ui-datepicker-prev .left.ui-icon, .hasDatepicker .ui-datepicker-prev button .left.ui-icon, .hasDatepicker .ui-datepicker-current .ui-datepicker-prev .left.ui-icon, .hasDatepicker .ui-datepicker-prev .ui-datepicker-current .left.ui-icon, button .hasDatepicker .ui-datepicker-next .left.ui-icon, .hasDatepicker .ui-datepicker-next button .left.ui-icon, .hasDatepicker .ui-datepicker-current .ui-datepicker-next .left.ui-icon, .hasDatepicker .ui-datepicker-next .ui-datepicker-current .left.ui-icon {
+button .material-icons:not(.left), button .material-icons.left {
   width: 3.1428571429rem;
   height: 3.1428571429rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-button .material-icons:not(.left):not(.left), .hasDatepicker .ui-datepicker-current .material-icons:not(.left):not(.left), button .hasDatepicker .ui-datepicker-prev .ui-icon:not(.left):not(.left), .hasDatepicker .ui-datepicker-prev button .ui-icon:not(.left):not(.left), .hasDatepicker .ui-datepicker-current .ui-datepicker-prev .ui-icon:not(.left):not(.left), .hasDatepicker .ui-datepicker-prev .ui-datepicker-current .ui-icon:not(.left):not(.left), button .hasDatepicker .ui-datepicker-next .ui-icon:not(.left):not(.left), .hasDatepicker .ui-datepicker-next button .ui-icon:not(.left):not(.left), .hasDatepicker .ui-datepicker-current .ui-datepicker-next .ui-icon:not(.left):not(.left), .hasDatepicker .ui-datepicker-next .ui-datepicker-current .ui-icon:not(.left):not(.left), button .material-icons.left:not(.left) {
+button .material-icons:not(.left):not(.left), button .material-icons.left:not(.left) {
   position: absolute;
   top: 0rem;
   right: 0rem;
 }
-button .material-icons:not(.left).left, button .material-icons.left.left, .hasDatepicker .ui-datepicker-current .material-icons.left.left, button .hasDatepicker .ui-datepicker-prev .left.left.ui-icon, .hasDatepicker .ui-datepicker-prev button .left.left.ui-icon, .hasDatepicker .ui-datepicker-current .ui-datepicker-prev .left.left.ui-icon, .hasDatepicker .ui-datepicker-prev .ui-datepicker-current .left.left.ui-icon, button .hasDatepicker .ui-datepicker-next .left.left.ui-icon, .hasDatepicker .ui-datepicker-next button .left.left.ui-icon, .hasDatepicker .ui-datepicker-current .ui-datepicker-next .left.left.ui-icon, .hasDatepicker .ui-datepicker-next .ui-datepicker-current .left.left.ui-icon {
+button .material-icons:not(.left).left, button .material-icons.left.left {
   position: absolute;
   top: 0rem;
   left: 0rem;
@@ -2822,7 +3700,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   src: url("../fonts/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+.material-icons {
   pointer-events: none;
   font-family: Material Icons, serif;
   font-weight: normal;
@@ -2864,6 +3742,48 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 /************************************************** */
 /************************************************** */
 /*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -3026,7 +3946,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   border-radius: 1.4285714286rem;
   display: none;
 }
-.header__menu-icon .material-icons, .header__menu-icon .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-prev .header__menu-icon .ui-icon, .header__menu-icon .hasDatepicker .ui-datepicker-next .ui-icon, .hasDatepicker .ui-datepicker-next .header__menu-icon .ui-icon {
+.header__menu-icon .material-icons {
   pointer-events: none;
   font-size: 2.2857142857rem;
   color: white;
@@ -3163,7 +4083,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 .header .menu__item:first-of-type {
   margin-left: 0;
 }
-.header .menu__item .material-icons, .header .menu__item .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-prev .header .menu__item .ui-icon, .header .menu__item .hasDatepicker .ui-datepicker-next .ui-icon, .hasDatepicker .ui-datepicker-next .header .menu__item .ui-icon {
+.header .menu__item .material-icons {
   pointer-events: none;
   line-height: 1.5714285714rem;
   margin-left: 0.0714285714rem;
@@ -3337,7 +4257,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   src: url("../fonts/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+.material-icons {
   pointer-events: none;
   font-family: Material Icons, serif;
   font-weight: normal;
@@ -3379,6 +4299,48 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
 /************************************************** */
 /************************************************** */
 /*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -3553,14 +4515,14 @@ button .material-icons:not(.left).left, button .material-icons.left.left, .hasDa
   margin-top: 9px;
 }
 
-button.card__button, .hasDatepicker .card__button.ui-datepicker-current {
+button.card__button {
   width: 100%;
   margin-top: 30px;
 }
-button.card__button_pr24, .hasDatepicker .card__button_pr24.ui-datepicker-current {
+button.card__button_pr24 {
   padding-right: 24px;
 }
-button.card__button_mt20, .hasDatepicker .card__button_mt20.ui-datepicker-current {
+button.card__button_mt20 {
   margin-top: 20px;
 }
 
@@ -3571,7 +4533,7 @@ button.card__button_mt20, .hasDatepicker .card__button_mt20.ui-datepicker-curren
   src: url("../fonts/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+.material-icons {
   pointer-events: none;
   font-family: Material Icons, serif;
   font-weight: normal;
@@ -3613,6 +4575,48 @@ button.card__button_mt20, .hasDatepicker .card__button_mt20.ui-datepicker-curren
 /************************************************** */
 /************************************************** */
 /*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -3831,7 +4835,7 @@ summary::-webkit-details-marker {
   display: none;
 }
 
-button, .hasDatepicker .ui-datepicker-current {
+button {
   font-family: Montserrat, serif;
 }
 
@@ -3902,7 +4906,7 @@ input::placeholder {
   src: url("../fonts/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+.material-icons {
   pointer-events: none;
   font-family: Material Icons, serif;
   font-weight: normal;
@@ -3944,6 +4948,48 @@ input::placeholder {
 /************************************************** */
 /************************************************** */
 /*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -4125,7 +5171,7 @@ input::placeholder {
   src: url("../fonts/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
 }
-.material-icons, .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
+.material-icons {
   pointer-events: none;
   font-family: Material Icons, serif;
   font-weight: normal;
@@ -4167,6 +5213,48 @@ input::placeholder {
 /************************************************** */
 /************************************************** */
 /*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                Objects palette                 * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                    Palette                     * */
+/************************************************** */
+/************************************************** */
+/*                 Objects sizes                  * */
+/************************************************** */
+/************************************************** */
+/*                      Main                      * */
+/************************************************** */
+/************************************************** */
+/*                     Cards                      * */
+/************************************************** */
+/************************************************** */
+/*                    T E X T                     * */
+/************************************************** */
+/************************************************** */
+/*                    F L E X                     * */
+/************************************************** */
+/************************************************** */
+/*                A B S O L U T E                 * */
+/************************************************** */
+/************************************************** */
+/*                   F O N T S                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
+/************************************************** */
+/************************************************** */
+/*                   I N P U T                    * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */

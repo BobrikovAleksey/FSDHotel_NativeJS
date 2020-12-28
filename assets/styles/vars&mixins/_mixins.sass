@@ -1,0 +1,168 @@
+@import vars
+
+/**************************************************
+/*                    T E X T                     *
+/**************************************************
+
+=textEllipsis()
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+
+=textDarkShade-700()
+  color: $DarkShade
+  font-weight: 700
+
+// h1
+=textDarkShade-24-29-700()
+  +textDarkShade-700
+  font-size: 24px
+  line-height: 29px
+
+// h2
+=textDarkShade-19-23-700()
+  +textDarkShade-700
+  font-size: 19px
+  line-height: 23px
+
+// h3
+=textDarkShade-12-15-700-uppercase()
+  +textDarkShade-700
+  font-size: 12px
+  line-height: 15px
+  text-transform: uppercase
+
+=textDarkShade75-14()
+  color: $DarkShade75
+  font-size: 14px
+
+=textDarkShade75-14-24-400()
+  +textDarkShade75-14
+  line-height: 24px
+  font-weight: 400
+
+=textDarkShade50-18-22-400()
+  color: $DarkShade50
+  font-size: 18px
+  line-height: 22px
+  font-weight: 400
+
+=textDarkShade50-12-15-400()
+  color: $DarkShade50
+  font-size: 12px
+  line-height: 15px
+  font-weight: 400
+
+=textDarkShade25-14-24()
+  color: $DarkShade25
+  font-size: 14px
+  line-height: 24px
+
+/**************************************************
+/*                    F L E X                     *
+/**************************************************
+
+=flex-center-center()
+  display: flex
+  justify-content: center
+  align-items: center
+
+=flex-between-center()
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+/**************************************************
+/*                A B S O L U T E                 *
+/**************************************************
+
+=absolute-top-left($top, $left: $top)
+  position: absolute
+  top: $top
+  left: $left
+
+=absolute-top-right($top, $right: $top)
+  position: absolute
+  top: $top
+  right: $right
+
+/**************************************************
+/*                   F O N T S                    *
+/**************************************************
+
+=MontserratSerif()
+  font-family: Montserrat, serif
+
+=MaterialIcon()
+  font-family: Material Icons, serif
+  pointer-events: none
+  color: $DarkShade50
+  font-size: 24px
+  line-height: 24px
+  font-weight: 400
+  white-space: nowrap
+  direction: ltr
+  +flex-center-center
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizeLegibility
+  -moz-osx-font-smoothing: grayscale
+  font-feature-settings: 'liga'
+
+/**************************************************
+/*                  B U T T O N                   *
+/**************************************************
+
+=Button()
+  +textDarkShade-12-15-700-uppercase
+  cursor: pointer
+  overflow: hidden
+  height: 22px
+  color: $Purple
+  background: inherit
+  outline: none
+  border: none
+  &[disabled]
+    cursor: default
+    color: $textLighten2
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+    &:not([disabled])
+      &:hover, &:active
+        filter: saturate(250%)
+      &:focus
+        text-shadow: 0 0 1px $PurpleLight
+
+/**************************************************
+/*                   I N P U T                    *
+/**************************************************
+
+=InputButton()
+  +MontserratSerif
+  +textDarkShade75-14-24-400
+  cursor: pointer
+  width: $Object-WidthPx
+  height: $Object-HeightPx
+  background: $Background
+  border: $Object-Border
+  border-radius: $Object-BorderRadius
+  padding: 8px 14px 12px 14px
+  position: relative
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+    &:hover, &:active, &:focus
+      color: $DarkShade75
+      border-color: $DarkShade50
+    &:focus
+      box-shadow: $Object-Shadow-focus
+
+=InputButtonIconExpendMore()
+  +InputButton
+  padding-right: 48px
+  &:before
+    +MaterialIcon
+    +absolute-top-right(0, -1px)
+    content: 'expand_more'
+    width: $Object-HeightPx
+    height: $Object-HeightPx
+    color: $DarkShade50
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+    &:hover:before, &:active:before, &:focus:before
+      color: $DarkShade75

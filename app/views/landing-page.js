@@ -8,9 +8,7 @@ class LandingPage extends BaseView {
                     <h1 class="card__title_mt1">Найдём номера под ваши пожелания</h1>
 
                     <div class="card__block">
-                        <label class="label ui-kit__label">Прибытие</label>
-                        <input type="text" placeholder="Name"/>
-                        <x-datepicker> </x-datepicker>
+                        <x-range-datepicker> </x-range-datepicker>
                     </div>
 
                     <div class="card__block">
@@ -26,6 +24,14 @@ class LandingPage extends BaseView {
     `;
 
     components = [
+        {
+            type: 'RangeDatepicker',
+            params: {
+                name: 'dates',
+                placeholder: 'ДД.ММ.ГГГГ',
+                titles: [ 'Прибытие', 'Выезд' ],
+            },
+        },
         {
             type: 'Select',
             params: {

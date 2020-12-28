@@ -40,8 +40,8 @@ class Select extends BaseComponent {
 
     constructor({ list, name, placeholder = '', single = true, title = '' } = {}) {
         list.forEach((item) => {
-            if (!item.hasOwnProperty('max')) item.max = 99;
             if (!item.hasOwnProperty('min')) item.min = 0;
+            if (!item.hasOwnProperty('max')) item.max = 99;
             if (!item.hasOwnProperty('value')) item.value = item.min;
             item.newValue = item.value;
         });
