@@ -3,9 +3,8 @@
 $ListItemHeight: 37px
 
 .select
+  +flex-column
   width: $Object-WidthPx
-  display: flex
-  flex-direction: column
 
   .select
     &__label
@@ -16,9 +15,8 @@ $ListItemHeight: 37px
       margin-bottom: 2px
 
   details
+    +flex-column
     background: $background
-    display: flex
-    flex-direction: column
     position: relative
     &[open] > summary
       border-color: $DarkShade50
@@ -28,24 +26,22 @@ $ListItemHeight: 37px
       visibility: visible
 
   summary
+    +textEllipsis
+    +textDarkShade75-14-24-400
     cursor: pointer
     width: $Object-WidthPx
     height: $Object-HeightPx
-    +textEllipsis
-    +textDarkShade75-14-24-400
     border: $Object-Border
     border-radius: $Object-BorderRadius
     display: flex
     align-items: center
     padding: 0 48px 0 14px
     &:before
-      content: 'expand_more'
       +MaterialIcon
+      +absolute-top-right(0)
+      content: 'expand_more'
       width: $Object-HeightPx
       height: $Object-HeightPx
-      position: absolute
-      top: 0
-      right: 0
     @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
       &:hover, &:active, &:focus
         border-color: $DarkShade50
@@ -53,6 +49,8 @@ $ListItemHeight: 37px
         box-shadow: $Object-Shadow-focus
 
   .select__dropdown
+    +flex-column
+    +absolute-top-left($Object-HeightPx, 0)
     z-index: 101
     overflow: hidden
     visibility: hidden
@@ -64,17 +62,13 @@ $ListItemHeight: 37px
     border-bottom-right-radius: $Object-BorderRadius
     border-bottom-left-radius: $Object-BorderRadius
     box-shadow: $Object-Shadow20
-    display: flex
-    flex-direction: column
     padding-top: 2px
-    position: absolute
-    top: $Object-HeightPx
 
   .select__item
-    width: 100%
-    height: $ListItemHeight
     +textEllipsis
     +textDarkShade-12-15-700-uppercase
+    width: 100%
+    height: $ListItemHeight
     display: flex
     align-items: center
     padding: 3px 6px 3px 14px
@@ -83,24 +77,24 @@ $ListItemHeight: 37px
     display: flex
 
   .number-field__input
+    +textDarkShade-12-15-700-uppercase
     width: 32px
     height: 30px
-    +textDarkShade-12-15-700-uppercase
     text-align: center
     border: none
     padding: 0 0 2px
 
   .number-field__spin-button
+    +textDarkShade50-18-22-400
+    +flex-center-center
     cursor: pointer
     width: 30px
     height: 30px
-    +textDarkShade50-18-22-400
+    background: inherit
     border: $Object-Border-focus
     border-radius: 50%
-    display: flex
-    justify-content: center
-    align-items: center
-    padding-top: 1px
+    padding-bottom: 1px
+    padding-right: 1px
     margin-top: 1px
     &[disabled]
       cursor: default
@@ -115,8 +109,6 @@ $ListItemHeight: 37px
         background: inherit
 
   .select__button-panel
+    +flex-between-center
     height: ($Object-Height - 1) + px
-    display: flex
-    justify-content: space-between
-    align-items: center
-    padding: 5px 6px 0 14px
+    padding: 5px 6px 0 11px

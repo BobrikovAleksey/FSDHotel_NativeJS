@@ -12,9 +12,9 @@ class Select extends BaseComponent {
                     <ul class="select__list">{{ list }}</ul>
 
                     <div class="select__button-panel">
-                        <button data-clear>Очистить</button>
-    
-                        <button data-apply>Применить</button>
+                        <button class="button" data-clear>Очистить</button>
+
+                        <button class="button" data-apply>Применить</button>
                     </div>
                 </div>
             </details>
@@ -38,7 +38,7 @@ class Select extends BaseComponent {
     static getTag = () => 'x-select';
     static getType = () => 'Select';
 
-    constructor({ list, name, placeholder = '', single = true, title = '' } = {}) {
+    constructor({ list, name, placeholder = '', title = '' } = {}) {
         list.forEach((item) => {
             if (!item.hasOwnProperty('min')) item.min = 0;
             if (!item.hasOwnProperty('max')) item.max = 99;
@@ -48,11 +48,11 @@ class Select extends BaseComponent {
 
         const minValue = list.reduce((sum, item) => sum + item.min, 0);
 
-        super({ list, minValue, placeholder, single, title });
+        super({ list, minValue, placeholder, title });
 
         if (typeof name === 'string') this.$name = name;
 
-        this.data = {
+        this.cache = {
             mouse: false,
         };
     };
@@ -75,20 +75,6 @@ class Select extends BaseComponent {
 
         this.switchSpinButtons();
         this.update();
-    }.bind(this);
-
-    mouseEnter = function () {
-        this.data.mouse = true;
-    }.bind(this);
-
-    mouseLeave = function () {
-        this.data.mouse = false;
-    }.bind(this);
-
-    clickDocument = function () {
-        if (this.data.mouse) return;
-
-        this.$nodes.details.hasAttribute('open') && this.$nodes.details.removeAttribute('open');
     }.bind(this);
 
     /**
@@ -141,6 +127,15 @@ class Select extends BaseComponent {
         }
     }.bind(this);
 
+    /**
+     * Включить/отключить кнопку
+     * @param button NodeElement
+     * @param disabled boolean
+     */
+    switchButton = function (button, disabled) {
+        disabled ? this._deactivateButton(button) : this._activateButton(button);
+    }.bind(this);
+
     _activateButton(button) {
         button.hasAttribute('disabled') && button.removeAttribute('disabled');
     };
@@ -149,17 +144,20 @@ class Select extends BaseComponent {
         !button.hasAttribute('disabled') && button.setAttribute('disabled', '');
     };
 
-    /**
-     * Включить/отключить кнопку
-     * @param button NodeElement
-     * @param disabled boolean
-     */
-    switchButton = function (button, disabled) {
-        if (disabled) {
-            this._deactivateButton(button);
-        } else {
-            this._activateButton(button);
-        }
+    /** Обработка скрытия и отображения выпадающего списка */
+
+    mouseEnter = function () {
+        this.cache.mouse = true;
+    }.bind(this);
+
+    mouseLeave = function () {
+        this.cache.mouse = false;
+    }.bind(this);
+
+    hideDropdown = function () {
+        if (this.cache.mouse) return;
+
+        this.$nodes.details.hasAttribute('open') && this.$nodes.details.removeAttribute('open');
     }.bind(this);
 
     /** Обновляет текст основного поля и кнопки очистки и сохранения изменений */
@@ -172,18 +170,27 @@ class Select extends BaseComponent {
 
         if (sum === 0) {
             this.$nodes.value.textContent = this.$state.placeholder;
-
-        } else if (this.$state.single) {
-            this.$nodes.value.textContent = `${ sum } ${ BaseComponent.declOfNum(sum, this.$state.list[0].units) }`;
-
-        } else {
-            this.$nodes.value.textContent = this.$state.list.reduce((result, el) => {
-                if (el.value === 0) return result;
-
-                if (result.length > 0) result += ', ';
-                return `${ result }${ el.value } ${ BaseComponent.declOfNum(el.value, el.units) }`;
-            }, '');
+            return;
         }
+
+        if (!this.$nodes.apply.hasAttribute('disabled')) return;
+
+        const resultList = [];
+        this.$state.list.forEach((el, i) => {
+            if (i === 0 || el.hasOwnProperty('units')) {
+                resultList.push({ value: el.value, units: el.units ?? [] });
+                return;
+            }
+
+            resultList[resultList.length - 1].value += el.value;
+        });
+
+        this.$nodes.value.textContent = resultList.reduce((result, el) => {
+            if (el.value === 0) return result;
+
+            if (result.length > 0) result += ', ';
+            return `${ result }${ el.value } ${ BaseComponent.declOfNum(el.value, el.units) }`;
+        }, '');
     }.bind(this);
 
     create(app, node, storage = null) {
@@ -202,7 +209,7 @@ class Select extends BaseComponent {
         this.$el.querySelector('h3').textContent = this.$state.title;
         this.$el.querySelectorAll('.select__item-label').forEach((el, i) => el.textContent = this.$state.list[i].label);
 
-        document.addEventListener('mousedown', this.clickDocument);
+        document.addEventListener('mousedown', this.hideDropdown);
         this.$nodes.details.addEventListener('mouseenter', this.mouseEnter);
         this.$nodes.details.addEventListener('mouseleave', this.mouseLeave);
         this.$nodes.apply.addEventListener('click', this.apply);

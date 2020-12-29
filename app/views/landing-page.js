@@ -15,9 +15,7 @@ class LandingPage extends BaseView {
                         <x-select> </x-select>
                     </div>
 
-                    <button class="button card__button card__button_pr24">
-                        Подобрать номер<i class="material-icons">arrow_forward</i>
-                    </button>
+                    <button class="button-icon button-icon_forward button_lg m-top-31">Подобрать номер</button>
                 </div>
             </div>
         </div>
@@ -38,7 +36,7 @@ class LandingPage extends BaseView {
                 list: [
                     { label: 'Взрослые', max: 9, min: 0, units: ['гость', 'гостя', 'гостей'] },
                     { label: 'Дети', max: 9, min: 0 },
-                    { label: 'Младенцы', max: 9, min: 0 },
+                    { label: 'Младенцы', max: 9, min: 0, units: ['младенец', 'младенца', 'младенцев'] },
                 ],
                 name: 'guests',
                 placeholder: 'Сколько гостей',

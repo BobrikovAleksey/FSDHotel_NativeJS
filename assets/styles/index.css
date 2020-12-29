@@ -1,19 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
@@ -101,10 +86,10 @@
 /*                   F O N T S                    * */
 /************************************************** */
 /************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
 /*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -248,6 +233,7 @@
 /*                      Text                      * */
 /************************************************** */
 button.button {
+  font-family: Montserrat, serif;
   color: #1F2041;
   font-weight: 700;
   font-size: 12px;
@@ -269,74 +255,233 @@ button.button[disabled] {
   button.button:not([disabled]):hover, button.button:not([disabled]):active {
     filter: saturate(250%);
   }
-  button.button:not([disabled]):focus {
+  button.button:focus {
     text-shadow: 0 0 1px #8BA4F9;
   }
 }
+button.button_lg {
+  width: 320px;
+}
 
-button.button_purple {
-  height: 3.1428571429rem;
+button.button-purple {
+  font-family: Montserrat, serif;
+  color: #1F2041;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  height: 22px;
+  color: #BC9CFF;
+  background: inherit;
+  outline: none;
+  border: none;
+  z-index: 0;
+  height: 44px;
+  border-radius: 22px;
+  padding: 0 20px;
+  position: relative;
   color: white;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border-radius: 1.5714285714rem;
-  padding-left: 1.4285714286rem;
-  padding-right: 1.4285714286rem;
-  position: relative;
 }
-button.button_purple[disabled] {
-  filter: opacity(50%);
+button.button-purple[disabled] {
+  cursor: default;
+  color: rgba(31, 32, 65, 0.5);
 }
 @media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  button.button_purple:not([disabled]):focus {
-    box-shadow: 0 0 5px #8BA4F9;
+  button.button-purple:not([disabled]):hover, button.button-purple:not([disabled]):active {
+    filter: saturate(250%);
+  }
+  button.button-purple:focus {
+    text-shadow: 0 0 1px #8BA4F9;
+  }
+}
+button.button-purple[disabled] {
+  filter: opacity(50%);
+}
+button.button-purple:before, button.button-purple:after {
+  pointer-events: none;
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  button.button-purple:focus {
+    text-shadow: none;
+    box-shadow: 0 0 3px #8BA4F9;
   }
 }
 
-button.button_white {
+button.button-white {
+  font-family: Montserrat, serif;
+  color: #1F2041;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  height: 22px;
+  color: #BC9CFF;
+  background: inherit;
+  outline: none;
+  border: none;
   z-index: 0;
+  height: 44px;
+  border-radius: 22px;
+  padding: 0 20px;
+  position: relative;
   color: #BC9CFF;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border: none;
-  position: relative;
 }
-button.button_white:before {
+button.button-white[disabled] {
+  cursor: default;
+  color: rgba(31, 32, 65, 0.5);
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  button.button-white:not([disabled]):hover, button.button-white:not([disabled]):active {
+    filter: saturate(250%);
+  }
+  button.button-white:focus {
+    text-shadow: 0 0 1px #8BA4F9;
+  }
+}
+button.button-white[disabled] {
+  filter: opacity(50%);
+}
+button.button-white:before, button.button-white:after {
+  pointer-events: none;
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  button.button-white:focus {
+    text-shadow: none;
+    box-shadow: 0 0 3px #8BA4F9;
+  }
+}
+button.button-white:before {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  pointer-events: none;
   z-index: -1;
   content: "";
-  pointer-events: none;
-  box-sizing: border-box;
-  width: calc(100% - 0.2857142857rem);
-  height: calc(100% - 0.2857142857rem);
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
   background: white;
-  border-radius: 1.5rem;
+  border-radius: 21px;
   display: block;
-  position: absolute;
-  top: 0.1428571429rem;
-  left: 0.1428571429rem;
 }
 
-button.button_lg {
-  width: 22.8571428571rem;
+button.button-icon {
+  font-family: Montserrat, serif;
+  color: #1F2041;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  height: 22px;
+  color: #BC9CFF;
+  background: inherit;
+  outline: none;
+  border: none;
+  z-index: 0;
+  height: 44px;
+  border-radius: 22px;
+  padding: 0 20px;
+  position: relative;
+  color: white;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  padding: 0 48px;
 }
-
-button .material-icons {
+button.button-icon[disabled] {
+  cursor: default;
+  color: rgba(31, 32, 65, 0.5);
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  button.button-icon:not([disabled]):hover, button.button-icon:not([disabled]):active {
+    filter: saturate(250%);
+  }
+  button.button-icon:focus {
+    text-shadow: 0 0 1px #8BA4F9;
+  }
+}
+button.button-icon[disabled] {
+  filter: opacity(50%);
+}
+button.button-icon:before, button.button-icon:after {
   pointer-events: none;
 }
-button .material-icons:not(.left), button .material-icons.left {
-  width: 3.1428571429rem;
-  height: 3.1428571429rem;
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  button.button-icon:focus {
+    text-shadow: none;
+    box-shadow: 0 0 3px #8BA4F9;
+  }
+}
+button.button-icon:before, button.button-icon:after {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Material Icons, serif;
+  pointer-events: none;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+  content: "";
+  width: 44px;
+  height: 44px;
+  color: white;
 }
-button .material-icons:not(.left):not(.left), button .material-icons.left:not(.left) {
+button.button-icon:before {
   position: absolute;
-  top: 0rem;
-  right: 0rem;
+  top: 0;
+  left: -1px;
 }
-button .material-icons:not(.left).left, button .material-icons.left.left {
+button.button-icon:after {
   position: absolute;
-  top: 0rem;
-  left: 0rem;
+  top: 0;
+  right: -1px;
+}
+button.button-icon:before, button.button-icon:after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Material Icons, serif;
+  pointer-events: none;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+  content: "";
+  width: 44px;
+  height: 44px;
+  color: white;
+}
+button.button-icon:before {
+  position: absolute;
+  top: 0;
+  left: -1px;
+}
+button.button-icon:after {
+  position: absolute;
+  top: 0;
+  right: -1px;
+}
+
+button.button-icon_forward:after {
+  content: "arrow_forward";
 }
 
 @font-face {
@@ -426,10 +571,10 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 /*                   F O N T S                    * */
 /************************************************** */
 /************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
 /*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -572,331 +717,6 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 /************************************************** */
 /*                      Text                      * */
 /************************************************** */
-@font-face {
-  font-family: "Material Icons";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/MaterialIcons-Regular.eot");
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
-}
-.material-icons {
-  pointer-events: none;
-  font-family: Material Icons, serif;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "liga";
-}
-
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                Objects palette                 * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                     Cards                      * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                Objects palette                 * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                     Cards                      * */
-/************************************************** */
-/************************************************** */
-/*                    T E X T                     * */
-/************************************************** */
-/************************************************** */
-/*                    F L E X                     * */
-/************************************************** */
-/************************************************** */
-/*                A B S O L U T E                 * */
-/************************************************** */
-/************************************************** */
-/*                   F O N T S                    * */
-/************************************************** */
-/************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
-/*                   I N P U T                    * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                Objects palette                 * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                     Cards                      * */
-/************************************************** */
-/************************************************** */
-/*                     Border                     * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                Objects palette                 * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                     Cards                      * */
-/************************************************** */
-/************************************************** */
-/*                    Display                     * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                Objects palette                 * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                     Cards                      * */
-/************************************************** */
-/************************************************** */
-/*                    Padding                     * */
-/************************************************** */
-/************************************************** */
-/*                     Margin                     * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                Objects palette                 * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                     Cards                      * */
-/************************************************** */
-/************************************************** */
-/*                    Absolute                    * */
-/************************************************** */
-/************************************************** */
-/*                     Fixed                      * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                Objects palette                 * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                    Palette                     * */
-/************************************************** */
-/************************************************** */
-/*                 Objects sizes                  * */
-/************************************************** */
-/************************************************** */
-/*                      Main                      * */
-/************************************************** */
-/************************************************** */
-/*                     Cards                      * */
-/************************************************** */
-/************************************************** */
-/*                      Text                      * */
-/************************************************** */
-button.button {
-  color: #1F2041;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  cursor: pointer;
-  overflow: hidden;
-  height: 22px;
-  color: #BC9CFF;
-  background: inherit;
-  outline: none;
-  border: none;
-}
-button.button[disabled] {
-  cursor: default;
-  color: rgba(31, 32, 65, 0.5);
-}
-@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  button.button:not([disabled]):hover, button.button:not([disabled]):active {
-    filter: saturate(250%);
-  }
-  button.button:not([disabled]):focus {
-    text-shadow: 0 0 1px #8BA4F9;
-  }
-}
-
-button.button_purple {
-  height: 3.1428571429rem;
-  color: white;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border-radius: 1.5714285714rem;
-  padding-left: 1.4285714286rem;
-  padding-right: 1.4285714286rem;
-  position: relative;
-}
-button.button_purple[disabled] {
-  filter: opacity(50%);
-}
-@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  button.button_purple:not([disabled]):focus {
-    box-shadow: 0 0 5px #8BA4F9;
-  }
-}
-
-button.button_white {
-  z-index: 0;
-  color: #BC9CFF;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border: none;
-  position: relative;
-}
-button.button_white:before {
-  z-index: -1;
-  content: "";
-  pointer-events: none;
-  box-sizing: border-box;
-  width: calc(100% - 0.2857142857rem);
-  height: calc(100% - 0.2857142857rem);
-  background: white;
-  border-radius: 1.5rem;
-  display: block;
-  position: absolute;
-  top: 0.1428571429rem;
-  left: 0.1428571429rem;
-}
-
-button.button_lg {
-  width: 22.8571428571rem;
-}
-
-button .material-icons {
-  pointer-events: none;
-}
-button .material-icons:not(.left), button .material-icons.left {
-  width: 3.1428571429rem;
-  height: 3.1428571429rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-button .material-icons:not(.left):not(.left), button .material-icons.left:not(.left) {
-  position: absolute;
-  top: 0rem;
-  right: 0rem;
-}
-button .material-icons:not(.left).left, button .material-icons.left.left {
-  position: absolute;
-  top: 0rem;
-  left: 0rem;
-}
-
 .hasDatepicker {
   background: white;
   border: 1px solid rgba(31, 32, 65, 0.25);
@@ -938,17 +758,17 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   border-radius: 50%;
 }
 .hasDatepicker .ui-datepicker-prev .ui-icon, .hasDatepicker .ui-datepicker-next .ui-icon {
-  font-family: Material Icons, serif;
-  pointer-events: none;
-  color: rgba(31, 32, 65, 0.5);
-  font-size: 24px;
-  line-height: 24px;
-  font-weight: 400;
-  white-space: nowrap;
-  direction: ltr;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Material Icons, serif;
+  pointer-events: none;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
@@ -1111,17 +931,17 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   }
 }
 .range-datepicker .range-datepicker__button:before {
-  font-family: Material Icons, serif;
-  pointer-events: none;
-  color: rgba(31, 32, 65, 0.5);
-  font-size: 24px;
-  line-height: 24px;
-  font-weight: 400;
-  white-space: nowrap;
-  direction: ltr;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Material Icons, serif;
+  pointer-events: none;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
@@ -1236,10 +1056,10 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 /*                   F O N T S                    * */
 /************************************************** */
 /************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
 /*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -1383,9 +1203,9 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 /*                      Text                      * */
 /************************************************** */
 .select {
-  width: 320px;
   display: flex;
   flex-direction: column;
+  width: 320px;
 }
 .select .select__label {
   margin-bottom: 5px;
@@ -1396,9 +1216,9 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   margin-bottom: 2px;
 }
 .select details {
-  background: white;
   display: flex;
   flex-direction: column;
+  background: white;
   position: relative;
 }
 .select details[open] > summary {
@@ -1410,9 +1230,6 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   visibility: visible;
 }
 .select summary {
-  cursor: pointer;
-  width: 320px;
-  height: 44px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1420,6 +1237,9 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
+  cursor: pointer;
+  width: 320px;
+  height: 44px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   display: flex;
@@ -1427,27 +1247,27 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   padding: 0 48px 0 14px;
 }
 .select summary:before {
-  content: "expand_more";
-  font-family: Material Icons, serif;
-  pointer-events: none;
-  color: rgba(31, 32, 65, 0.5);
-  font-size: 24px;
-  line-height: 24px;
-  font-weight: 400;
-  white-space: nowrap;
-  direction: ltr;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Material Icons, serif;
+  pointer-events: none;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "liga";
-  width: 44px;
-  height: 44px;
   position: absolute;
   top: 0;
   right: 0;
+  content: "expand_more";
+  width: 44px;
+  height: 44px;
 }
 @media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
   .select summary:hover, .select summary:active, .select summary:focus {
@@ -1458,6 +1278,11 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   }
 }
 .select .select__dropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 44px;
+  left: 0;
   z-index: 101;
   overflow: hidden;
   visibility: hidden;
@@ -1469,15 +1294,9 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-  display: flex;
-  flex-direction: column;
   padding-top: 2px;
-  position: absolute;
-  top: 44px;
 }
 .select .select__item {
-  width: 100%;
-  height: 37px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1486,6 +1305,8 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
+  width: 100%;
+  height: 37px;
   display: flex;
   align-items: center;
   padding: 3px 6px 3px 14px;
@@ -1494,31 +1315,33 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   display: flex;
 }
 .select .number-field__input {
-  width: 32px;
-  height: 30px;
   color: #1F2041;
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
+  width: 32px;
+  height: 30px;
   text-align: center;
   border: none;
   padding: 0 0 2px;
 }
 .select .number-field__spin-button {
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
   color: rgba(31, 32, 65, 0.5);
   font-size: 18px;
   line-height: 22px;
   font-weight: 400;
-  border: 1px solid rgba(31, 32, 65, 0.5);
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 1px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background: inherit;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-radius: 50%;
+  padding-bottom: 1px;
+  padding-right: 1px;
   margin-top: 1px;
 }
 .select .number-field__spin-button[disabled] {
@@ -1538,11 +1361,11 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
   }
 }
 .select .select__button-panel {
-  height: 43px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 6px 0 14px;
+  height: 43px;
+  padding: 5px 6px 0 11px;
 }
 
 @font-face {
@@ -1632,10 +1455,10 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 /*                   F O N T S                    * */
 /************************************************** */
 /************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
 /*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -1953,10 +1776,10 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 /*                   F O N T S                    * */
 /************************************************** */
 /************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
 /*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -2256,10 +2079,10 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 /*                   F O N T S                    * */
 /************************************************** */
 /************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
 /*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -2522,10 +2345,10 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 /*                   F O N T S                    * */
 /************************************************** */
 /************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
 /*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -2839,10 +2662,10 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 /*                   F O N T S                    * */
 /************************************************** */
 /************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
 /*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -3152,10 +2975,10 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 /*                   F O N T S                    * */
 /************************************************** */
 /************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
 /*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -3385,10 +3208,10 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 /*                   F O N T S                    * */
 /************************************************** */
 /************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
 /*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -3532,6 +3355,7 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 /*                      Text                      * */
 /************************************************** */
 button.button {
+  font-family: Montserrat, serif;
   color: #1F2041;
   font-weight: 700;
   font-size: 12px;
@@ -3553,74 +3377,233 @@ button.button[disabled] {
   button.button:not([disabled]):hover, button.button:not([disabled]):active {
     filter: saturate(250%);
   }
-  button.button:not([disabled]):focus {
+  button.button:focus {
     text-shadow: 0 0 1px #8BA4F9;
   }
 }
+button.button_lg {
+  width: 320px;
+}
 
-button.button_purple {
-  height: 3.1428571429rem;
+button.button-purple {
+  font-family: Montserrat, serif;
+  color: #1F2041;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  height: 22px;
+  color: #BC9CFF;
+  background: inherit;
+  outline: none;
+  border: none;
+  z-index: 0;
+  height: 44px;
+  border-radius: 22px;
+  padding: 0 20px;
+  position: relative;
   color: white;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border-radius: 1.5714285714rem;
-  padding-left: 1.4285714286rem;
-  padding-right: 1.4285714286rem;
-  position: relative;
 }
-button.button_purple[disabled] {
-  filter: opacity(50%);
+button.button-purple[disabled] {
+  cursor: default;
+  color: rgba(31, 32, 65, 0.5);
 }
 @media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
-  button.button_purple:not([disabled]):focus {
-    box-shadow: 0 0 5px #8BA4F9;
+  button.button-purple:not([disabled]):hover, button.button-purple:not([disabled]):active {
+    filter: saturate(250%);
+  }
+  button.button-purple:focus {
+    text-shadow: 0 0 1px #8BA4F9;
+  }
+}
+button.button-purple[disabled] {
+  filter: opacity(50%);
+}
+button.button-purple:before, button.button-purple:after {
+  pointer-events: none;
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  button.button-purple:focus {
+    text-shadow: none;
+    box-shadow: 0 0 3px #8BA4F9;
   }
 }
 
-button.button_white {
+button.button-white {
+  font-family: Montserrat, serif;
+  color: #1F2041;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  height: 22px;
+  color: #BC9CFF;
+  background: inherit;
+  outline: none;
+  border: none;
   z-index: 0;
+  height: 44px;
+  border-radius: 22px;
+  padding: 0 20px;
+  position: relative;
   color: #BC9CFF;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border: none;
-  position: relative;
 }
-button.button_white:before {
+button.button-white[disabled] {
+  cursor: default;
+  color: rgba(31, 32, 65, 0.5);
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  button.button-white:not([disabled]):hover, button.button-white:not([disabled]):active {
+    filter: saturate(250%);
+  }
+  button.button-white:focus {
+    text-shadow: 0 0 1px #8BA4F9;
+  }
+}
+button.button-white[disabled] {
+  filter: opacity(50%);
+}
+button.button-white:before, button.button-white:after {
+  pointer-events: none;
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  button.button-white:focus {
+    text-shadow: none;
+    box-shadow: 0 0 3px #8BA4F9;
+  }
+}
+button.button-white:before {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  pointer-events: none;
   z-index: -1;
   content: "";
-  pointer-events: none;
-  box-sizing: border-box;
-  width: calc(100% - 0.2857142857rem);
-  height: calc(100% - 0.2857142857rem);
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
   background: white;
-  border-radius: 1.5rem;
+  border-radius: 21px;
   display: block;
-  position: absolute;
-  top: 0.1428571429rem;
-  left: 0.1428571429rem;
 }
 
-button.button_lg {
-  width: 22.8571428571rem;
+button.button-icon {
+  font-family: Montserrat, serif;
+  color: #1F2041;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  height: 22px;
+  color: #BC9CFF;
+  background: inherit;
+  outline: none;
+  border: none;
+  z-index: 0;
+  height: 44px;
+  border-radius: 22px;
+  padding: 0 20px;
+  position: relative;
+  color: white;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  padding: 0 48px;
 }
-
-button .material-icons {
+button.button-icon[disabled] {
+  cursor: default;
+  color: rgba(31, 32, 65, 0.5);
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  button.button-icon:not([disabled]):hover, button.button-icon:not([disabled]):active {
+    filter: saturate(250%);
+  }
+  button.button-icon:focus {
+    text-shadow: 0 0 1px #8BA4F9;
+  }
+}
+button.button-icon[disabled] {
+  filter: opacity(50%);
+}
+button.button-icon:before, button.button-icon:after {
   pointer-events: none;
 }
-button .material-icons:not(.left), button .material-icons.left {
-  width: 3.1428571429rem;
-  height: 3.1428571429rem;
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  button.button-icon:focus {
+    text-shadow: none;
+    box-shadow: 0 0 3px #8BA4F9;
+  }
+}
+button.button-icon:before, button.button-icon:after {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Material Icons, serif;
+  pointer-events: none;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+  content: "";
+  width: 44px;
+  height: 44px;
+  color: white;
 }
-button .material-icons:not(.left):not(.left), button .material-icons.left:not(.left) {
+button.button-icon:before {
   position: absolute;
-  top: 0rem;
-  right: 0rem;
+  top: 0;
+  left: -1px;
 }
-button .material-icons:not(.left).left, button .material-icons.left.left {
+button.button-icon:after {
   position: absolute;
-  top: 0rem;
-  left: 0rem;
+  top: 0;
+  right: -1px;
+}
+button.button-icon:before, button.button-icon:after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Material Icons, serif;
+  pointer-events: none;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+  content: "";
+  width: 44px;
+  height: 44px;
+  color: white;
+}
+button.button-icon:before {
+  position: absolute;
+  top: 0;
+  left: -1px;
+}
+button.button-icon:after {
+  position: absolute;
+  top: 0;
+  right: -1px;
+}
+
+button.button-icon_forward:after {
+  content: "arrow_forward";
 }
 
 .pagination {
@@ -3667,25 +3650,69 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
     filter: saturate(250%);
   }
   .pagination .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next), .pagination .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next) {
+    font-family: Montserrat, serif;
+    color: #1F2041;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    height: 22px;
+    color: #BC9CFF;
+    background: inherit;
+    outline: none;
+    border: none;
     z-index: 0;
+    height: 44px;
+    border-radius: 22px;
+    padding: 0 20px;
+    position: relative;
     color: #BC9CFF;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    border: none;
-    position: relative;
   }
+  .pagination .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next)[disabled], .pagination .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next)[disabled] {
+    cursor: default;
+    color: rgba(31, 32, 65, 0.5);
+  }
+}
+@media (hover) and (hover), (hover) and (min-width: 0\0 ), (hover) and (min--moz-device-pixel-ratio: 0), (min-width: 0\0 ) and (hover), (min-width: 0\0 ) and (min-width: 0\0 ), (min-width: 0\0 ) and (min--moz-device-pixel-ratio: 0), (min--moz-device-pixel-ratio: 0) and (hover), (min--moz-device-pixel-ratio: 0) and (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) and (min--moz-device-pixel-ratio: 0) {
+  .pagination .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):not([disabled]):hover, .pagination .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):not([disabled]):active, .pagination .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):not([disabled]):hover, .pagination .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):not([disabled]):active {
+    filter: saturate(250%);
+  }
+  .pagination .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):focus, .pagination .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):focus {
+    text-shadow: 0 0 1px #8BA4F9;
+  }
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  .pagination .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next)[disabled], .pagination .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next)[disabled] {
+    filter: opacity(50%);
+  }
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
+  .pagination .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):before, .pagination .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):after, .pagination .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):before, .pagination .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):after {
+    pointer-events: none;
+  }
+}
+@media (hover) and (hover), (hover) and (min-width: 0\0 ), (hover) and (min--moz-device-pixel-ratio: 0), (min-width: 0\0 ) and (hover), (min-width: 0\0 ) and (min-width: 0\0 ), (min-width: 0\0 ) and (min--moz-device-pixel-ratio: 0), (min--moz-device-pixel-ratio: 0) and (hover), (min--moz-device-pixel-ratio: 0) and (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) and (min--moz-device-pixel-ratio: 0) {
+  .pagination .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):focus, .pagination .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):focus {
+    text-shadow: none;
+    box-shadow: 0 0 3px #8BA4F9;
+  }
+}
+@media (hover), (min-width: 0\0 ), (min--moz-device-pixel-ratio: 0) {
   .pagination .pagination__button:hover:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):before, .pagination .pagination__button:focus:not(.pagination__button_active):not(.pagination__button_prev):not(.pagination__button_next):before {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    pointer-events: none;
     z-index: -1;
     content: "";
-    pointer-events: none;
-    box-sizing: border-box;
-    width: calc(100% - 0.2857142857rem);
-    height: calc(100% - 0.2857142857rem);
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
     background: white;
-    border-radius: 1.5rem;
+    border-radius: 21px;
     display: block;
-    position: absolute;
-    top: 0.1428571429rem;
-    left: 0.1428571429rem;
   }
 }
 
@@ -3780,10 +3807,10 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 /*                   F O N T S                    * */
 /************************************************** */
 /************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
 /*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -4337,10 +4364,10 @@ button .material-icons:not(.left).left, button .material-icons.left.left {
 /*                   F O N T S                    * */
 /************************************************** */
 /************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
 /*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -4613,10 +4640,10 @@ button.card__button_mt20 {
 /*                   F O N T S                    * */
 /************************************************** */
 /************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
 /*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -4835,10 +4862,6 @@ summary::-webkit-details-marker {
   display: none;
 }
 
-button {
-  font-family: Montserrat, serif;
-}
-
 input {
   font-family: Montserrat, serif;
   color: rgba(31, 32, 65, 0.25);
@@ -4986,10 +5009,10 @@ input::placeholder {
 /*                   F O N T S                    * */
 /************************************************** */
 /************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
 /*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -5251,10 +5274,10 @@ input::placeholder {
 /*                   F O N T S                    * */
 /************************************************** */
 /************************************************** */
-/*                  B U T T O N                   * */
-/************************************************** */
-/************************************************** */
 /*                   I N P U T                    * */
+/************************************************** */
+/************************************************** */
+/*                  B U T T O N                   * */
 /************************************************** */
 /************************************************** */
 /*                      Main                      * */
@@ -5532,6 +5555,10 @@ input::placeholder {
 }
 .ui-kit__row {
   margin-bottom: 1rem;
+}
+
+.m-top-31 {
+  margin-top: 31px;
 }
 
 /*# sourceMappingURL=index.css.map */

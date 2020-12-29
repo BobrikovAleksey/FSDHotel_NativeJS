@@ -1,55 +1,28 @@
 @import ../vars&mixins/index
 
-=ButtonWhite()
-  z-index: 0
-  color: $Purple
-  background: $PurpleGradient
-  border: none
-  position: relative
-
-=ButtonWhite-Before()
-  z-index: -1
-  content: ""
-  pointer-events: none
-  box-sizing: border-box
-  width: calc(100% - #{($borderSize-md * 2) / 14 + rem})
-  height: calc(100% - #{($borderSize-md * 2) / 14 + rem})
-  background: $background
-  border-radius: (($inputHeight-md - $borderSize-md) / 28) + rem
-  display: block
-  +absoluteTopLeft(2/14)
-
 button.button
   +Button
+  &_lg
+    width: $Object-WidthPx
 
-button.button_purple
-  +Height($inputHeight-md / 14)
-  color: $background
-  background: $PurpleGradient
-  +borderRadius($inputHeight-md / 28)
-  +paddingLeftRight(20/14)
-  position: relative
-  &[disabled]
-    filter: opacity(50%)
-  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
-    &:not([disabled])
-      &:focus
-        box-shadow: 0 0 5px $PurpleLight
+button.button-purple
+  +ButtonPurple
 
-button.button_white
+button.button-white
   +ButtonWhite
+
+button.button-icon
+  +ButtonIcon
+  &:before, &:after
+    +MaterialIcon
+    content: ""
+    width: $Object-HeightPx
+    height: $Object-HeightPx
+    color: $background
   &:before
-    +ButtonWhite-Before
+    +absolute-top-left(0, -1px)
+  &:after
+    +absolute-top-right(0, -1px)
 
-button.button_lg
-  +Width($inputWidth-lg / 14)
-
-button .material-icons
-  pointer-events: none
-  &:not(.left), &.left
-    +WidthHeight($inputHeight-md / 14)
-    +flexPlacement(center, center)
-    &:not(.left)
-      +absoluteTopRight()
-    &.left
-      +absoluteTopLeft()
+button.button-icon_forward:after
+  content: "arrow_forward"

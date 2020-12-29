@@ -62,6 +62,10 @@
 /*                    F L E X                     *
 /**************************************************
 
+=flex-column()
+  display: flex
+  flex-direction: column
+
 =flex-center-center()
   display: flex
   justify-content: center
@@ -94,42 +98,19 @@
   font-family: Montserrat, serif
 
 =MaterialIcon()
+  +flex-center-center
   font-family: Material Icons, serif
   pointer-events: none
-  color: $DarkShade50
+  font-weight: normal
   font-size: 24px
   line-height: 24px
-  font-weight: 400
+  text-transform: none
   white-space: nowrap
   direction: ltr
-  +flex-center-center
   -webkit-font-smoothing: antialiased
   text-rendering: optimizeLegibility
   -moz-osx-font-smoothing: grayscale
-  font-feature-settings: 'liga'
-
-/**************************************************
-/*                  B U T T O N                   *
-/**************************************************
-
-=Button()
-  +textDarkShade-12-15-700-uppercase
-  cursor: pointer
-  overflow: hidden
-  height: 22px
-  color: $Purple
-  background: inherit
-  outline: none
-  border: none
-  &[disabled]
-    cursor: default
-    color: $textLighten2
-  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
-    &:not([disabled])
-      &:hover, &:active
-        filter: saturate(250%)
-      &:focus
-        text-shadow: 0 0 1px $PurpleLight
+  font-feature-settings: "liga"
 
 /**************************************************
 /*                   I N P U T                    *
@@ -159,10 +140,84 @@
   &:before
     +MaterialIcon
     +absolute-top-right(0, -1px)
-    content: 'expand_more'
+    content: "expand_more"
     width: $Object-HeightPx
     height: $Object-HeightPx
     color: $DarkShade50
   @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
     &:hover:before, &:active:before, &:focus:before
       color: $DarkShade75
+
+/**************************************************
+/*                  B U T T O N                   *
+/**************************************************
+
+=Button()
+  +MontserratSerif
+  +textDarkShade-12-15-700-uppercase
+  cursor: pointer
+  overflow: hidden
+  height: 22px
+  color: $Purple
+  background: inherit
+  outline: none
+  border: none
+  &[disabled]
+    cursor: default
+    color: $textLighten2
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+    &:not([disabled])
+      &:hover, &:active
+        filter: saturate(250%)
+    &:focus
+      text-shadow: 0 0 1px $PurpleLight
+
+=ButtonAny()
+  +Button
+  z-index: 0
+  height: $Object-HeightPx
+  border-radius: ($Object-Height / 2) + px
+  padding: 0 20px
+  position: relative
+  &[disabled]
+    filter: opacity(50%)
+  &:before, &:after
+    pointer-events: none
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0)
+    &:focus
+      text-shadow: none
+      box-shadow: $Object-Shadow-focus
+
+=ButtonPurple()
+  +ButtonAny
+  color: $background
+  background: $PurpleGradient
+
+=ButtonWhite()
+  +ButtonAny
+  color: $Purple
+  background: $PurpleGradient
+  &:before
+    +absolute-top-left(2px)
+    pointer-events: none
+    z-index: -1
+    content: ""
+    width: calc(100% - 4px)
+    height: calc(100% - 4px)
+    background: $background
+    border-radius: (($Object-Height - 2) /2) + px
+    display: block
+
+=ButtonIcon()
+  +ButtonPurple
+  padding: 0 48px
+  &:before, &:after
+    +MaterialIcon
+    content: ""
+    width: $Object-HeightPx
+    height: $Object-HeightPx
+    color: $background
+  &:before
+    +absolute-top-left(0, -1px)
+  &:after
+    +absolute-top-right(0, -1px)
