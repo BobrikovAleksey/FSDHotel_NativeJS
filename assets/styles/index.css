@@ -1264,7 +1264,7 @@ button.button-icon_forward:after {
   font-feature-settings: "liga";
   position: absolute;
   top: 0;
-  right: 0;
+  right: 1px;
   content: "expand_more";
   width: 44px;
   height: 44px;
@@ -4512,16 +4512,17 @@ button.button-icon_forward:after {
 /************************************************** */
 .card {
   width: 380px;
+  height: fit-content;
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  padding: 40px 30px 30px;
+  padding: 39px 29px 29px;
 }
 @media (max-width: 767.49px) {
   .card {
-    width: calc(320px + (30px - (768px - 100vw) * 0.0386597938) * 2);
-    padding: calc(40px - (768px - 100vw) * 0.0386597938) calc(30px - (768px - 100vw) * 0.0386597938);
+    width: calc(320px + (29px - (768px - 100vw) * 0.0360824742) * 2);
+    padding: calc(39px - (768px - 100vw) * 0.0360824742) calc(29px - (768px - 100vw) * 0.0360824742);
   }
 }
 @media (max-width: 379.49px) {
@@ -4531,26 +4532,15 @@ button.button-icon_forward:after {
   }
 }
 
-.card__title_mt1 {
-  margin-top: 1px;
+.card-search .card__datepicker {
+  margin-top: 22px;
 }
-.card__block {
-  width: 100%;
-  margin-top: 18px;
+.card-search .card__select {
+  margin-top: 21px;
 }
-.card__block_mt10 {
-  margin-top: 9px;
-}
-
-button.card__button {
-  width: 100%;
-  margin-top: 30px;
-}
-button.card__button_pr24 {
-  padding-right: 24px;
-}
-button.card__button_mt20 {
-  margin-top: 20px;
+.card-search .card__button {
+  padding-left: 45px;
+  margin-top: 31px;
 }
 
 @font-face {
@@ -4895,6 +4885,7 @@ input::placeholder {
 .view__container {
   min-width: 380px;
   max-width: 1440px;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   padding: 70px 140px 50px;
@@ -5184,6 +5175,28 @@ input::placeholder {
     height: 400px;
     background-position: top 0 left -110px;
     background-size: auto 400px;
+  }
+}
+.landing-page .landing-page__about {
+  position: absolute;
+  bottom: 18px;
+  right: 140px;
+  text-align: right;
+  width: 300px;
+}
+@media (max-width: 1439.49px) {
+  .landing-page .landing-page__about {
+    right: calc(140px - (1440px - 100vw) * 0.1636904762);
+  }
+}
+@media (max-width: 767.49px) {
+  .landing-page .landing-page__about {
+    right: calc(30px - (768px - 100vw) * 0.0386597938);
+  }
+}
+@media (max-width: 539.49px) {
+  .landing-page .landing-page__about {
+    visibility: hidden;
   }
 }
 
@@ -5555,10 +5568,6 @@ input::placeholder {
 }
 .ui-kit__row {
   margin-bottom: 1rem;
-}
-
-.m-top-31 {
-  margin-top: 31px;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -4,44 +4,16 @@ class LandingPage extends BaseView {
     template = `
         <div class="view landing-page">
             <div class="view__container">
-                <div class="card selection">
-                    <h1 class="card__title_mt1">Найдём номера под ваши пожелания</h1>
-
-                    <div class="card__block">
-                        <x-range-datepicker> </x-range-datepicker>
-                    </div>
-
-                    <div class="card__block">
-                        <x-select> </x-select>
-                    </div>
-
-                    <button class="button-icon button-icon_forward button_lg m-top-31">Подобрать номер</button>
-                </div>
+                <x-card-search> </x-card-search>
+                
+                <p class="landing-page__about">Лучшие номера для вашей работы, отдыха и просто вдохновения</p>
             </div>
         </div>
     `;
 
     components = [
         {
-            type: 'RangeDatepicker',
-            params: {
-                name: 'dates',
-                placeholder: 'ДД.ММ.ГГГГ',
-                titles: [ 'Прибытие', 'Выезд' ],
-            },
-        },
-        {
-            type: 'Select',
-            params: {
-                list: [
-                    { label: 'Взрослые', max: 9, min: 0, units: ['гость', 'гостя', 'гостей'] },
-                    { label: 'Дети', max: 9, min: 0 },
-                    { label: 'Младенцы', max: 9, min: 0, units: ['младенец', 'младенца', 'младенцев'] },
-                ],
-                name: 'guests',
-                placeholder: 'Сколько гостей',
-                title: 'Гости',
-            },
+            type: 'CardSearch',
         },
     ];
 

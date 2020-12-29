@@ -61,6 +61,7 @@ class BaseComponent {
 
         node.insertAdjacentHTML('afterend', this._getTemplate());
         this.$el = node.nextElementSibling;
+        this.$el.className += ` ${ node.className }`;
         node.parentNode.removeChild(node);
 
         if (storage !== null && this.$name) {

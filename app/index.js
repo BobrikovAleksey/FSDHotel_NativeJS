@@ -12,6 +12,9 @@ import Vacancies from './views/vacancies.js';
 
 // import uiKit from './views/ui-kit.js';
 
+// cards
+import CardSearch from './components/ui-kit/card-search.js';
+
 // components
 import Select from './components/ui-kit/select.js';
 import RangeDatepicker from './components/ui-kit/range-datepicker.js';
@@ -81,6 +84,7 @@ const app = {
     },
 
     components: {
+        CardSearch,
         RangeDatepicker,
         Select,
 

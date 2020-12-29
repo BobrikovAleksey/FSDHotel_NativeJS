@@ -2,6 +2,7 @@
 
 .card
   width: $Card-WidthPx
+  height: fit-content
   background: $Card-Background
   border: $Card-Border
   border-radius: $Card-Radius
@@ -14,19 +15,11 @@
     width: #{$Object-Width + $Card-PaddingMin * 2}px
     padding: $Card-PaddingMinTopPx $Card-PaddingMinPx
 
-.card
-  &__title_mt1
-    margin-top: 1px
-  &__block
-    width: 100%
-    margin-top: 18px
-    &_mt10
-      margin-top: 9px
-
-button.card__button
-  width: 100%
-  margin-top: 30px
-  &_pr24
-    padding-right: 24px
-  &_mt20
-    margin-top: 20px
+.card-search
+  .card__datepicker
+    margin-top: 22px
+  .card__select
+    margin-top: 21px
+  .card__button
+    padding-left: ($Object-Height + 1) + px
+    margin-top: 31px

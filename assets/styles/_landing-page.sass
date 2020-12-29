@@ -18,3 +18,14 @@
     height: 400px
     background-position: top 0 left -110px
     background-size: auto 400px
+
+  .landing-page__about
+    +absolute-bottom-right(18px, $Site-MaxHorPaddingPx)
+    text-align: right
+    width: 300px
+    @media (max-width: #{$Site-MaxWidth - 0.51}px)
+      right: calc(#{$Site-MaxHorPaddingPx} - (#{$Site-MaxWidthPx} - 100vw) * #{($Site-MaxHorPadding - $Site-MinHorPadding) / ($Site-MaxWidth - $Site-WidthBreakpoint768)})
+    @media (max-width: #{$Site-WidthBreakpoint768 - 0.51}px)
+      right: calc(#{$Site-MinHorPaddingPx} - (#{$Site-WidthBreakpoint768Px} - 100vw) * #{($Site-MinHorPadding / 2) / ($Site-WidthBreakpoint768 - $Site-MinWidth)})
+    @media (max-width: #{$Site-WidthBreakpoint540 - 0.51}px)
+      visibility: hidden
